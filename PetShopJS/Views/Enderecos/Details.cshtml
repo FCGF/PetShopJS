@@ -1,0 +1,51 @@
+﻿@model PetShopJS.Models.Endereco
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Endereco</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,43 @@
+﻿@model PetShopJS.Models.Estado
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Abreviacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Abreviacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

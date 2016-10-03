@@ -1,0 +1,75 @@
+﻿@model PetShopJS.Models.Compra
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Compra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desconto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desconto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Condicao.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Condicao.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Forma_Pagamento.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Forma_Pagamento.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parcela.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parcela.Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

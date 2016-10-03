@@ -1,0 +1,1406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PetShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdDono" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdRaca" Type="int" Nullable="false" />
+          <Property Name="DataNascimento" Type="date" Nullable="false" />
+          <Property Name="Cor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Observacoes" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bairro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCidade" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdCategoriaPai" Type="int" />
+        </EntityType>
+        <EntityType Name="Cidade">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdEstado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdEndereco" Type="int" Nullable="false" />
+          <Property Name="Cep" Type="varchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Senha" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdCondicao" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Desconto" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="IdFormaPagamento" Type="int" Nullable="false" />
+          <Property Name="IdParcela" Type="int" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Compra_Produto_Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProdutoEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdCompra" Type="int" Nullable="false" />
+          <Property Name="Quantidade" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ValorUnitario" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Condicao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="IdEndereco" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Endereco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdBairro" Type="int" Nullable="false" />
+          <Property Name="Endereco1" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Endereco2" Type="nvarchar" MaxLength="150" />
+          <Property Name="CEP" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especificacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProduto" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Valor" Type="text" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Abreviacao" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="IdPais" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fabricante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Forma_Pagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Abreviacao" Type="nvarchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Parcelas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Quantidade" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="Juros" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCategoria" Type="int" Nullable="false" />
+          <Property Name="IdFabricante" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Descricao" Type="text" />
+          <Property Name="IdAnimal" Type="int" />
+        </EntityType>
+        <EntityType Name="Produto_Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdProduto" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="Estoque" Type="decimal" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Raca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdEspecie" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Bairro_Cidade">
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+          <End Role="Bairro" Type="Self.Bairro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cidade">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bairro">
+              <PropertyRef Name="IdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+          <End Role="Categoria1" Type="Self.Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Categoria1">
+              <PropertyRef Name="IdCategoriaPai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cidade_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cidade">
+              <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Dono">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="IdDono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Raca">
+          <End Role="Raca" Type="Self.Raca" Multiplicity="1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Raca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="IdRaca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Condicao">
+          <End Role="Condicao" Type="Self.Condicao" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Condicao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdCondicao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_FormaPagamento">
+          <End Role="Forma_Pagamento" Type="Self.Forma_Pagamento" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forma_Pagamento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdFormaPagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Parcela">
+          <End Role="Parcelas" Type="Self.Parcelas" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parcelas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdParcela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Produto_Empresa_Compra">
+          <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+          <End Role="Compra_Produto_Empresa" Type="Self.Compra_Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compra">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra_Produto_Empresa">
+              <PropertyRef Name="IdCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Produto_Empresa_Produto_Empresa">
+          <End Role="Produto_Empresa" Type="Self.Produto_Empresa" Multiplicity="1" />
+          <End Role="Compra_Produto_Empresa" Type="Self.Compra_Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto_Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra_Produto_Empresa">
+              <PropertyRef Name="IdProdutoEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dono_Endereco">
+          <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Endereco">
+          <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empresa">
+              <PropertyRef Name="IdEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Endereco_Bairro">
+          <End Role="Bairro" Type="Self.Bairro" Multiplicity="1" />
+          <End Role="Endereco" Type="Self.Endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bairro">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Endereco">
+              <PropertyRef Name="IdBairro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Especificacao_Produto">
+          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+          <End Role="Especificacao" Type="Self.Especificacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Especificacao">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estado_Pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+          <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Animal">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdAnimal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Empresa_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+          <End Role="Produto_Empresa" Type="Self.Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Empresa_Produto">
+          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+          <End Role="Produto_Empresa" Type="Self.Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto_Empresa">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Fabricante">
+          <End Role="Fabricante" Type="Self.Fabricante" Multiplicity="1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fabricante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Raca_Especie">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="1" />
+          <End Role="Raca" Type="Self.Raca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Raca">
+              <PropertyRef Name="IdEspecie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PetShopModelStoreContainer">
+          <EntitySet Name="Animal" EntityType="Self.Animal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bairro" EntityType="Self.Bairro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cidade" EntityType="Self.Cidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compra_Produto_Empresa" EntityType="Self.Compra_Produto_Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Condicao" EntityType="Self.Condicao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Endereco" EntityType="Self.Endereco" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especie" EntityType="Self.Especie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especificacao" EntityType="Self.Especificacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fabricante" EntityType="Self.Fabricante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Forma_Pagamento" EntityType="Self.Forma_Pagamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parcelas" EntityType="Self.Parcelas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produto_Empresa" EntityType="Self.Produto_Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Raca" EntityType="Self.Raca" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bairro_Cidade" Association="Self.FK_Bairro_Cidade">
+            <End Role="Cidade" EntitySet="Cidade" />
+            <End Role="Bairro" EntitySet="Bairro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categoria" Association="Self.FK_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Categoria1" EntitySet="Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Cidade" EntitySet="Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Dono" Association="Self.FK_Cliente_Dono">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Raca" Association="Self.FK_Cliente_Raca">
+            <End Role="Raca" EntitySet="Raca" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Cliente" Association="Self.FK_Compra_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Condicao" Association="Self.FK_Compra_Condicao">
+            <End Role="Condicao" EntitySet="Condicao" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_FormaPagamento" Association="Self.FK_Compra_FormaPagamento">
+            <End Role="Forma_Pagamento" EntitySet="Forma_Pagamento" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Parcela" Association="Self.FK_Compra_Parcela">
+            <End Role="Parcelas" EntitySet="Parcelas" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Produto_Empresa_Compra" Association="Self.FK_Compra_Produto_Empresa_Compra">
+            <End Role="Compra" EntitySet="Compra" />
+            <End Role="Compra_Produto_Empresa" EntitySet="Compra_Produto_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Produto_Empresa_Produto_Empresa" Association="Self.FK_Compra_Produto_Empresa_Produto_Empresa">
+            <End Role="Produto_Empresa" EntitySet="Produto_Empresa" />
+            <End Role="Compra_Produto_Empresa" EntitySet="Compra_Produto_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dono_Endereco" Association="Self.FK_Dono_Endereco">
+            <End Role="Endereco" EntitySet="Endereco" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Endereco" Association="Self.FK_Empresa_Endereco">
+            <End Role="Endereco" EntitySet="Endereco" />
+            <End Role="Empresa" EntitySet="Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Endereco_Bairro" Association="Self.FK_Endereco_Bairro">
+            <End Role="Bairro" EntitySet="Bairro" />
+            <End Role="Endereco" EntitySet="Endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Especificacao_Produto" Association="Self.FK_Especificacao_Produto">
+            <End Role="Produto" EntitySet="Produto" />
+            <End Role="Especificacao" EntitySet="Especificacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estado_Pais" Association="Self.FK_Estado_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Animal" Association="Self.FK_Produto_Animal">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Categoria" Association="Self.FK_Produto_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Empresa_Empresa" Association="Self.FK_Produto_Empresa_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Produto_Empresa" EntitySet="Produto_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Empresa_Produto" Association="Self.FK_Produto_Empresa_Produto">
+            <End Role="Produto" EntitySet="Produto" />
+            <End Role="Produto_Empresa" EntitySet="Produto_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Fabricante" Association="Self.FK_Produto_Fabricante">
+            <End Role="Fabricante" EntitySet="Fabricante" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Raca_Especie" Association="Self.FK_Raca_Especie">
+            <End Role="Especie" EntitySet="Especie" />
+            <End Role="Raca" EntitySet="Raca" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PetShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdDono" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdRaca" Type="Int32" Nullable="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Observacoes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Cliente_Dono" FromRole="Animal" ToRole="Cliente" />
+          <NavigationProperty Name="Raca" Relationship="Self.FK_Cliente_Raca" FromRole="Animal" ToRole="Raca" />
+          <NavigationProperty Name="Produtos" Relationship="Self.FK_Produto_Animal" FromRole="Animal" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="Bairro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCidade" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Cidade" Relationship="Self.FK_Bairro_Cidade" FromRole="Bairro" ToRole="Cidade" />
+          <NavigationProperty Name="Enderecos" Relationship="Self.FK_Endereco_Bairro" FromRole="Bairro" ToRole="Endereco" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdCategoriaPai" Type="Int32" />
+          <NavigationProperty Name="Categoria1" Relationship="Self.FK_Categoria" FromRole="Categoria" ToRole="Categoria1" />
+          <NavigationProperty Name="Categoria2" Relationship="Self.FK_Categoria" FromRole="Categoria1" ToRole="Categoria" />
+          <NavigationProperty Name="Produtos" Relationship="Self.FK_Produto_Categoria" FromRole="Categoria" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="Cidade">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdEstado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bairros" Relationship="Self.FK_Bairro_Cidade" FromRole="Cidade" ToRole="Bairro" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdEndereco" Type="Int32" Nullable="false" />
+          <Property Name="Cep" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Senha" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Animals" Relationship="Self.FK_Cliente_Dono" FromRole="Cliente" ToRole="Animal" />
+          <NavigationProperty Name="Compras" Relationship="Self.FK_Compra_Cliente" FromRole="Cliente" ToRole="Compra" />
+          <NavigationProperty Name="Endereco" Relationship="Self.FK_Dono_Endereco" FromRole="Cliente" ToRole="Endereco" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdCondicao" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Desconto" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="IdFormaPagamento" Type="Int32" Nullable="false" />
+          <Property Name="IdParcela" Type="Int32" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Compra_Cliente" FromRole="Compra" ToRole="Cliente" />
+          <NavigationProperty Name="Condicao" Relationship="Self.FK_Compra_Condicao" FromRole="Compra" ToRole="Condicao" />
+          <NavigationProperty Name="Forma_Pagamento" Relationship="Self.FK_Compra_FormaPagamento" FromRole="Compra" ToRole="Forma_Pagamento" />
+          <NavigationProperty Name="Parcela" Relationship="Self.FK_Compra_Parcela" FromRole="Compra" ToRole="Parcelas" />
+          <NavigationProperty Name="Compra_Produto_Empresa" Relationship="Self.FK_Compra_Produto_Empresa_Compra" FromRole="Compra" ToRole="Compra_Produto_Empresa" />
+        </EntityType>
+        <EntityType Name="Compra_Produto_Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProdutoEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="IdCompra" Type="Int32" Nullable="false" />
+          <Property Name="Quantidade" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ValorUnitario" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Compra" Relationship="Self.FK_Compra_Produto_Empresa_Compra" FromRole="Compra_Produto_Empresa" ToRole="Compra" />
+          <NavigationProperty Name="Produto_Empresa" Relationship="Self.FK_Compra_Produto_Empresa_Produto_Empresa" FromRole="Compra_Produto_Empresa" ToRole="Produto_Empresa" />
+        </EntityType>
+        <EntityType Name="Condicao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Compras" Relationship="Self.FK_Compra_Condicao" FromRole="Condicao" ToRole="Compra" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdEndereco" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Endereco" Relationship="Self.FK_Empresa_Endereco" FromRole="Empresa" ToRole="Endereco" />
+          <NavigationProperty Name="Produto_Empresa" Relationship="Self.FK_Produto_Empresa_Empresa" FromRole="Empresa" ToRole="Produto_Empresa" />
+        </EntityType>
+        <EntityType Name="Endereco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdBairro" Type="Int32" Nullable="false" />
+          <Property Name="Endereco1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Endereco2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bairro" Relationship="Self.FK_Endereco_Bairro" FromRole="Endereco" ToRole="Bairro" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Dono_Endereco" FromRole="Endereco" ToRole="Cliente" />
+          <NavigationProperty Name="Empresas" Relationship="Self.FK_Empresa_Endereco" FromRole="Endereco" ToRole="Empresa" />
+        </EntityType>
+        <EntityType Name="Especie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Racas" Relationship="Self.FK_Raca_Especie" FromRole="Especie" ToRole="Raca" />
+        </EntityType>
+        <EntityType Name="Especificacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProduto" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Valor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Produto" Relationship="Self.FK_Especificacao_Produto" FromRole="Especificacao" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Abreviacao" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdPais" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cidades" Relationship="Self.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
+          <NavigationProperty Name="Pais" Relationship="Self.FK_Estado_Pais" FromRole="Estado" ToRole="Pais" />
+        </EntityType>
+        <EntityType Name="Fabricante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Produtos" Relationship="Self.FK_Produto_Fabricante" FromRole="Fabricante" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="Forma_Pagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Compras" Relationship="Self.FK_Compra_FormaPagamento" FromRole="Forma_Pagamento" ToRole="Compra" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Abreviacao" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Estados" Relationship="Self.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
+        </EntityType>
+        <EntityType Name="Parcela">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Quantidade" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="Juros" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Compras" Relationship="Self.FK_Compra_Parcela" FromRole="Parcelas" ToRole="Compra" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+          <Property Name="IdFabricante" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IdAnimal" Type="Int32" />
+          <NavigationProperty Name="Animal" Relationship="Self.FK_Produto_Animal" FromRole="Produto" ToRole="Animal" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK_Produto_Categoria" FromRole="Produto" ToRole="Categoria" />
+          <NavigationProperty Name="Especificacaos" Relationship="Self.FK_Especificacao_Produto" FromRole="Produto" ToRole="Especificacao" />
+          <NavigationProperty Name="Fabricante" Relationship="Self.FK_Produto_Fabricante" FromRole="Produto" ToRole="Fabricante" />
+          <NavigationProperty Name="Produto_Empresa" Relationship="Self.FK_Produto_Empresa_Produto" FromRole="Produto" ToRole="Produto_Empresa" />
+        </EntityType>
+        <EntityType Name="Produto_Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="IdProduto" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="Estoque" Type="Decimal" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Compra_Produto_Empresa" Relationship="Self.FK_Compra_Produto_Empresa_Produto_Empresa" FromRole="Produto_Empresa" ToRole="Compra_Produto_Empresa" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK_Produto_Empresa_Empresa" FromRole="Produto_Empresa" ToRole="Empresa" />
+          <NavigationProperty Name="Produto" Relationship="Self.FK_Produto_Empresa_Produto" FromRole="Produto_Empresa" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="Raca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdEspecie" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Animals" Relationship="Self.FK_Cliente_Raca" FromRole="Raca" ToRole="Animal" />
+          <NavigationProperty Name="Especie" Relationship="Self.FK_Raca_Especie" FromRole="Raca" ToRole="Especie" />
+        </EntityType>
+        <Association Name="FK_Cliente_Dono">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="IdDono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Raca">
+          <End Role="Raca" Type="Self.Raca" Multiplicity="1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Raca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="IdRaca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Animal">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdAnimal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bairro_Cidade">
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+          <End Role="Bairro" Type="Self.Bairro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cidade">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bairro">
+              <PropertyRef Name="IdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Endereco_Bairro">
+          <End Role="Bairro" Type="Self.Bairro" Multiplicity="1" />
+          <End Role="Endereco" Type="Self.Endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bairro">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Endereco">
+              <PropertyRef Name="IdBairro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+          <End Role="Categoria1" Type="Self.Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Categoria1">
+              <PropertyRef Name="IdCategoriaPai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cidade_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cidade">
+              <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dono_Endereco">
+          <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Condicao">
+          <End Role="Condicao" Type="Self.Condicao" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Condicao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdCondicao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_FormaPagamento">
+          <End Role="Forma_Pagamento" Type="Self.Forma_Pagamento" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forma_Pagamento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdFormaPagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Parcela">
+          <End Role="Parcelas" Type="Self.Parcela" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parcelas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="IdParcela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Produto_Empresa_Compra">
+          <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+          <End Role="Compra_Produto_Empresa" Type="Self.Compra_Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compra">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra_Produto_Empresa">
+              <PropertyRef Name="IdCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Produto_Empresa_Produto_Empresa">
+          <End Role="Produto_Empresa" Type="Self.Produto_Empresa" Multiplicity="1" />
+          <End Role="Compra_Produto_Empresa" Type="Self.Compra_Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto_Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra_Produto_Empresa">
+              <PropertyRef Name="IdProdutoEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Endereco">
+          <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Endereco">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empresa">
+              <PropertyRef Name="IdEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Empresa_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+          <End Role="Produto_Empresa" Type="Self.Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Raca_Especie">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="1" />
+          <End Role="Raca" Type="Self.Raca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Raca">
+              <PropertyRef Name="IdEspecie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Especificacao_Produto">
+          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+          <End Role="Especificacao" Type="Self.Especificacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Especificacao">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estado_Pais">
+          <End Role="Pais" Type="PetShopModel.Pais" Multiplicity="1" />
+          <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Fabricante">
+          <End Role="Fabricante" Type="Self.Fabricante" Multiplicity="1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fabricante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produto_Empresa_Produto">
+          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+          <End Role="Produto_Empresa" Type="Self.Produto_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto_Empresa">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PetShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Animals" EntityType="Self.Animal" />
+          <EntitySet Name="Bairroes" EntityType="Self.Bairro" />
+          <EntitySet Name="Categorias" EntityType="Self.Categoria" />
+          <EntitySet Name="Cidades" EntityType="Self.Cidade" />
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="Compras" EntityType="Self.Compra" />
+          <EntitySet Name="Compra_Produto_Empresa" EntityType="Self.Compra_Produto_Empresa" />
+          <EntitySet Name="Condicaos" EntityType="Self.Condicao" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+          <EntitySet Name="Enderecoes" EntityType="Self.Endereco" />
+          <EntitySet Name="Especies" EntityType="Self.Especie" />
+          <EntitySet Name="Especificacaos" EntityType="Self.Especificacao" />
+          <EntitySet Name="Estadoes" EntityType="Self.Estado" />
+          <EntitySet Name="Fabricantes" EntityType="Self.Fabricante" />
+          <EntitySet Name="Forma_Pagamento" EntityType="Self.Forma_Pagamento" />
+          <EntitySet Name="Pais1" EntityType="PetShopModel.Pais" />
+          <EntitySet Name="Parcelas" EntityType="Self.Parcela" />
+          <EntitySet Name="Produtoes" EntityType="Self.Produto" />
+          <EntitySet Name="Produto_Empresa" EntityType="Self.Produto_Empresa" />
+          <EntitySet Name="Racas" EntityType="Self.Raca" />
+          <AssociationSet Name="FK_Cliente_Dono" Association="Self.FK_Cliente_Dono">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Raca" Association="Self.FK_Cliente_Raca">
+            <End Role="Raca" EntitySet="Racas" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Animal" Association="Self.FK_Produto_Animal">
+            <End Role="Animal" EntitySet="Animals" />
+            <End Role="Produto" EntitySet="Produtoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bairro_Cidade" Association="Self.FK_Bairro_Cidade">
+            <End Role="Cidade" EntitySet="Cidades" />
+            <End Role="Bairro" EntitySet="Bairroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Endereco_Bairro" Association="Self.FK_Endereco_Bairro">
+            <End Role="Bairro" EntitySet="Bairroes" />
+            <End Role="Endereco" EntitySet="Enderecoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categoria" Association="Self.FK_Categoria">
+            <End Role="Categoria" EntitySet="Categorias" />
+            <End Role="Categoria1" EntitySet="Categorias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Categoria" Association="Self.FK_Produto_Categoria">
+            <End Role="Categoria" EntitySet="Categorias" />
+            <End Role="Produto" EntitySet="Produtoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+            <End Role="Estado" EntitySet="Estadoes" />
+            <End Role="Cidade" EntitySet="Cidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Cliente" Association="Self.FK_Compra_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Compra" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dono_Endereco" Association="Self.FK_Dono_Endereco">
+            <End Role="Endereco" EntitySet="Enderecoes" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Condicao" Association="Self.FK_Compra_Condicao">
+            <End Role="Condicao" EntitySet="Condicaos" />
+            <End Role="Compra" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_FormaPagamento" Association="Self.FK_Compra_FormaPagamento">
+            <End Role="Forma_Pagamento" EntitySet="Forma_Pagamento" />
+            <End Role="Compra" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Parcela" Association="Self.FK_Compra_Parcela">
+            <End Role="Parcelas" EntitySet="Parcelas" />
+            <End Role="Compra" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Produto_Empresa_Compra" Association="Self.FK_Compra_Produto_Empresa_Compra">
+            <End Role="Compra" EntitySet="Compras" />
+            <End Role="Compra_Produto_Empresa" EntitySet="Compra_Produto_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Produto_Empresa_Produto_Empresa" Association="Self.FK_Compra_Produto_Empresa_Produto_Empresa">
+            <End Role="Produto_Empresa" EntitySet="Produto_Empresa" />
+            <End Role="Compra_Produto_Empresa" EntitySet="Compra_Produto_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Endereco" Association="Self.FK_Empresa_Endereco">
+            <End Role="Endereco" EntitySet="Enderecoes" />
+            <End Role="Empresa" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Empresa_Empresa" Association="Self.FK_Produto_Empresa_Empresa">
+            <End Role="Empresa" EntitySet="Empresas" />
+            <End Role="Produto_Empresa" EntitySet="Produto_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Raca_Especie" Association="Self.FK_Raca_Especie">
+            <End Role="Especie" EntitySet="Especies" />
+            <End Role="Raca" EntitySet="Racas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Especificacao_Produto" Association="Self.FK_Especificacao_Produto">
+            <End Role="Produto" EntitySet="Produtoes" />
+            <End Role="Especificacao" EntitySet="Especificacaos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estado_Pais" Association="Self.FK_Estado_Pais">
+            <End Role="Pais" EntitySet="Pais1" />
+            <End Role="Estado" EntitySet="Estadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Fabricante" Association="Self.FK_Produto_Fabricante">
+            <End Role="Fabricante" EntitySet="Fabricantes" />
+            <End Role="Produto" EntitySet="Produtoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Empresa_Produto" Association="Self.FK_Produto_Empresa_Produto">
+            <End Role="Produto" EntitySet="Produtoes" />
+            <End Role="Produto_Empresa" EntitySet="Produto_Empresa" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PetShopModelStoreContainer" CdmEntityContainer="PetShopEntities">
+          <EntitySetMapping Name="Animals">
+            <EntityTypeMapping TypeName="PetShopModel.Animal">
+              <MappingFragment StoreEntitySet="Animal">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdDono" ColumnName="IdDono" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdRaca" ColumnName="IdRaca" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Cor" ColumnName="Cor" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bairroes">
+            <EntityTypeMapping TypeName="PetShopModel.Bairro">
+              <MappingFragment StoreEntitySet="Bairro">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="PetShopModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdCategoriaPai" ColumnName="IdCategoriaPai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cidades">
+            <EntityTypeMapping TypeName="PetShopModel.Cidade">
+              <MappingFragment StoreEntitySet="Cidade">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="PetShopModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compras">
+            <EntityTypeMapping TypeName="PetShopModel.Compra">
+              <MappingFragment StoreEntitySet="Compra">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdCondicao" ColumnName="IdCondicao" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Desconto" ColumnName="Desconto" />
+                <ScalarProperty Name="IdFormaPagamento" ColumnName="IdFormaPagamento" />
+                <ScalarProperty Name="IdParcela" ColumnName="IdParcela" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compra_Produto_Empresa">
+            <EntityTypeMapping TypeName="PetShopModel.Compra_Produto_Empresa">
+              <MappingFragment StoreEntitySet="Compra_Produto_Empresa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdProdutoEmpresa" ColumnName="IdProdutoEmpresa" />
+                <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="ValorUnitario" ColumnName="ValorUnitario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Condicaos">
+            <EntityTypeMapping TypeName="PetShopModel.Condicao">
+              <MappingFragment StoreEntitySet="Condicao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="PetShopModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enderecoes">
+            <EntityTypeMapping TypeName="PetShopModel.Endereco">
+              <MappingFragment StoreEntitySet="Endereco">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdBairro" ColumnName="IdBairro" />
+                <ScalarProperty Name="Endereco1" ColumnName="Endereco1" />
+                <ScalarProperty Name="Endereco2" ColumnName="Endereco2" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especies">
+            <EntityTypeMapping TypeName="PetShopModel.Especie">
+              <MappingFragment StoreEntitySet="Especie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especificacaos">
+            <EntityTypeMapping TypeName="PetShopModel.Especificacao">
+              <MappingFragment StoreEntitySet="Especificacao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estadoes">
+            <EntityTypeMapping TypeName="PetShopModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Abreviacao" ColumnName="Abreviacao" />
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fabricantes">
+            <EntityTypeMapping TypeName="PetShopModel.Fabricante">
+              <MappingFragment StoreEntitySet="Fabricante">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Forma_Pagamento">
+            <EntityTypeMapping TypeName="PetShopModel.Forma_Pagamento">
+              <MappingFragment StoreEntitySet="Forma_Pagamento">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pais1">
+            <EntityTypeMapping TypeName="PetShopModel.Pais">
+              <MappingFragment StoreEntitySet="Pais">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Abreviacao" ColumnName="Abreviacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parcelas">
+            <EntityTypeMapping TypeName="PetShopModel.Parcela">
+              <MappingFragment StoreEntitySet="Parcelas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="Juros" ColumnName="Juros" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produtoes">
+            <EntityTypeMapping TypeName="PetShopModel.Produto">
+              <MappingFragment StoreEntitySet="Produto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="IdFabricante" ColumnName="IdFabricante" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="IdAnimal" ColumnName="IdAnimal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produto_Empresa">
+            <EntityTypeMapping TypeName="PetShopModel.Produto_Empresa">
+              <MappingFragment StoreEntitySet="Produto_Empresa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Estoque" ColumnName="Estoque" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Racas">
+            <EntityTypeMapping TypeName="PetShopModel.Raca">
+              <MappingFragment StoreEntitySet="Raca">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdEspecie" ColumnName="IdEspecie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
