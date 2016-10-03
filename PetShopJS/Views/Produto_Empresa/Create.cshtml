@@ -1,11 +1,11 @@
 ﻿@model PetShopJS.Models.Produto_Empresa
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Criar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Criar</h2>
 
 
 @using (Html.BeginForm()) 
@@ -13,11 +13,11 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Produto_Empresa</h4>
+        <h4>Produto - Empresa</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.IdEmpresa, "IdEmpresa", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdEmpresa, "Empresa", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdEmpresa", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdEmpresa, "", new { @class = "text-danger" })
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdProduto, "IdProduto", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdProduto, "Produto", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdProduto", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdProduto, "", new { @class = "text-danger" })
@@ -67,7 +67,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar à Lista", "Index")
 </div>
 
 @section Scripts {

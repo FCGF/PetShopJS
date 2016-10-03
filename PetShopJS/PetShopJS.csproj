@@ -199,6 +199,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministrativoController.cs" />
     <Compile Include="Controllers\AnimaisController.cs" />
     <Compile Include="Controllers\BairrosController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
@@ -483,6 +484,7 @@
     <Content Include="Views\Racas\Details.cshtml" />
     <Content Include="Views\Racas\Edit.cshtml" />
     <Content Include="Views\Racas\Index.cshtml" />
+    <Content Include="Views\Administrativo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

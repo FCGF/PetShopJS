@@ -1,11 +1,11 @@
 ﻿@model PetShopJS.Models.Endereco
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Criar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Criar</h2>
 
 
 @using (Html.BeginForm()) 
@@ -13,11 +13,11 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Endereco</h4>
+        <h4>Endereço</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.IdBairro, "IdBairro", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdBairro, "Bairro", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdBairro", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdBairro, "", new { @class = "text-danger" })
@@ -57,7 +57,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar à Lista", "Index")
 </div>
 
 @section Scripts {

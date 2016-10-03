@@ -1,11 +1,11 @@
 ﻿@model PetShopJS.Models.Animal
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Editar</h2>
 
 
 @using (Html.BeginForm())
@@ -19,7 +19,7 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdDono, "IdDono", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdDono, "Dono", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdDono", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdDono, "", new { @class = "text-danger" })
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdRaca, "IdRaca", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdRaca, "Raca", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdRaca", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdRaca, "", new { @class = "text-danger" })
@@ -83,7 +83,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar à Lista", "Index")
 </div>
 
 @section Scripts {
