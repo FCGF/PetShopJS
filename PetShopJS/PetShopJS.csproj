@@ -208,6 +208,7 @@
     <Compile Include="Controllers\ComprasController.cs" />
     <Compile Include="Controllers\Compra_Produto_EmpresaController.cs" />
     <Compile Include="Controllers\CondicoesController.cs" />
+    <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\EmpresasController.cs" />
     <Compile Include="Controllers\EnderecosController.cs" />
     <Compile Include="Controllers\EspeciesController.cs" />
@@ -250,6 +251,7 @@
     <Compile Include="Models\Condicao.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContatoModel.cs" />
     <Compile Include="Models\Empresa.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -489,6 +491,8 @@
     <Content Include="Views\Compras\Details.cshtml" />
     <Content Include="Views\Compras\Edit.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
+    <Content Include="Views\Contato\Index.cshtml" />
+    <Content Include="Views\Contato\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

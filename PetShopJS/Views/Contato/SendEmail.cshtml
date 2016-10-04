@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Enviar Email";
+}
+
+@{
+    try {
+        //parameters to send email
+        string ToEmail, FromOrSenderEmail = "petshopjds@gmail.com", SubJect, Body, cc, Bcc;
+
+        //Reading values from form collection (Querystring) and assigning values to parameters
+        ToEmail = Request["ToEmail"].ToString();
+        SubJect = Request["EmailSubject"].ToString();
+        Body = Request["EMailBody"].ToString();
+        cc = Request["EmailCC"].ToString();
+        Bcc = Request["EmailBCC"].ToString();
+        //Configuring webMail class to send emails
+        WebMail.SmtpServer = "smtp.gmail.com"; //gmail smtp server
+        WebMail.SmtpPort = 587; //gmail port to send emails
+        WebMail.SmtpUseDefaultCredentials = true;
+        WebMail.EnableSsl = true; //sending emails with secure protocol
+        WebMail.UserName = FromOrSenderEmail;//EmailId used to send emails from application
+        WebMail.Password = "qwe12345.";
+        WebMail.From = FromOrSenderEmail; //email sender email address.
+
+        //Sending email
+        WebMail.Send(to: ToEmail, subject: SubJect, body: Body, cc: cc, bcc: Bcc, isBodyHtml: true);
+        <hr />
+        <div class="text-success">
+            Email enviado com sucesso.
+        </div>
+    } catch (Exception) {
+        <div class="text-danger">
+            Problema enviando email, favor verificar detalhes do servidor gmail.
+        </div>
+    }
+} 
