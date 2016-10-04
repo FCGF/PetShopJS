@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PetShopJS.Models.Estado>
+﻿@model IEnumerable<PetShopJS.Models.Cliente>
 
 @{
     ViewBag.Title = "Indice";
@@ -16,10 +16,19 @@
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Abreviacao)
+            @Html.DisplayNameFor(model => model.Cep)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Pais.Nome)
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Endereco1)
         </th>
         <th></th>
     </tr>
@@ -30,10 +39,19 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Abreviacao)
+            @Html.DisplayFor(modelItem => item.Cep)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Pais.Nome)
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Endereco1)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |

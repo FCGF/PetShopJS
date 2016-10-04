@@ -1,64 +1,59 @@
 ﻿@model IEnumerable<PetShopJS.Models.Cliente>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Indice";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var grid = new WebGrid(source: Model, defaultSort: "Nome");
+    grid.Pager(WebGridPagerModes.All);
 }
 
-<h2>Index</h2>
+<div class="container">
+    <div>
+        <h2>Indice</h2>
+        <p>
+            @Html.ActionLink("Criar Novo", "Create")
+        </p>
+        @grid.GetHtml(tableStyle: "webgrid-table table table-hover table-responsive",
+            headerStyle: "webgrid-header",
+            rowStyle: "webgrid-row-style",
+            alternatingRowStyle: "webgrid-alternating-row",
+            selectedRowStyle: "webgrid-selected-row",
+            footerStyle: "webgrid-footer",
+            columns: grid.Columns(
+                grid.Column("Id", format: (item) => item.GetSelectLink(Convert.ToString(item.Id))),
+                grid.Column(columnName: "Nome", header: "Nome do Cliente"),
+                grid.Column(columnName: "Cep", header: "CEP"),
+                grid.Column(columnName: "Email", header: "E-mail"),
+                grid.Column(columnName: "Telefone", header: "Telefone"),
+                grid.Column(columnName: "Endereco.Endereco1", header: "Endereço"),
+                grid.Column(header: "Editar", format: (item) =>
+                {
+                    var link = Html.ActionLink("Editar", "Edit", new { id = item.Id });
+                    return link;
+                }),
+                grid.Column(header: "Detalhes", format: (item) =>
+                {
+                    var link = Html.ActionLink("Detalhes", "Details", new { id = item.Id });
+                    return link;
+                }),
+                grid.Column(header: "Deletar", format: (item) =>
+                {
+                    var link = Html.ActionLink("Deletar", "Delete", new { id = item.Id });
+                    return link;
+                })
+            )
+        )
+    </div>
+    <div>
+        @if (grid.HasSelection) {
+            <h4>Seleção</h4>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cep)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Endereco.Endereco1)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cep)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Senha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Endereco.Endereco1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+            var cliente = (PetShopJS.Models.Cliente)grid.Rows[grid.SelectedIndex].Value;
+            <p><b>Nome:</b> @cliente.Nome</p>
+            <p><b>Cep:</b> @cliente.Cep</p>
+            <p><b>Email:</b> @cliente.Email</p>
+            <p><b>Telefone:</b> @cliente.Telefone</p>
+            <p><b>Endereco:</b> @cliente.Endereco.Endereco1.</p>
+        }
+    </div>
+</div>

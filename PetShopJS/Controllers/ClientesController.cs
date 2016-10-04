@@ -8,37 +8,36 @@ using System.Web;
 using System.Web.Mvc;
 using PetShopJS.Models;
 
-namespace PetShopJS.Controllers
-{
-    public class ClientesController : Controller
-    {
+namespace PetShopJS.Controllers {
+    public class ClientesController : Controller {
         private PetShopEntities db = new PetShopEntities();
 
         // GET: Clientes
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
+            var clientes = db.Clientes.Include(c => c.Endereco);
+            return View(clientes.ToList());
+        }
+
+        // GET: Clientes
+        public ActionResult IndexOriginal() {
             var clientes = db.Clientes.Include(c => c.Endereco);
             return View(clientes.ToList());
         }
 
         // GET: Clientes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Details(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
-            {
+            if (cliente == null) {
                 return HttpNotFound();
             }
             return View(cliente);
         }
 
         // GET: Clientes/Create
-        public ActionResult Create()
-        {
+        public ActionResult Create() {
             ViewBag.IdEndereco = new SelectList(db.Enderecoes, "Id", "Endereco1");
             return View();
         }
@@ -48,10 +47,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,IdEndereco,Cep,Email,Senha,Telefone")] Cliente cliente)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Create([Bind(Include = "Id,Nome,IdEndereco,Cep,Email,Senha,Telefone")] Cliente cliente) {
+            if (ModelState.IsValid) {
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -62,15 +59,12 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Clientes/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Edit(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
-            {
+            if (cliente == null) {
                 return HttpNotFound();
             }
             ViewBag.IdEndereco = new SelectList(db.Enderecoes, "Id", "Endereco1", cliente.IdEndereco);
@@ -82,10 +76,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,IdEndereco,Cep,Email,Senha,Telefone")] Cliente cliente)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Edit([Bind(Include = "Id,Nome,IdEndereco,Cep,Email,Senha,Telefone")] Cliente cliente) {
+            if (ModelState.IsValid) {
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -95,15 +87,12 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Clientes/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Delete(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
-            {
+            if (cliente == null) {
                 return HttpNotFound();
             }
             return View(cliente);
@@ -112,18 +101,15 @@ namespace PetShopJS.Controllers
         // POST: Clientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+        public ActionResult DeleteConfirmed(int id) {
             Cliente cliente = db.Clientes.Find(id);
             db.Clientes.Remove(cliente);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
                 db.Dispose();
             }
             base.Dispose(disposing);

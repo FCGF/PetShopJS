@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PetShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PetShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Animal">
           <Key>
             <PropertyRef Name="Id" />
@@ -66,6 +66,7 @@
           <Property Name="IdFormaPagamento" Type="int" Nullable="false" />
           <Property Name="IdParcela" Type="int" Nullable="false" />
           <Property Name="Total" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Compra_Produto_Empresa">
           <Key>
@@ -563,8 +564,7 @@
             <End Role="Raca" EntitySet="Raca" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PetShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -647,6 +647,7 @@
           <NavigationProperty Name="Forma_Pagamento" Relationship="Self.FK_Compra_FormaPagamento" FromRole="Compra" ToRole="Forma_Pagamento" />
           <NavigationProperty Name="Parcela" Relationship="Self.FK_Compra_Parcela" FromRole="Compra" ToRole="Parcelas" />
           <NavigationProperty Name="Compra_Produto_Empresa" Relationship="Self.FK_Compra_Produto_Empresa_Compra" FromRole="Compra" ToRole="Compra_Produto_Empresa" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Compra_Produto_Empresa">
           <Key>
@@ -1233,6 +1234,7 @@
           <EntitySetMapping Name="Compras">
             <EntityTypeMapping TypeName="PetShopModel.Compra">
               <MappingFragment StoreEntitySet="Compra">
+                <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="IdCondicao" ColumnName="IdCondicao" />

@@ -28,6 +28,7 @@ namespace PetShopJS.Models
         public int IdFormaPagamento { get; set; }
         public int IdParcela { get; set; }
         public decimal Total { get; set; }
+        public System.DateTime Data { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         public virtual Condicao Condicao { get; set; }
