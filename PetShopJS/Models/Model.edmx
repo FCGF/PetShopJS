@@ -65,7 +65,6 @@
           <Property Name="Desconto" Type="decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="IdFormaPagamento" Type="int" Nullable="false" />
           <Property Name="IdParcela" Type="int" Nullable="false" />
-          <Property Name="Total" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="Data" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Compra_Produto_Empresa">
@@ -77,6 +76,7 @@
           <Property Name="IdCompra" Type="int" Nullable="false" />
           <Property Name="Quantidade" Type="decimal" Precision="10" Scale="0" Nullable="false" />
           <Property Name="ValorUnitario" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="8" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Condicao">
           <Key>
@@ -641,7 +641,6 @@
           <Property Name="Desconto" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="IdFormaPagamento" Type="Int32" Nullable="false" />
           <Property Name="IdParcela" Type="Int32" Nullable="false" />
-          <Property Name="Total" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Compra_Cliente" FromRole="Compra" ToRole="Cliente" />
           <NavigationProperty Name="Condicao" Relationship="Self.FK_Compra_Condicao" FromRole="Compra" ToRole="Condicao" />
           <NavigationProperty Name="Forma_Pagamento" Relationship="Self.FK_Compra_FormaPagamento" FromRole="Compra" ToRole="Forma_Pagamento" />
@@ -660,6 +659,7 @@
           <Property Name="ValorUnitario" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
           <NavigationProperty Name="Compra" Relationship="Self.FK_Compra_Produto_Empresa_Compra" FromRole="Compra_Produto_Empresa" ToRole="Compra" />
           <NavigationProperty Name="Produto_Empresa" Relationship="Self.FK_Compra_Produto_Empresa_Produto_Empresa" FromRole="Compra_Produto_Empresa" ToRole="Produto_Empresa" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
         </EntityType>
         <EntityType Name="Condicao">
           <Key>
@@ -1242,13 +1242,13 @@
                 <ScalarProperty Name="Desconto" ColumnName="Desconto" />
                 <ScalarProperty Name="IdFormaPagamento" ColumnName="IdFormaPagamento" />
                 <ScalarProperty Name="IdParcela" ColumnName="IdParcela" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Compra_Produto_Empresa">
             <EntityTypeMapping TypeName="PetShopModel.Compra_Produto_Empresa">
               <MappingFragment StoreEntitySet="Compra_Produto_Empresa">
+                <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdProdutoEmpresa" ColumnName="IdProdutoEmpresa" />
                 <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />

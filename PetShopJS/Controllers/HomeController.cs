@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PetShopJS.Models;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+
 
 namespace PetShopJS.Controllers {
     public class HomeController : Controller {
+        private PetShopEntities db = new PetShopEntities();
         public ActionResult Index() {
             return View();
         }
@@ -19,6 +20,21 @@ namespace PetShopJS.Controllers {
         public ActionResult Contact() {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Chart1() {
+            var compras = db.Compras.Include(c => c.Cliente).Include(c => c.Condicao).Include(c => c.Forma_Pagamento).Include(c => c.Parcela);
+
+            var datas = compras.Select(c => c.Data);
+
+            var contas = datas.GroupBy(i => i)
+                .Select(grp => grp.Count());
+
+            var datasUnicas = datas.GroupBy(i => i).Select(i => i.FirstOrDefault());
+
+            ViewBag.Datas = datasUnicas;
+            ViewBag.Quantidade = contas;
             return View();
         }
     }

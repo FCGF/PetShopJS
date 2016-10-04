@@ -19,6 +19,7 @@ namespace PetShopJS.Models
         public int IdCompra { get; set; }
         public decimal Quantidade { get; set; }
         public decimal ValorUnitario { get; set; }
+        public decimal Total { get; set; }
     
         public virtual Compra Compra { get; set; }
         public virtual Produto_Empresa Produto_Empresa { get; set; }

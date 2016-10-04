@@ -51,7 +51,7 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Total,Data")] Compra compra)
+        public ActionResult Create([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Data")] Compra compra)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Total,Data")] Compra compra)
+        public ActionResult Edit([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Data")] Compra compra)
         {
             if (ModelState.IsValid)
             {
