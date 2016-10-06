@@ -1,46 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using PetShopJS.Models;
 
-namespace PetShopJS.Controllers
-{
-    public class EstadosController : Controller
-    {
+namespace PetShopJS.Controllers {
+    public class EstadosController : Controller {
         private PetShopEntities db = new PetShopEntities();
 
         // GET: Estados
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             var estadoes = db.Estadoes.Include(e => e.Pais);
             return View(estadoes.ToList());
         }
 
         // GET: Estados/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Details(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Estado estado = db.Estadoes.Find(id);
-            if (estado == null)
-            {
+            if (estado == null) {
                 return HttpNotFound();
             }
-            return View(estado);
+            return PartialView(estado);
         }
 
         // GET: Estados/Create
-        public ActionResult Create()
-        {
+        public ActionResult Create() {
             ViewBag.IdPais = new SelectList(db.Pais1, "Id", "Nome");
-            return View();
+            return PartialView();
         }
 
         // POST: Estados/Create
@@ -48,10 +37,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Abreviacao,IdPais")] Estado estado)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Create([Bind(Include = "Id,Nome,Abreviacao,IdPais")] Estado estado) {
+            if (ModelState.IsValid) {
                 db.Estadoes.Add(estado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -62,19 +49,16 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Estados/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Edit(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Estado estado = db.Estadoes.Find(id);
-            if (estado == null)
-            {
+            if (estado == null) {
                 return HttpNotFound();
             }
             ViewBag.IdPais = new SelectList(db.Pais1, "Id", "Nome", estado.IdPais);
-            return View(estado);
+            return PartialView(estado);
         }
 
         // POST: Estados/Edit/5
@@ -82,10 +66,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Abreviacao,IdPais")] Estado estado)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Edit([Bind(Include = "Id,Nome,Abreviacao,IdPais")] Estado estado) {
+            if (ModelState.IsValid) {
                 db.Entry(estado).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -95,35 +77,29 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Estados/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Delete(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Estado estado = db.Estadoes.Find(id);
-            if (estado == null)
-            {
+            if (estado == null) {
                 return HttpNotFound();
             }
-            return View(estado);
+            return PartialView(estado);
         }
 
         // POST: Estados/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+        public ActionResult DeleteConfirmed(int id) {
             Estado estado = db.Estadoes.Find(id);
             db.Estadoes.Remove(estado);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
                 db.Dispose();
             }
             base.Dispose(disposing);

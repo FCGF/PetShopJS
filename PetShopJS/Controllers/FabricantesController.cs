@@ -1,44 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using PetShopJS.Models;
 
-namespace PetShopJS.Controllers
-{
-    public class FabricantesController : Controller
-    {
+namespace PetShopJS.Controllers {
+    public class FabricantesController : Controller {
         private PetShopEntities db = new PetShopEntities();
 
         // GET: Fabricantes
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             return View(db.Fabricantes.ToList());
         }
 
         // GET: Fabricantes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Details(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Fabricante fabricante = db.Fabricantes.Find(id);
-            if (fabricante == null)
-            {
+            if (fabricante == null) {
                 return HttpNotFound();
             }
-            return View(fabricante);
+            return PartialView(fabricante);
         }
 
         // GET: Fabricantes/Create
-        public ActionResult Create()
-        {
-            return View();
+        public ActionResult Create() {
+            return PartialView();
         }
 
         // POST: Fabricantes/Create
@@ -46,10 +35,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome")] Fabricante fabricante)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Create([Bind(Include = "Id,Nome")] Fabricante fabricante) {
+            if (ModelState.IsValid) {
                 db.Fabricantes.Add(fabricante);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,18 +46,15 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Fabricantes/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Edit(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Fabricante fabricante = db.Fabricantes.Find(id);
-            if (fabricante == null)
-            {
+            if (fabricante == null) {
                 return HttpNotFound();
             }
-            return View(fabricante);
+            return PartialView(fabricante);
         }
 
         // POST: Fabricantes/Edit/5
@@ -78,10 +62,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome")] Fabricante fabricante)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Edit([Bind(Include = "Id,Nome")] Fabricante fabricante) {
+            if (ModelState.IsValid) {
                 db.Entry(fabricante).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -90,35 +72,29 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Fabricantes/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Delete(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Fabricante fabricante = db.Fabricantes.Find(id);
-            if (fabricante == null)
-            {
+            if (fabricante == null) {
                 return HttpNotFound();
             }
-            return View(fabricante);
+            return PartialView(fabricante);
         }
 
         // POST: Fabricantes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+        public ActionResult DeleteConfirmed(int id) {
             Fabricante fabricante = db.Fabricantes.Find(id);
             db.Fabricantes.Remove(fabricante);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
                 db.Dispose();
             }
             base.Dispose(disposing);

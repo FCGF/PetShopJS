@@ -1,44 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using PetShopJS.Models;
 
-namespace PetShopJS.Controllers
-{
-    public class EspeciesController : Controller
-    {
+namespace PetShopJS.Controllers {
+    public class EspeciesController : Controller {
         private PetShopEntities db = new PetShopEntities();
 
         // GET: Especies
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             return View(db.Especies.ToList());
         }
 
         // GET: Especies/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Details(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Especie especie = db.Especies.Find(id);
-            if (especie == null)
-            {
+            if (especie == null) {
                 return HttpNotFound();
             }
-            return View(especie);
+            return PartialView(especie);
         }
 
         // GET: Especies/Create
-        public ActionResult Create()
-        {
-            return View();
+        public ActionResult Create() {
+            return PartialView();
         }
 
         // POST: Especies/Create
@@ -46,10 +35,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome")] Especie especie)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Create([Bind(Include = "Id,Nome")] Especie especie) {
+            if (ModelState.IsValid) {
                 db.Especies.Add(especie);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,18 +46,15 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Especies/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Edit(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Especie especie = db.Especies.Find(id);
-            if (especie == null)
-            {
+            if (especie == null) {
                 return HttpNotFound();
             }
-            return View(especie);
+            return PartialView(especie);
         }
 
         // POST: Especies/Edit/5
@@ -78,10 +62,8 @@ namespace PetShopJS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome")] Especie especie)
-        {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Edit([Bind(Include = "Id,Nome")] Especie especie) {
+            if (ModelState.IsValid) {
                 db.Entry(especie).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -90,35 +72,29 @@ namespace PetShopJS.Controllers
         }
 
         // GET: Especies/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
+        public ActionResult Delete(int? id) {
+            if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Especie especie = db.Especies.Find(id);
-            if (especie == null)
-            {
+            if (especie == null) {
                 return HttpNotFound();
             }
-            return View(especie);
+            return PartialView(especie);
         }
 
         // POST: Especies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+        public ActionResult DeleteConfirmed(int id) {
             Especie especie = db.Especies.Find(id);
             db.Especies.Remove(especie);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
                 db.Dispose();
             }
             base.Dispose(disposing);

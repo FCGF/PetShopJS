@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using PetShopJS.Models;
 
 namespace PetShopJS.Controllers {
     public class ClientesController : Controller {
@@ -33,13 +29,13 @@ namespace PetShopJS.Controllers {
             if (cliente == null) {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return PartialView(cliente);
         }
 
         // GET: Clientes/Create
         public ActionResult Create() {
             ViewBag.IdEndereco = new SelectList(db.Enderecoes, "Id", "Endereco1");
-            return View();
+            return PartialView();
         }
 
         // POST: Clientes/Create
@@ -68,7 +64,7 @@ namespace PetShopJS.Controllers {
                 return HttpNotFound();
             }
             ViewBag.IdEndereco = new SelectList(db.Enderecoes, "Id", "Endereco1", cliente.IdEndereco);
-            return View(cliente);
+            return PartialView(cliente);
         }
 
         // POST: Clientes/Edit/5
@@ -95,7 +91,7 @@ namespace PetShopJS.Controllers {
             if (cliente == null) {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return PartialView(cliente);
         }
 
         // POST: Clientes/Delete/5
