@@ -10,7 +10,7 @@
     @Html.Hidden("provider", @Model.Provider)
     @Html.Hidden("rememberMe", @Model.RememberMe)
     <h4>Enter verification code</h4>
-    <hr />
+    <br />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Code, new { @class = "col-md-2 control-label" })

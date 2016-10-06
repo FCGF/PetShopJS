@@ -12,14 +12,18 @@ $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
-$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+//$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-light:             #dfdfde !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
-$brand-success:         #5cb85c !default;
+$brand-primary:         #1b85b8 !default; // #337ab7
+//$brand-success:         #5cb85c !default;
+$brand-success:         #559e83 !default;
 $brand-info:            #5bc0de !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
+//$brand-warning:         #f0ad4e !default;
+$brand-warning:         #c3cb71 !default;
+//$brand-danger:          #d9534f !default;
+$brand-danger:          #ae5a41 !default;
 
 
 //== Scaffolding
@@ -27,8 +31,10 @@ $brand-danger:          #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #fff !default;
+//$body-bg:               #fff !default;
+$body-bg:               #dffcf2 !default;
 //** Global text color on `<body>`.
+//$text-color:            $gray-dark !default;
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
@@ -149,9 +155,12 @@ $table-border-color:            #ddd !default;
 
 $btn-font-weight:                normal !default;
 
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
+//$btn-default-color:              #333 !default;
+$btn-default-color:              #f7eef2 !default;
+//$btn-default-bg:                 #fff !default;
+$btn-default-bg:                 #30948b !default;
+//$btn-default-border:             #ccc !default;
+$btn-default-border:             darken($btn-default-bg, 15%) !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -396,7 +405,8 @@ $navbar-default-toggle-border-color:       #ddd !default;
 //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      lighten($gray-light, 15%) !default;
-$navbar-inverse-bg:                         #222 !default;
+//$navbar-inverse-bg:                         #222 !default;
+$navbar-inverse-bg:                         #002848 !default;
 $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
 
 // Inverted navbar links
@@ -491,7 +501,8 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 
 $jumbotron-padding:              30px !default;
 $jumbotron-color:                inherit !default;
-$jumbotron-bg:                   $gray-lighter !default;
+//$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-bg:                   lighten($brand-primary, 50%) !default;
 $jumbotron-heading-color:        inherit !default;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;

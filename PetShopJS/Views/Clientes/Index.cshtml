@@ -11,7 +11,7 @@
     <div>
         <h2>Indice</h2>
         <p>
-            @Html.ActionLink("Criar Novo", "Create")
+            <a href="@Url.Action("Create")" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
         </p>
         @grid.GetHtml(tableStyle: "webgrid-table table table-hover table-responsive",
             headerStyle: "webgrid-header",

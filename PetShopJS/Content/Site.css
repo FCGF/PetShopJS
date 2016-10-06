@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.modal-body p {
+    word-wrap: break-word;
+}
+
+

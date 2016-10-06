@@ -40,8 +40,13 @@ namespace PetShopJS.Controllers
         public ActionResult Create()
         {
             ViewBag.IdEstado = new SelectList(db.Estadoes, "Id", "Nome");
-            return View();
+            return PartialView();
         }
+
+        /*public ActionResult Create() {
+            ViewBag.IdEstado = new SelectList(db.Estadoes, "Id", "Nome");
+            return View();
+        }*/
 
         // POST: Cidades/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
