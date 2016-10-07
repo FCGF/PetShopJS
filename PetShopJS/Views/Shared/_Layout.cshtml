@@ -31,13 +31,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Administrativo", "Index", "Administrativo")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Contato", "Index", "Contato")</li>
+                    <li>@Html.ActionLink("WebMail", "Index", "Contato")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -52,21 +51,49 @@
     </div>
 
     <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-content" style="width:500px; margin: 100px auto;">
-            <div class="modal-body">
+        <div class="modal-dialog" style="max-width: 80%; margin: 10% auto;">
+            <div class="modal-content" style="padding: 10px;">
+                <div class="modal-header">
+                    <button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <p>&copy; @DateTime.Now.Year - PetShopJS</p>
+                </div>
             </div>
         </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
     <script type="text/javascript">
         $(function () {
+            function openAddressDialog(id) {
+                var data = {
+                    Id: id,
+                    CompanyId: $('#Id').val()
+                };
+                $.ajax({
+                    url: '/crm/customer/AddEditAddress/',
+                    contentType: 'application/html',
+                    data: data,
+                    success: function (content) {
+                        $('#dialogPlaceholder').html(content);
+                    },
+                    error: function (e) { }
+                });
+            }
+
+            $.ajaxSetup({
+                cache: false
+            });
+
             $('body').on('click', '.modal-link', function (e) {
                 e.preventDefault();
                 $(this).attr('data-target', '#modal-container');
                 $(this).attr('data-toggle', 'modal');
+
             });
 
             $('body').on('click', '.modal-close-btn', function () {
@@ -74,9 +101,15 @@
             });
 
             $('#modal-container').on('hidden.bs.modal', function () {
-                $(this), removeData('bs.modal');
-            })
+                //$('.modal-body').find('textarea,input').val('');
+                $('#modal-body').removeData('bs.modal');
+                $('#modal-body').removeData();
+                $(this).removeData('bs.modal');
+                $(this).removeData();
+
+            });
         });
     </script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Detalhes";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Detalhes</h2>
@@ -38,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    <a href="@Url.Action("Edit", new { id=Model.Id })" class="btn btn-primary modal-link" title="Editar"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
     @Html.ActionLink("Voltar à Lista", "Index")
 </p>

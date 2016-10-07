@@ -2,16 +2,14 @@
 
 @{
     ViewBag.Title = "Criar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Criar</h2>
 
 
-@using (Html.BeginForm()) 
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Animal</h4>
         <br />
@@ -43,7 +41,18 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="datetime"
+                           class="form-control datepicker"
+                           data-val="true"
+                           data-val-date="The field DataNascimento must be a date."
+                           data-val-required="The DataNascimento field is required."
+                           id="DataNascimento"
+                           name="DataNascimento"
+                           data-date-format="mm/dd/yyyy"
+                           lang="pt-br">
+                </div>
+                <!--Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { class = "form-control" } })-->
                 @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PetShopJS.Models.Compra>
 
 @{
-    ViewBag.Title = "Indice";
+    ViewBag.Title = "Compras";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Indice</h2>
+<h2>Compras</h2>
 
 <p>
-    <a href="@Url.Action("Create")" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+    <a href="@Url.Action("Create")" class="btn btn-info modal-link" title="Criar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 </p>
 <table class="table">
     <tr>

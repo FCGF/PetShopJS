@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Deletar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Deletar</h2>
@@ -18,14 +17,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cep)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cep)
         </dd>
 
         <dt>
@@ -66,7 +57,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-default" />
             @Html.ActionLink("Voltar à Lista", "Index")
         </div>
     }

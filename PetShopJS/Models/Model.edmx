@@ -622,7 +622,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdEndereco" Type="Int32" Nullable="false" />
-          <Property Name="Cep" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Senha" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
@@ -1224,7 +1223,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
-                <ScalarProperty Name="Cep" ColumnName="Cep" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
                 <ScalarProperty Name="Telefone" ColumnName="Telefone" />
