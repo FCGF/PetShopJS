@@ -1,0 +1,68 @@
+﻿<p>
+    <a href="#" class="btn btn-info modal-link" title="Criar" data-action="Create"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+</p>
+
+<form class="form-inline pull-right" id="searchForm">
+    <div class="form-group">
+        <label for="search" class="sr-only">Buscar</label>
+        <input type="text" class="form-control" name="search" placeholder="Buscar" />
+    </div>
+    <button type="button" class="btn btn-warning" id="searchButton" title="Buscar"><span class="glyphicon glyphicon-search"></span></button>
+    <input type="hidden" name="page" value="1" />
+    <input type="hidden" name="size" value="2" />
+</form>
+
+<div id="entityList"></div>
+
+<nav>
+    <ul class="pager">
+        <li><a href="#" onclick="changePage(-1)">Anterior</a></li>
+        <li><a href="#" onclick="changePage(1)">Próximo</a></li>
+    </ul>
+</nav>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script type="text/javascript">
+    $(document).ready((function () {
+        $("#searchButton").click(listEntities);
+
+        listEntities();
+    }));
+
+    function changePage(value) {
+        var pageElement = $("input[name='page']");
+        var currentPage = parseInt(pageElement.val());
+        pageElement.val(currentPage + value);
+        listEntities();
+    };
+
+    function listEntities() {
+        $("#entityList").load("@Url.Action("List")", $("#searchForm").serialize(), function () {
+            $('a.modal-link').unbind("click");
+            $('a.modal-link').click(function (e) {
+                e.preventDefault();
+                var action = $(this).data('action');
+                var parameter = $(this).data('parameter');
+                openModal(action, parameter);
+            });
+        });
+    }
+
+    function openModal(action, parameter) {
+        var controller = "@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"]";
+        var url = "/{ctrl}/{action}/{parameter}";
+        url = url.replace("{ctrl}", controller);
+        url = url.replace("{action}", action);
+        if (parameter == null) {
+            url = url.replace("{parameter}", "");
+        } else {
+            url = url.replace("{parameter}", parameter);
+        }
+
+        $('#modalContent').load(url, function () {
+            $('#modal-container').modal('show');
+        });
+
+    };
+</script>

@@ -1,6 +1,8 @@
 ﻿using PetShopJS.Models;
+using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,8 +12,28 @@ namespace PetShopJS.Controllers {
 
         // GET: Compras
         public ActionResult Index() {
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 2) {
             var compras = db.Compras.Include(c => c.Cliente).Include(c => c.Condicao).Include(c => c.Forma_Pagamento).Include(c => c.Parcela);
-            return View(compras.ToList());
+
+            if (!String.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                DateTime date = DateTime.Now;
+                DateTime.TryParse(search, out date);
+
+                decimal dec = 0m;
+                decimal.TryParse(search, out dec);
+
+                compras = compras.Where("Id == @0 OR IdCliente == @0 OR IdFormaPagamento == @0 OR IdParcela == @0 OR IdCondicao == @0 OR Data.Equals(@1) OR Codigo.Contains(@2) OR Desconto == @3", integer, date, search, dec);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedCompras = compras.OrderByDescending(a => a.Data).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedCompras.ToList());
         }
 
         // GET: Compras/Details/5

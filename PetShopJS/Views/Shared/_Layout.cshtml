@@ -51,15 +51,10 @@
     </div>
 
     <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" style="max-width: 80%; margin: 10% auto;">
+        <div class="modal-dialog" style="max-width: 80%; margin: 10% auto;" role="form">
             <div class="modal-content" style="padding: 10px;">
-                <div class="modal-header">
-                    <button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-                </div>
                 <div class="modal-body" id="modal-body">
-                </div>
-                <div class="modal-footer">
-                    <p>&copy; @DateTime.Now.Year - PetShopJS</p>
+                    <div id="modalContent"></div>
                 </div>
             </div>
         </div>
@@ -67,49 +62,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <script type="text/javascript">
-        $(function () {
-            function openAddressDialog(id) {
-                var data = {
-                    Id: id,
-                    CompanyId: $('#Id').val()
-                };
-                $.ajax({
-                    url: '/crm/customer/AddEditAddress/',
-                    contentType: 'application/html',
-                    data: data,
-                    success: function (content) {
-                        $('#dialogPlaceholder').html(content);
-                    },
-                    error: function (e) { }
-                });
-            }
-
-            $.ajaxSetup({
-                cache: false
-            });
-
-            $('body').on('click', '.modal-link', function (e) {
-                e.preventDefault();
-                $(this).attr('data-target', '#modal-container');
-                $(this).attr('data-toggle', 'modal');
-
-            });
-
-            $('body').on('click', '.modal-close-btn', function () {
-                $('#modal-container').modal('hide');
-            });
-
-            $('#modal-container').on('hidden.bs.modal', function () {
-                //$('.modal-body').find('textarea,input').val('');
-                $('#modal-body').removeData('bs.modal');
-                $('#modal-body').removeData();
-                $(this).removeData('bs.modal');
-                $(this).removeData();
-
-            });
-        });
-    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

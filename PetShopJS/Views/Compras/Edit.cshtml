@@ -67,7 +67,19 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Data, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="datetime"
+                       class="form-control datepicker"
+                       id="Data"
+                       name="Data"
+                       data-val="true"
+                       data-val-date="The field Data must be a date."
+                       data-val-required="The Data field is required."
+                       data-provide="datepicker"
+                       data-date-autoclose="true"
+                       data-date-language="pt-BR"
+                       lang="pt-br"
+                       value="@Model.Data">
+                @*@Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -83,6 +95,13 @@
 <div>
     @Html.ActionLink("Voltar à Lista", "Index")
 </div>
+
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+
+</script>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

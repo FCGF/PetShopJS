@@ -17,13 +17,14 @@ namespace PetShopJS {
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/javascripts/bootstrap.min.js", 
+                      "~/Scripts/jquery.bootgrid.min.js",
                       "~/Scripts/respond.js",
-                      "~/javascripts/bootstrap.min.js",
                       "~/javascripts/plugins/bootstrap-datepicker.min.js",
                       "~/javascripts/plugins/locales/bootstrap-datepicker.pt-BR.min.js"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
+                      "~/Content/jquery.bootgrid.min.css",
                       "~/Content/Site.css",
                       "~/stylesheets/plugins/bootstrap-datepicker3.min.css"));
         }

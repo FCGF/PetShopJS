@@ -1,31 +1,27 @@
-﻿@model IEnumerable<PetShopJS.Models.Produto>
+﻿@model IEnumerable<PetShopJS.Models.Compra>
 
-@{
-    ViewBag.Title = "Produtos";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>Produtos</h2>
-
-<p>
-    <a href="@Url.Action("Create")" class="btn btn-info modal-link" title="Criar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.Codigo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Descricao)
+            @Html.DisplayNameFor(model => model.Desconto)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Animal.Nome)
+            @Html.DisplayNameFor(model => model.Data)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Categoria.Nome)
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fabricante.Nome)
+            @Html.DisplayNameFor(model => model.Condicao.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Forma_Pagamento.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parcela.Id)
         </th>
         <th></th>
     </tr>
@@ -33,19 +29,25 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
+                @Html.DisplayFor(modelItem => item.Codigo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
+                @Html.DisplayFor(modelItem => item.Desconto)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Animal.Nome)
+                @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fabricante.Nome)
+                @Html.DisplayFor(modelItem => item.Condicao.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Forma_Pagamento.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parcela.Id)
             </td>
             <td>
                 <a href="#" class="btn btn-primary modal-link" title="Editar" data-action="Edit" data-parameter="@item.Id"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
