@@ -1,6 +1,7 @@
 ﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,8 +11,22 @@ namespace PetShopJS.Controllers {
 
         // GET: Categorias
         public ActionResult Index() {
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
             var categorias = db.Categorias.Include(c => c.Categoria2);
-            return View(categorias.ToList());
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                categorias = categorias.Where("Id == @0 OR IdCategoriaPai == @0 OR Nome.Contains(@1)", integer, search);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedCategorias = categorias.OrderBy(a => a.Nome).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedCategorias.ToList());
         }
 
         // GET: Categorias/Details/5

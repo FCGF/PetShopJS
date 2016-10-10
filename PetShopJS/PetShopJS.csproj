@@ -303,6 +303,25 @@
     <Compile Include="Models\Parcela.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Partials\RacaMetaData.cs" />
+    <Compile Include="Models\Partials\BairroMetaData.cs" />
+    <Compile Include="Models\Partials\CategoriaMetaData.cs" />
+    <Compile Include="Models\Partials\CidadeMetaData.cs" />
+    <Compile Include="Models\Partials\ClienteMetaData.cs" />
+    <Compile Include="Models\Partials\CompraMetaData.cs" />
+    <Compile Include="Models\Partials\Compra_Produto_EmpresaMetaData.cs" />
+    <Compile Include="Models\Partials\CondicaoMetaData.cs" />
+    <Compile Include="Models\Partials\EmpresaMetaData.cs" />
+    <Compile Include="Models\Partials\EnderecoMetaData.cs" />
+    <Compile Include="Models\Partials\EspecieMetaData.cs" />
+    <Compile Include="Models\Partials\EspecificacaoMetaData.cs" />
+    <Compile Include="Models\Partials\EstadoMetaData.cs" />
+    <Compile Include="Models\Partials\FabricanteMetaData.cs" />
+    <Compile Include="Models\Partials\Forma_PagamentoMetaData.cs" />
+    <Compile Include="Models\Partials\PaisMetaData.cs" />
+    <Compile Include="Models\Partials\ParcelaMetaData.cs" />
+    <Compile Include="Models\Partials\ProdutoMetaData.cs" />
+    <Compile Include="Models\Partials\Produto_EmpresaMetaData.cs" />
     <Compile Include="Models\Partials\AnimalMetaData.cs" />
     <Compile Include="Models\Produto.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -712,6 +731,23 @@
     <Content Include="Views\Animais\_List.cshtml" />
     <Content Include="Views\Shared\_PartialIndex.cshtml" />
     <Content Include="Views\Compras\_List.cshtml" />
+    <Content Include="Views\Bairros\_List.cshtml" />
+    <Content Include="Views\Categorias\_List.cshtml" />
+    <Content Include="Views\Cidades\_List.cshtml" />
+    <Content Include="Views\Condicoes\_List.cshtml" />
+    <Content Include="Views\Empresas\_List.cshtml" />
+    <Content Include="Views\Enderecos\_List.cshtml" />
+    <Content Include="Views\Especies\_List.cshtml" />
+    <Content Include="Views\Especificacoes\_List.cshtml" />
+    <Content Include="Views\Estados\_List.cshtml" />
+    <Content Include="Views\Fabricantes\_List.cshtml" />
+    <Content Include="Views\Forma_Pagamento\_List.cshtml" />
+    <Content Include="Views\Paises\_List.cshtml" />
+    <Content Include="Views\Parcelas\_List.cshtml" />
+    <Content Include="Views\Produto_Empresa\_List.cshtml" />
+    <Content Include="Views\Produtos\_List.cshtml" />
+    <Content Include="Views\Racas\_List.cshtml" />
+    <Content Include="Views\Compra_Produto_Empresa\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

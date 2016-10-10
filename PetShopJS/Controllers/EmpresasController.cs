@@ -1,6 +1,7 @@
 ﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,8 +11,22 @@ namespace PetShopJS.Controllers {
 
         // GET: Empresas
         public ActionResult Index() {
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
             var empresas = db.Empresas.Include(e => e.Endereco);
-            return View(empresas.ToList());
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                empresas = empresas.Where("Id == @0 OR IdEndereco == @0 OR Nome.Contains(@1) OR Email.Contains(@1) OR Telefone.Contains(@1)", integer, search);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedCondicoes = empresas.OrderBy(a => a.Nome).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedCondicoes.ToList());
         }
 
         // GET: Empresas/Details/5

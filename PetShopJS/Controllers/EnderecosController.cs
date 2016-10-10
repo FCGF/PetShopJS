@@ -1,6 +1,7 @@
 ﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,8 +11,22 @@ namespace PetShopJS.Controllers {
 
         // GET: Enderecos
         public ActionResult Index() {
-            var enderecoes = db.Enderecoes.Include(e => e.Bairro);
-            return View(enderecoes.ToList());
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
+            var enderecos = db.Enderecoes.Include(e => e.Bairro);
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                enderecos = enderecos.Where("Id == @0 OR IdBairro == @0 OR CEP.Contains(@1) OR Endereco1.Contains(@1) OR Endereco2.Contains(@1)", integer, search);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedCondicoes = enderecos.OrderBy(a => a.IdBairro).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedCondicoes.ToList());
         }
 
         // GET: Enderecos/Details/5

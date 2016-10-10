@@ -1,6 +1,8 @@
 ﻿using PetShopJS.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,7 +12,22 @@ namespace PetShopJS.Controllers {
 
         // GET: Condicoes
         public ActionResult Index() {
-            return View(db.Condicaos.ToList());
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
+            IEnumerable<Condicao> condicao = db.Condicaos.ToList();
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                condicao = condicao.Where("Id == @0 OR Nome.Contains(@1)", integer, search);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedCondicoes = condicao.OrderBy(a => a.Nome).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedCondicoes.ToList());
         }
 
         // GET: Condicoes/Details/5

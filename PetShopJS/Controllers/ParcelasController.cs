@@ -1,6 +1,8 @@
 ﻿using PetShopJS.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,7 +12,25 @@ namespace PetShopJS.Controllers {
 
         // GET: Parcelas
         public ActionResult Index() {
-            return View(db.Parcelas.ToList());
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
+            IEnumerable<Parcela> parcelas = db.Parcelas.ToList();
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                decimal dec = 0;
+                decimal.TryParse(search, out dec);
+
+                parcelas = parcelas.Where("Id == @0 OR Quantidade == @1 OR Juros == @1", integer, dec);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedParcelas = parcelas.OrderBy(a => a.Quantidade).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedParcelas.ToList());
         }
 
         // GET: Parcelas/Details/5

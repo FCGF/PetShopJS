@@ -1,6 +1,8 @@
 ﻿using PetShopJS.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,7 +12,22 @@ namespace PetShopJS.Controllers {
 
         // GET: Forma_Pagamento
         public ActionResult Index() {
-            return View(db.Forma_Pagamento.ToList());
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
+            IEnumerable<Forma_Pagamento> formasPagamento = db.Forma_Pagamento.ToList();
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                formasPagamento = formasPagamento.Where("Id == @0 OR Nome.Contains(@1)", integer, search);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedFabricantes = formasPagamento.OrderBy(a => a.Nome).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedFabricantes.ToList());
         }
 
         // GET: Forma_Pagamento/Details/5

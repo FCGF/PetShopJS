@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -30,13 +31,17 @@ namespace PetShopJS.Models.Partials {
         [Required]
         [Display(Name = "Observações")]
         public string Observacoes { get; set; }
+
         [ScriptIgnore]
+        [JsonIgnore]
         public Cliente Cliente { get; set; }
         [ScriptIgnore]
+        [JsonIgnore]
         [Display(Name = "Raça")]
         public Raca Raca { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         [ScriptIgnore]
+        [JsonIgnore]
         public ICollection<Produto> Produtos { get; set; }
     }
 }

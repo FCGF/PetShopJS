@@ -1,6 +1,7 @@
 ﻿using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -10,8 +11,22 @@ namespace PetShopJS.Controllers {
 
         // GET: Racas
         public ActionResult Index() {
+            return View();
+        }
+
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
             var racas = db.Racas.Include(r => r.Especie);
-            return View(racas.ToList());
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer = 0;
+                int.TryParse(search, out integer);
+
+                racas = racas.Where("Id == @0 OR IdEspecie == @0 OR Nome.Contains(@1)", integer, search);
+            }
+            if (page < 1) page = 1;
+            if (size < 1) size = 1;
+            var orderedRacas = racas.OrderBy(a => a.IdEspecie).Skip((page - 1) * size).Take(size);
+            return PartialView("_List", orderedRacas.ToList());
         }
 
         // GET: Racas/Details/5

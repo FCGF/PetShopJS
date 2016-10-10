@@ -15,7 +15,7 @@ namespace PetShopJS.Controllers {
             return View();
         }
 
-        public PartialViewResult List(string search, int page = 1, int size = 2) {
+        public PartialViewResult List(string search, int page = 1, int size = 10) {
             var compras = db.Compras.Include(c => c.Cliente).Include(c => c.Condicao).Include(c => c.Forma_Pagamento).Include(c => c.Parcela);
 
             if (!String.IsNullOrWhiteSpace(search)) {
