@@ -12,10 +12,15 @@ namespace PetShopJS.Models.Partials {
 
     }
     public class ProdutoMetaData {
-        
+        [Key]
+        [Required]
         public int Id { get; set; }
+        [Required]
         public int IdCategoria { get; set; }
+        [Required]
         public int IdFabricante { get; set; }
+        [Required]
+        [Display(Name = "Produto")]
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public Nullable<int> IdAnimal { get; set; }

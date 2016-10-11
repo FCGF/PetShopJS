@@ -1,20 +1,22 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
 
 namespace PetShopJS.Models.Partials {
     [MetadataType(typeof(BairroMetaData))]
     public partial class Bairro {
+
     }
 
     public class BairroMetaData {
         [Key]
+        [Required]
         public int Id { get; set; }
+        [Required]
         public int IdCidade { get; set; }
+        [Display(Name = "Bairro")]
+        [Required]
         public string Nome { get; set; }
 
         [ScriptIgnore]

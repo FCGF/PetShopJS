@@ -12,7 +12,11 @@ namespace PetShopJS.Models.Partials {
 
     }
     public class Forma_PagamentoMetaData {
+        [Key]
+        [Required]
         public int Id { get; set; }
+        [Required]
+        [Display(Name = "Forma Pagamento")]
         public string Nome { get; set; }
 
         [ScriptIgnore]

@@ -3,55 +3,8 @@
 @{
     ViewBag.Title = "Clientes";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var grid = new WebGrid(source: Model, defaultSort: "Nome");
-    grid.Pager(WebGridPagerModes.All);
 }
 
-<div class="container">
-    <div>
-        <h2>Clientes</h2>
-        <p>
-            <a href="@Url.Action("Create")" class="btn btn-info modal-link" title="Criar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-        </p>
-        @grid.GetHtml(tableStyle: "webgrid-table table table-hover table-responsive",
-            headerStyle: "webgrid-header",
-            rowStyle: "webgrid-row-style",
-            alternatingRowStyle: "webgrid-alternating-row",
-            selectedRowStyle: "webgrid-selected-row",
-            footerStyle: "webgrid-footer",
-            columns: grid.Columns(
-                grid.Column("Id", format: (item) => item.GetSelectLink(Convert.ToString(item.Id))),
-                grid.Column(columnName: "Nome", header: "Nome do Cliente"),
-                grid.Column(columnName: "Email", header: "E-mail"),
-                grid.Column(columnName: "Telefone", header: "Telefone"),
-                grid.Column(columnName: "Endereco.Endereco1", header: "Endereço"),
-                grid.Column(header: "Editar", format: (item) =>
-                {
-                    var link = Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary modal-link", title = "Editar" });
-                    return link;
-                }),
-                grid.Column(header: "Detalhes", format: (item) =>
-                {
-                    var link = Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-success modal-link", title = "Detalhes" });
-                    return link;
-                }),
-                grid.Column(header: "Deletar", format: (item) =>
-                {
-                    var link = Html.ActionLink("Deletar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger modal-link", title = "Deletar" });
-                    return link;
-                })
-            )
-        )
-    </div>
-    <div>
-        @if (grid.HasSelection) {
-            <h4>Seleção</h4>
+<h2>Clientes</h2>
 
-            var cliente = (PetShopJS.Models.Cliente)grid.Rows[grid.SelectedIndex].Value;
-            <p><b>Nome:</b> @cliente.Nome</p>
-            <p><b>Email:</b> @cliente.Email</p>
-            <p><b>Telefone:</b> @cliente.Telefone</p>
-            <p><b>Endereco:</b> @cliente.Endereco.Endereco1.</p>
-        }
-    </div>
-</div>
+@Html.Partial("_PartialIndex")

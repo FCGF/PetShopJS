@@ -1,9 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
 
 namespace PetShopJS.Models.Partials {
@@ -12,8 +8,13 @@ namespace PetShopJS.Models.Partials {
 
     }
     public class EspecificacaoMetaData {
+        [Key]
+        [Required]
         public int Id { get; set; }
+        [Required]
         public int IdProduto { get; set; }
+        [Required]
+        [Display(Name = "Especificação")]
         public string Nome { get; set; }
         public string Valor { get; set; }
 

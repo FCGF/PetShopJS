@@ -748,6 +748,7 @@
     <Content Include="Views\Produtos\_List.cshtml" />
     <Content Include="Views\Racas\_List.cshtml" />
     <Content Include="Views\Compra_Produto_Empresa\_List.cshtml" />
+    <Content Include="Views\Clientes\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

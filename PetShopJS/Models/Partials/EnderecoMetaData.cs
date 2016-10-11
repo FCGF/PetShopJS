@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
 
 namespace PetShopJS.Models.Partials {
@@ -12,10 +9,15 @@ namespace PetShopJS.Models.Partials {
 
     }
     public class EnderecoMetaData {
+        [Key]
+        [Required]
         public int Id { get; set; }
+        [Required]
         public int IdBairro { get; set; }
+        [Required]
         public string Endereco1 { get; set; }
         public string Endereco2 { get; set; }
+        [Required]
         public string CEP { get; set; }
 
         [ScriptIgnore]

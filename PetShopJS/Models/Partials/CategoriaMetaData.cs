@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
 
 namespace PetShopJS.Models.Partials {
@@ -12,7 +10,11 @@ namespace PetShopJS.Models.Partials {
 
     }
     public class CategoriaMetaData {
+        [Required]
+        [Key]
         public int Id { get; set; }
+        [Required]
+        [Display(Name = "Categoria")]
         public string Nome { get; set; }
         public Nullable<int> IdCategoriaPai { get; set; }
 
@@ -27,6 +29,6 @@ namespace PetShopJS.Models.Partials {
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Produto> Produtos { get; set; }
-        
+
     }
 }

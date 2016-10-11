@@ -9,7 +9,11 @@ namespace PetShopJS.Models.Partials {
 
     }
     public class CondicaoMetaData {
+        [Key]
+        [Required]
         public int Id { get; set; }
+        [Required]
+        [Display(Name = "Condição")]
         public string Nome { get; set; }
 
         [ScriptIgnore]

@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
 
 namespace PetShopJS.Models.Partials {
@@ -15,12 +12,16 @@ namespace PetShopJS.Models.Partials {
         [Key]
         public int Id { get; set; }
         [Required]
+        [Display(Name = "Dono")]
         public int IdDono { get; set; }
         [Required]
+        [Display(Name = "Animal")]
         public string Nome { get; set; }
         [Required]
+        [Display(Name = "Raça")]
         public int IdRaca { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Data de Nascimento")]
         public System.DateTime DataNascimento { get; set; }
@@ -34,6 +35,7 @@ namespace PetShopJS.Models.Partials {
 
         [ScriptIgnore]
         [JsonIgnore]
+        [Display(Name = "Dono")]
         public Cliente Cliente { get; set; }
         [ScriptIgnore]
         [JsonIgnore]

@@ -12,12 +12,18 @@ namespace PetShopJS.Models.Partials {
 
     }
     public class Produto_EmpresaMetaData {
-
+        [Key]
+        [Required]
         public int Id { get; set; }
+        [Required]
         public int IdEmpresa { get; set; }
+        [Required]
         public int IdProduto { get; set; }
+        [Required]
         public decimal Valor { get; set; }
+        [Required]
         public decimal Estoque { get; set; }
+        [Required]
         public bool Ativo { get; set; }
 
         [ScriptIgnore]
