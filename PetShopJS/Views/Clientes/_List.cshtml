@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<PetShopJS.Models.Cliente>
 @{
-    var grid = new WebGrid(source: Model, defaultSort: "Nome");
+    var grid = new WebGrid(source: Model, defaultSort: "Nome", canSort: false);
     grid.Pager(WebGridPagerModes.All);
 }
 <div class="container">

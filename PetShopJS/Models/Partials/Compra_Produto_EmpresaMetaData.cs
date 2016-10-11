@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
 
-namespace PetShopJS.Models.Partials {
+namespace PetShopJS.Models {
     [MetadataType(typeof(Compra_Produto_EmpresaMetaData))]
     public partial class Compra_Produto_Empresa {
 

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Script.Serialization;
 
-namespace PetShopJS.Models.Partials {
+namespace PetShopJS.Models {
     [MetadataType(typeof(ClienteMetaData))]
     public partial class Cliente {
 

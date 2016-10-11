@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
 
-namespace PetShopJS.Models.Partials {
+namespace PetShopJS.Models {
     [MetadataType(typeof(CategoriaMetaData))]
     public partial class Categoria {
 

@@ -31,7 +31,7 @@ namespace PetShopJS.Controllers {
             }
             if (page < 1) page = 1;
             if (size < 1) size = 1;
-            var orderedClientes = clientes.Skip((page - 1) * size).Take(size);
+            var orderedClientes = clientes.OrderBy(c => c.Nome).Skip((page - 1) * size).Take(size);
             return PartialView("_List", orderedClientes.ToList());
         }
 

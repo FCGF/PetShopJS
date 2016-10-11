@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
 
-namespace PetShopJS.Models.Partials {
+namespace PetShopJS.Models {
     [MetadataType(typeof(Produto_EmpresaMetaData))]
     public partial class Produto_Empresa {
 

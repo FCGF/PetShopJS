@@ -9,7 +9,6 @@
 
 namespace PetShopJS.Models {
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class Cliente {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -30,8 +29,5 @@ namespace PetShopJS.Models {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compra> Compras { get; set; }
         public virtual Endereco Endereco { get; set; }
-
-        [NotMapped]
-        public string CompareSenha { get; set; }
     }
 }
