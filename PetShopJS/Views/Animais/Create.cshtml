@@ -7,7 +7,7 @@
 <h2>Criar</h2>
 
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Create", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), FormMethod.Post, new { id = "crudForm" })) {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
@@ -52,7 +52,6 @@
                        data-date-autoclose="true"
                        data-date-language="pt-BR"
                        lang="pt-br">
-                @*Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -78,8 +77,7 @@
                    Value = "F"
                }
            }, htmlAttributes: new { @class = "form-control" })
-                @*Html.EditorFor(model => model.Sexo, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })*@
+                @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -93,23 +91,57 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="button" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Voltar à Lista", "Index")
-</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
 
 <script type="text/javascript">
     $('.datepicker').datepicker({
         format: 'dd/mm/yyyy'
     });
 
+    var submitBtn = $("input[type='button']");
+    var form = $("#crudForm")
+
+    submitBtn.on("click", submit);
+
+    function submit() {
+        if (form.valid()) {
+            var action = form.prop("action");
+            var method = form.prop("method");
+
+            var formData = form.serialize();
+
+            $.ajax({
+                url: action,
+                type: method,
+                data: formData,
+                success: treatReturn
+            });
+        }
+    }
+
+    function treatReturn(serverResult) {
+        alert("Treat Return " + serverResult.result);
+        if (serverResult.result) {
+            toastr['success'](serverResult.message);
+
+            $('#modal-container').modal('hide');
+
+            listEntities();
+        } else {
+            toastr['error'](serverResult.message);
+
+        }
+
+    }
+
 </script>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+

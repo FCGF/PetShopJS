@@ -17,12 +17,14 @@ namespace PetShopJS.Models {
         public int Id { get; set; }
         [Required]
         [Display(Name = "Cliente")]
+        [StringLength(50, MinimumLength = 3)]
         public string Nome { get; set; }
         [Required]
         public int IdEndereco { get; set; }
+        [StringLength(50)]
         public string Email { get; set; }
         [Required]
-        [StringLength(18, ErrorMessage = "A {0} deve ter pelo menos {2} caracteres.", MinimumLength = 6)]
+        [StringLength(40, ErrorMessage = "A {0} deve ter pelo menos {2} caracteres.", MinimumLength = 8)]
         [RegularExpression(@"^ ((?=.*[a - z])(?=.*[A - Z])(?=.*\d)).+$)")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
@@ -32,6 +34,7 @@ namespace PetShopJS.Models {
         [Display(Name = "Repetir Senha")]
         [Compare("Senha", ErrorMessage = "Senhas devem bater")]
         public string CompareSenha { get; set; }
+        [StringLength(15)]
         public string Telefone { get; set; }
 
         [ScriptIgnore]

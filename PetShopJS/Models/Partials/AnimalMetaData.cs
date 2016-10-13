@@ -16,6 +16,7 @@ namespace PetShopJS.Models {
         public int IdDono { get; set; }
         [Required]
         [Display(Name = "Animal")]
+        [StringLength(50, MinimumLength = 3)]
         public string Nome { get; set; }
         [Required]
         [Display(Name = "Raça")]
@@ -26,11 +27,13 @@ namespace PetShopJS.Models {
         [Display(Name = "Data de Nascimento")]
         public System.DateTime DataNascimento { get; set; }
         [Required]
+        [StringLength(50, MinimumLength = 3)]
         public string Cor { get; set; }
         [Required]
         public string Sexo { get; set; }
         [Required]
         [Display(Name = "Observações")]
+        [StringLength(255, MinimumLength = 3)]
         public string Observacoes { get; set; }
 
         [ScriptIgnore]

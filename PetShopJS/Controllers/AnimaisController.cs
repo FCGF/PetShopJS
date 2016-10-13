@@ -1,5 +1,6 @@
 ﻿using PetShopJS.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -58,16 +59,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IdDono,Nome,IdRaca,DataNascimento,Cor,Sexo,Observacoes")] Animal animal) {
+        public JsonResult Create([Bind(Include = "Id,IdDono,Nome,IdRaca,DataNascimento,Cor,Sexo,Observacoes")] Animal animal) {
             if (ModelState.IsValid) {
                 db.Animals.Add(animal);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Animal cadastrado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdDono = new SelectList(db.Clientes, "Id", "Nome", animal.IdDono);
-            ViewBag.IdRaca = new SelectList(db.Racas, "Id", "Nome", animal.IdRaca);
-            return View(animal);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Animais/Edit/5

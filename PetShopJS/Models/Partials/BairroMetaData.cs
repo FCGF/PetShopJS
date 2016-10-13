@@ -17,6 +17,7 @@ namespace PetShopJS.Models {
         public int IdCidade { get; set; }
         [Display(Name = "Bairro")]
         [Required]
+        [StringLength(50, MinimumLength = 3)]
         public string Nome { get; set; }
 
         [ScriptIgnore]
