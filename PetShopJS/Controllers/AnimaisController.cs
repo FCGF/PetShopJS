@@ -90,15 +90,17 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IdDono,Nome,IdRaca,DataNascimento,Cor,Sexo,Observacoes")] Animal animal) {
+        public JsonResult Edit([Bind(Include = "Id,IdDono,Nome,IdRaca,DataNascimento,Cor,Sexo,Observacoes")] Animal animal) {
             if (ModelState.IsValid) {
                 db.Entry(animal).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Animal editado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdDono = new SelectList(db.Clientes, "Id", "Nome", animal.IdDono);
-            ViewBag.IdRaca = new SelectList(db.Racas, "Id", "Nome", animal.IdRaca);
-            return View(animal);
+
         }
 
         // GET: Animais/Delete/5
@@ -116,11 +118,11 @@ namespace PetShopJS.Controllers {
         // POST: Animais/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Animal animal = db.Animals.Find(id);
             db.Animals.Remove(animal);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Animal deletado com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

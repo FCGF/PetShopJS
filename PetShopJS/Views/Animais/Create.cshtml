@@ -97,51 +97,13 @@
     </div>
 }
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/jqueryval")
+@Html.Partial("_ModalPartial")
+
+<script type="text/javascript" src="~/javascripts/plugins/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="~/javascripts/plugins/locales/bootstrap-datepicker.pt-BR.min.js"></script>
 
 <script type="text/javascript">
     $('.datepicker').datepicker({
         format: 'dd/mm/yyyy'
     });
-
-    var submitBtn = $("input[type='button']");
-    var form = $("#crudForm")
-
-    submitBtn.on("click", submit);
-
-    function submit() {
-        if (form.valid()) {
-            var action = form.prop("action");
-            var method = form.prop("method");
-
-            var formData = form.serialize();
-
-            $.ajax({
-                url: action,
-                type: method,
-                data: formData,
-                success: treatReturn
-            });
-        }
-    }
-
-    function treatReturn(serverResult) {
-        alert("Treat Return " + serverResult.result);
-        if (serverResult.result) {
-            toastr['success'](serverResult.message);
-
-            $('#modal-container').modal('hide');
-
-            listEntities();
-        } else {
-            toastr['error'](serverResult.message);
-
-        }
-
-    }
-
 </script>
-
-
-

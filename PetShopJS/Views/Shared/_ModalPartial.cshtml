@@ -1,0 +1,56 @@
+﻿@Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+
+    $.when(
+        $.getJSON("/Scripts/cldr/supplemental/likelySubtags.json"),
+        $.getJSON("/Scripts/cldr/main/en/numbers.json"),
+        $.getJSON("/Scripts/cldr/main/pt/numbers.json"),
+        $.getJSON("/Scripts/cldr/supplemental/numberingSystems.json"),
+        $.getJSON("/Scripts/cldr/main/en/ca-gregorian.json"),
+        $.getJSON("/Scripts/cldr/main/pt/ca-gregorian.json"),
+        $.getJSON("/Scripts/cldr/main/en/timeZoneNames.json"),
+        $.getJSON("/Scripts/cldr/main/pt/timeZoneNames.json"),
+        $.getJSON("/Scripts/cldr/supplemental/timeData.json"),
+        $.getJSON("/Scripts/cldr/supplemental/weekData.json")
+        ).then(function () {
+            return [].slice.apply(arguments, [0]).map(function (result) {
+                return result[0];
+            });
+        }).then(Globalize.load).then(function () {
+            Globalize.locale("pt");
+        });
+
+    var submitBtn = $("input[type='button']");
+    var form = $("#crudForm")
+
+    submitBtn.on("click", submit);
+
+    function submit() {
+        if (form.valid()) {
+            var action = form.prop("action");
+            var method = form.prop("method");
+
+            var formData = form.serialize();
+
+            $.ajax({
+                url: action,
+                type: method,
+                data: formData,
+                success: treatReturn
+            });
+        }
+    }
+
+    function treatReturn(serverResult) {
+        if (serverResult.result) {
+            toastr['success'](serverResult.message);
+
+            $('#modal-container').modal('hide');
+
+            listEntities();
+        } else {
+            toastr['error'](serverResult.message);
+        }
+    }
+</script>
+
