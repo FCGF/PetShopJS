@@ -13,9 +13,11 @@ namespace PetShopJS.Models {
         [Required]
         public int Id { get; set; }
         [Required]
+        [StringLength(50)]
         [Display(Name = "Estado")]
         public string Nome { get; set; }
         [Required]
+        [StringLength(2)]
         public string Abreviacao { get; set; }
         [Required]
         public int IdPais { get; set; }

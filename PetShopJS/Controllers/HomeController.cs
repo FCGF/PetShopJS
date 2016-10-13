@@ -1,4 +1,5 @@
 ﻿using PetShopJS.Models;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -26,7 +27,9 @@ namespace PetShopJS.Controllers {
         public ActionResult Chart1() {
             var compras = db.Compras.Include(c => c.Cliente).Include(c => c.Condicao).Include(c => c.Forma_Pagamento).Include(c => c.Parcela);
 
-            var datas = compras.Select(c => c.Data);
+            var now = DateTime.Now.AddMonths(-1);
+
+            var datas = compras.Where(c => c.Data.CompareTo(now) >= 0).Select(c => c.Data);
 
             var contas = datas.GroupBy(i => i)
                 .Select(grp => grp.Count());

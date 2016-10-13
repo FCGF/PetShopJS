@@ -1,4 +1,5 @@
-﻿using PetShopJS.Models;
+﻿using System.Collections.Generic;
+using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -47,25 +48,21 @@ namespace PetShopJS.Controllers {
             return PartialView();
         }
 
-        /*public ActionResult Create() {
-            ViewBag.IdEstado = new SelectList(db.Estadoes, "Id", "Nome");
-            return View();
-        }*/
-
         // POST: Cidades/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,IdEstado")] Cidade cidade) {
+        public JsonResult Create([Bind(Include = "Id,Nome,IdEstado")] Cidade cidade) {
             if (ModelState.IsValid) {
                 db.Cidades.Add(cidade);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Cidade criada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdEstado = new SelectList(db.Estadoes, "Id", "Nome", cidade.IdEstado);
-            return View(cidade);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Cidades/Edit/5
@@ -86,14 +83,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,IdEstado")] Cidade cidade) {
+        public JsonResult Edit([Bind(Include = "Id,Nome,IdEstado")] Cidade cidade) {
             if (ModelState.IsValid) {
                 db.Entry(cidade).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Cidade editada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdEstado = new SelectList(db.Estadoes, "Id", "Nome", cidade.IdEstado);
-            return View(cidade);
         }
 
         // GET: Cidades/Delete/5
@@ -115,7 +114,7 @@ namespace PetShopJS.Controllers {
             Cidade cidade = db.Cidades.Find(id);
             db.Cidades.Remove(cidade);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Cidade deletada com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

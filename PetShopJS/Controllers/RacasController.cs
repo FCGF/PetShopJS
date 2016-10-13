@@ -1,4 +1,5 @@
-﻿using PetShopJS.Models;
+﻿using System.Collections.Generic;
+using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -52,15 +53,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,IdEspecie")] Raca raca) {
+        public JsonResult Create([Bind(Include = "Id,Nome,IdEspecie")] Raca raca) {
             if (ModelState.IsValid) {
                 db.Racas.Add(raca);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Raça criada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdEspecie = new SelectList(db.Especies, "Id", "Nome", raca.IdEspecie);
-            return View(raca);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Racas/Edit/5
@@ -81,14 +83,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,IdEspecie")] Raca raca) {
+        public JsonResult Edit([Bind(Include = "Id,Nome,IdEspecie")] Raca raca) {
             if (ModelState.IsValid) {
                 db.Entry(raca).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Raça editada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdEspecie = new SelectList(db.Especies, "Id", "Nome", raca.IdEspecie);
-            return View(raca);
         }
 
         // GET: Racas/Delete/5
@@ -106,11 +110,11 @@ namespace PetShopJS.Controllers {
         // POST: Racas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Raca raca = db.Racas.Find(id);
             db.Racas.Remove(raca);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Raça deletada com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

@@ -1,4 +1,5 @@
-﻿using PetShopJS.Models;
+﻿using System.Collections.Generic;
+using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -56,11 +57,12 @@ namespace PetShopJS.Controllers {
             if (ModelState.IsValid) {
                 db.Enderecoes.Add(endereco);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Endereço criado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdBairro = new SelectList(db.Bairroes, "Id", "Nome", endereco.IdBairro);
-            return View(endereco);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Enderecos/Edit/5
@@ -81,14 +83,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IdBairro,Endereco1,Endereco2,CEP")] Endereco endereco) {
+        public JsonResult Edit([Bind(Include = "Id,IdBairro,Endereco1,Endereco2,CEP")] Endereco endereco) {
             if (ModelState.IsValid) {
                 db.Entry(endereco).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Endereço editado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdBairro = new SelectList(db.Bairroes, "Id", "Nome", endereco.IdBairro);
-            return View(endereco);
         }
 
         // GET: Enderecos/Delete/5
@@ -106,11 +110,11 @@ namespace PetShopJS.Controllers {
         // POST: Enderecos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Endereco endereco = db.Enderecoes.Find(id);
             db.Enderecoes.Remove(endereco);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Endereço deletado com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

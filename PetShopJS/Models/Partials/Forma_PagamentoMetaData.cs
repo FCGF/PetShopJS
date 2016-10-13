@@ -16,6 +16,7 @@ namespace PetShopJS.Models {
         [Required]
         public int Id { get; set; }
         [Required]
+        [StringLength(50)]
         [Display(Name = "Forma Pagamento")]
         public string Nome { get; set; }
 

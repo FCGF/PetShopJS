@@ -18,19 +18,20 @@
         WebMail.SmtpPort = 587; //gmail port to send emails
         WebMail.SmtpUseDefaultCredentials = true;
         WebMail.EnableSsl = true; //sending emails with secure protocol
-        WebMail.UserName = FromOrSenderEmail;//EmailId used to send emails from application
+        WebMail.UserName = FromOrSenderEmail; //EmailId used to send emails from application
         WebMail.Password = "qwe12345.";
         WebMail.From = FromOrSenderEmail; //email sender email address.
 
         //Sending email
         WebMail.Send(to: ToEmail, subject: SubJect, body: Body, cc: cc, bcc: Bcc, isBodyHtml: true);
-        <br />
+        <br/>
         <div class="text-success">
             Email enviado com sucesso.
         </div>
-    } catch (Exception) {
+    }
+    catch (Exception) {
         <div class="text-danger">
             Problema enviando email, favor verificar detalhes do servidor gmail.
         </div>
     }
-} 
+}

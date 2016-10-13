@@ -7,63 +7,63 @@
 <h2>Criar</h2>
 
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Create", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), FormMethod.Post, new {id = "crudForm"})) {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <h4>Compra</h4>
-        <br />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <br/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
         <div class="form-group">
-            @Html.LabelFor(model => model.IdCliente, "Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdCliente, "Cliente", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("IdCliente", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdCliente, "", new { @class = "text-danger" })
+                @Html.DropDownList("IdCliente", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.IdCliente, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdCondicao, "Condicao", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdCondicao, "Condicao", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("IdCondicao", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdCondicao, "", new { @class = "text-danger" })
+                @Html.DropDownList("IdCondicao", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.IdCondicao, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Codigo, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Codigo, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Codigo, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Desconto, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Desconto, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Desconto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Desconto, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Desconto, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Desconto, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdFormaPagamento, "FormaPagamento", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdFormaPagamento, "FormaPagamento", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("IdFormaPagamento", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdFormaPagamento, "", new { @class = "text-danger" })
+                @Html.DropDownList("IdFormaPagamento", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.IdFormaPagamento, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdParcela, "Parcela", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdParcela, "Parcela", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("IdParcela", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdParcela, "", new { @class = "text-danger" })
+                @Html.DropDownList("IdParcela", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.IdParcela, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Data, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Data, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
                 <input type="datetime"
                        class="form-control datepicker"
@@ -77,32 +77,27 @@
                        data-date-language="pt-BR"
                        lang="pt-br">
                 @*Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Data, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="button" value="Create" class="btn btn-default"/>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Voltar à Lista", "Index")
-</div>
+@Html.Partial("_ModalPartial")
 
 <script type="text/javascript" src="~/javascripts/plugins/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="~/javascripts/plugins/locales/bootstrap-datepicker.pt-BR.min.js"></script>
 
 <script type="text/javascript">
-    $('.datepicker').datepicker({
-        format: 'dd/mm/yyyy'
-    });
+    $('.datepicker')
+        .datepicker({
+            format: 'dd/mm/yyyy'
+        });
 
 </script>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

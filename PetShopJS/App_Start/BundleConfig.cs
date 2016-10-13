@@ -39,6 +39,7 @@ namespace PetShopJS {
                       "~/Content/bootstrap.min.css",
                       "~/Content/jquery.bootgrid.min.css",
                       "~/stylesheets/plugins/bootstrap-datepicker3.min.css",
+                      "~/Content/toastr.css",
                       "~/Content/Site.css");
             cssBundle.Orderer = new AsIsBundleOrderer();
 

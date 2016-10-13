@@ -16,14 +16,14 @@ namespace PetShopJS.Models {
         [Required]
         public int IdCompra { get; set; }
         [Required]
-        [MaxLength(10)]
+        [Range(1, 9999999999)]
         public decimal Quantidade { get; set; }
         [Required]
         [Display(Name = "Valor Unitario")]
-        [MaxLength(10)]
+        [Range(0, 99999999999)]
         public decimal ValorUnitario { get; set; }
         [Required]
-        [MaxLength(10)]
+        [Range(0, 99999999999)]
         public decimal Total { get; set; }
 
         [ScriptIgnore]

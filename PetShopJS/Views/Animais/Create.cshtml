@@ -7,39 +7,39 @@
 <h2>Criar</h2>
 
 
-@using (Html.BeginForm("Create", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), FormMethod.Post, new { id = "crudForm" })) {
+@using (Html.BeginForm("Create", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), FormMethod.Post, new {id = "crudForm"})) {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <h4>Animal</h4>
-        <br />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <br/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
         <div class="form-group">
-            @Html.LabelFor(model => model.IdDono, "Dono", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdDono, "Dono", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("IdDono", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdDono, "", new { @class = "text-danger" })
+                @Html.DropDownList("IdDono", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.IdDono, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Nome, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Nome, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdRaca, "Raca", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdRaca, "Raca", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("IdRaca", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdRaca, "", new { @class = "text-danger" })
+                @Html.DropDownList("IdRaca", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.IdRaca, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
                 <input type="datetime"
                        class="form-control datepicker"
@@ -52,46 +52,46 @@
                        data-date-autoclose="true"
                        data-date-language="pt-BR"
                        lang="pt-br">
-                @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.DataNascimento, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Cor, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Cor, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cor, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Cor, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Cor, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Sexo, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Sexo, new List<SelectListItem>(){
-               new SelectListItem() {
-                   Text = "Masculino",
-                   Value = "M"
-               },
-               new SelectListItem() {
-                   Text = "Feminino",
-                   Value = "F"
-               }
-           }, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Sexo, new List<SelectListItem>() {
+                    new SelectListItem() {
+                        Text = "Masculino",
+                        Value = "M"
+                    },
+                    new SelectListItem() {
+                        Text = "Feminino",
+                        Value = "F"
+                    }
+                }, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Sexo, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Observacoes, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observacoes, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Observacoes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Observacoes, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observacoes, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Observacoes, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="button" value="Create" class="btn btn-default" />
+                <input type="button" value="Create" class="btn btn-default"/>
             </div>
         </div>
     </div>
@@ -103,7 +103,8 @@
 <script type="text/javascript" src="~/javascripts/plugins/locales/bootstrap-datepicker.pt-BR.min.js"></script>
 
 <script type="text/javascript">
-    $('.datepicker').datepicker({
-        format: 'dd/mm/yyyy'
-    });
+    $('.datepicker')
+        .datepicker({
+            format: 'dd/mm/yyyy'
+        });
 </script>

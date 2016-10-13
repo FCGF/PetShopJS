@@ -20,11 +20,11 @@ namespace PetShopJS.Controllers {
         public PartialViewResult List(string search, int page = 1, int size = 10) {
             var animais = db.Animals.Include(a => a.Cliente).Include(a => a.Raca);
 
-            if (!String.IsNullOrWhiteSpace(search)) {
-                int integer = 0;
+            if (!string.IsNullOrWhiteSpace(search)) {
+                int integer;
                 int.TryParse(search, out integer);
 
-                DateTime date = DateTime.Now;
+                DateTime date;
                 DateTime.TryParse(search, out date);
 
                 animais = animais.Where("Id == @0 OR IdDono == @0 OR IdRaca == @0 OR DataNascimento.Equals(@1) OR Nome.Contains(@2) OR Cor.Contains(@2) OR Sexo.Contains(@2) OR Observacoes.Contains(@2)", integer, date, search);

@@ -1,4 +1,5 @@
-﻿using PetShopJS.Models;
+﻿using System.Collections.Generic;
+using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -52,15 +53,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,IdCategoriaPai")] Categoria categoria) {
+        public JsonResult Create([Bind(Include = "Id,Nome,IdCategoriaPai")] Categoria categoria) {
             if (ModelState.IsValid) {
                 db.Categorias.Add(categoria);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Categoria criada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdCategoriaPai = new SelectList(db.Categorias, "Id", "Nome", categoria.IdCategoriaPai);
-            return View(categoria);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Categorias/Edit/5
@@ -81,14 +83,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,IdCategoriaPai")] Categoria categoria) {
+        public JsonResult Edit([Bind(Include = "Id,Nome,IdCategoriaPai")] Categoria categoria) {
             if (ModelState.IsValid) {
                 db.Entry(categoria).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Categoria editada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdCategoriaPai = new SelectList(db.Categorias, "Id", "Nome", categoria.IdCategoriaPai);
-            return View(categoria);
         }
 
         // GET: Categorias/Delete/5
@@ -106,11 +110,11 @@ namespace PetShopJS.Controllers {
         // POST: Categorias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Categoria categoria = db.Categorias.Find(id);
             db.Categorias.Remove(categoria);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Categoria deletada com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

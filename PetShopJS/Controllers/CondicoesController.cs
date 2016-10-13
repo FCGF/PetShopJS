@@ -52,14 +52,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome")] Condicao condicao) {
+        public JsonResult Create([Bind(Include = "Id,Nome")] Condicao condicao) {
             if (ModelState.IsValid) {
                 db.Condicaos.Add(condicao);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Condição criada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            return View(condicao);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Condicoes/Edit/5
@@ -79,13 +81,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome")] Condicao condicao) {
+        public JsonResult Edit([Bind(Include = "Id,Nome")] Condicao condicao) {
             if (ModelState.IsValid) {
                 db.Entry(condicao).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Condição editada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            return View(condicao);
         }
 
         // GET: Condicoes/Delete/5
@@ -103,11 +108,11 @@ namespace PetShopJS.Controllers {
         // POST: Condicoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Condicao condicao = db.Condicaos.Find(id);
             db.Condicaos.Remove(condicao);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Condição deletada com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

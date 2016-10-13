@@ -17,10 +17,10 @@ namespace PetShopJS.Models {
         [Required]
         public int IdCondicao { get; set; }
         [Required]
-        [MaxLength(10)]
+        [StringLength(10)]
         public string Codigo { get; set; }
         [Required]
-        [MaxLength(5)]
+        [Range(0, 99999)]
         public decimal Desconto { get; set; }
         [Required]
         public int IdFormaPagamento { get; set; }

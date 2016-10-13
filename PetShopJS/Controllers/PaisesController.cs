@@ -52,14 +52,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Abreviacao")] Pais pais) {
+        public JsonResult Create([Bind(Include = "Id,Nome,Abreviacao")] Pais pais) {
             if (ModelState.IsValid) {
                 db.Pais1.Add(pais);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Pais criado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            return View(pais);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Paises/Edit/5
@@ -79,13 +81,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Abreviacao")] Pais pais) {
+        public JsonResult Edit([Bind(Include = "Id,Nome,Abreviacao")] Pais pais) {
             if (ModelState.IsValid) {
                 db.Entry(pais).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Pais editado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            return View(pais);
         }
 
         // GET: Paises/Delete/5
@@ -103,11 +108,11 @@ namespace PetShopJS.Controllers {
         // POST: Paises/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Pais pais = db.Pais1.Find(id);
             db.Pais1.Remove(pais);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Pais deletado com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

@@ -20,8 +20,10 @@ namespace PetShopJS.Models {
         [Required]
         public int IdProduto { get; set; }
         [Required]
+        [Range(0, 999999.99)]
         public decimal Valor { get; set; }
         [Required]
+        [Range(0, 99999999999)]
         public decimal Estoque { get; set; }
         [Required]
         public bool Ativo { get; set; }

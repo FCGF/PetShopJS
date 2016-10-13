@@ -52,14 +52,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome")] Especie especie) {
+        public JsonResult Create([Bind(Include = "Id,Nome")] Especie especie) {
             if (ModelState.IsValid) {
                 db.Especies.Add(especie);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Especie criada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            return View(especie);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Especies/Edit/5
@@ -79,13 +81,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome")] Especie especie) {
+        public JsonResult Edit([Bind(Include = "Id,Nome")] Especie especie) {
             if (ModelState.IsValid) {
                 db.Entry(especie).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Especie editada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            return View(especie);
         }
 
         // GET: Especies/Delete/5
@@ -103,11 +108,11 @@ namespace PetShopJS.Controllers {
         // POST: Especies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Especie especie = db.Especies.Find(id);
             db.Especies.Remove(especie);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Especie deletada com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

@@ -14,6 +14,7 @@ namespace PetShopJS.Models {
         public int Id { get; set; }
         [Required]
         [Display(Name = "Raça")]
+        [StringLength(50)]
         public string Nome { get; set; }
         [Required]
         public int IdEspecie { get; set; }

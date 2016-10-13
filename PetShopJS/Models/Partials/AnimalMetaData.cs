@@ -23,7 +23,6 @@ namespace PetShopJS.Models {
         public int IdRaca { get; set; }
         [Required]
         [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd.MM.yy}", ApplyFormatInEditMode = true)]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Data de Nascimento")]
         public System.DateTime DataNascimento { get; set; }
         [Required]

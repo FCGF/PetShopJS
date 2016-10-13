@@ -13,6 +13,7 @@ namespace PetShopJS.Models {
         [Required]
         public int Id { get; set; }
         [Required]
+        [StringLength(100)]
         [Display(Name = "Fabricante")]
         public string Nome { get; set; }
 

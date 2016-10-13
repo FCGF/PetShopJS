@@ -1,4 +1,5 @@
-﻿using PetShopJS.Models;
+﻿using System.Collections.Generic;
+using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -52,15 +53,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IdCidade,Nome")] Bairro bairro) {
+        public JsonResult Create([Bind(Include = "Id,IdCidade,Nome")] Bairro bairro) {
             if (ModelState.IsValid) {
                 db.Bairroes.Add(bairro);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Bairro cadastrado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdCidade = new SelectList(db.Cidades, "Id", "Nome", bairro.IdCidade);
-            return View(bairro);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Bairros/Edit/5
@@ -81,14 +83,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IdCidade,Nome")] Bairro bairro) {
+        public JsonResult Edit([Bind(Include = "Id,IdCidade,Nome")] Bairro bairro) {
             if (ModelState.IsValid) {
                 db.Entry(bairro).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Bairro editado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdCidade = new SelectList(db.Cidades, "Id", "Nome", bairro.IdCidade);
-            return View(bairro);
         }
 
         // GET: Bairros/Delete/5
@@ -106,11 +110,11 @@ namespace PetShopJS.Controllers {
         // POST: Bairros/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Bairro bairro = db.Bairroes.Find(id);
             db.Bairroes.Remove(bairro);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Bairro deletado com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

@@ -1,4 +1,5 @@
-﻿using PetShopJS.Models;
+﻿using System.Collections.Generic;
+using PetShopJS.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -54,17 +55,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IdCategoria,IdFabricante,Nome,Descricao,IdAnimal")] Produto produto) {
+        public JsonResult Create([Bind(Include = "Id,IdCategoria,IdFabricante,Nome,Descricao,IdAnimal")] Produto produto) {
             if (ModelState.IsValid) {
                 db.Produtoes.Add(produto);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Produto criado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdAnimal = new SelectList(db.Animals, "Id", "Nome", produto.IdAnimal);
-            ViewBag.IdCategoria = new SelectList(db.Categorias, "Id", "Nome", produto.IdCategoria);
-            ViewBag.IdFabricante = new SelectList(db.Fabricantes, "Id", "Nome", produto.IdFabricante);
-            return View(produto);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Produtos/Edit/5
@@ -87,16 +87,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IdCategoria,IdFabricante,Nome,Descricao,IdAnimal")] Produto produto) {
+        public JsonResult Edit([Bind(Include = "Id,IdCategoria,IdFabricante,Nome,Descricao,IdAnimal")] Produto produto) {
             if (ModelState.IsValid) {
                 db.Entry(produto).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Produto editado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdAnimal = new SelectList(db.Animals, "Id", "Nome", produto.IdAnimal);
-            ViewBag.IdCategoria = new SelectList(db.Categorias, "Id", "Nome", produto.IdCategoria);
-            ViewBag.IdFabricante = new SelectList(db.Fabricantes, "Id", "Nome", produto.IdFabricante);
-            return View(produto);
         }
 
         // GET: Produtos/Delete/5
@@ -114,11 +114,11 @@ namespace PetShopJS.Controllers {
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Produto produto = db.Produtoes.Find(id);
             db.Produtoes.Remove(produto);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Produto deletado com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

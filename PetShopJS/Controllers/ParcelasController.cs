@@ -55,14 +55,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Quantidade,Juros")] Parcela parcela) {
+        public JsonResult Create([Bind(Include = "Id,Quantidade,Juros")] Parcela parcela) {
             if (ModelState.IsValid) {
                 db.Parcelas.Add(parcela);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Parcelas criadas com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            return View(parcela);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Parcelas/Edit/5
@@ -82,13 +84,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Quantidade,Juros")] Parcela parcela) {
+        public JsonResult Edit([Bind(Include = "Id,Quantidade,Juros")] Parcela parcela) {
             if (ModelState.IsValid) {
                 db.Entry(parcela).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Parcelas editadas com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            return View(parcela);
         }
 
         // GET: Parcelas/Delete/5
@@ -106,11 +111,11 @@ namespace PetShopJS.Controllers {
         // POST: Parcelas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Parcela parcela = db.Parcelas.Find(id);
             db.Parcelas.Remove(parcela);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Parcelas deletadas com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

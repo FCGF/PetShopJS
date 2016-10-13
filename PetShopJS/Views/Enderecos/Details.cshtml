@@ -8,7 +8,7 @@
 
 <div>
     <h4>Endereço</h4>
-    <br />
+    <br/>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Endereco1)
@@ -45,6 +45,7 @@
     </dl>
 </div>
 <p>
-    <a href="@Url.Action("Edit", new { id=Model.Id })" class="btn btn-primary modal-link" title="Editar"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+    <a href="@Url.Action("Edit", new {id = Model.Id})" class="btn btn-primary modal-link" title="Editar">
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
     @Html.ActionLink("Voltar à Lista", "Index")
 </p>

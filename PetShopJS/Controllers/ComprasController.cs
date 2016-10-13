@@ -1,5 +1,6 @@
 ﻿using PetShopJS.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
@@ -18,7 +19,7 @@ namespace PetShopJS.Controllers {
         public PartialViewResult List(string search, int page = 1, int size = 10) {
             var compras = db.Compras.Include(c => c.Cliente).Include(c => c.Condicao).Include(c => c.Forma_Pagamento).Include(c => c.Parcela);
 
-            if (!String.IsNullOrWhiteSpace(search)) {
+            if (!string.IsNullOrWhiteSpace(search)) {
                 int integer = 0;
                 int.TryParse(search, out integer);
 
@@ -62,18 +63,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Data")] Compra compra) {
+        public JsonResult Create([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Data")] Compra compra) {
             if (ModelState.IsValid) {
                 db.Compras.Add(compra);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Compra criada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            ViewBag.IdCliente = new SelectList(db.Clientes, "Id", "Nome", compra.IdCliente);
-            ViewBag.IdCondicao = new SelectList(db.Condicaos, "Id", "Nome", compra.IdCondicao);
-            ViewBag.IdFormaPagamento = new SelectList(db.Forma_Pagamento, "Id", "Nome", compra.IdFormaPagamento);
-            ViewBag.IdParcela = new SelectList(db.Parcelas, "Id", "Id", compra.IdParcela);
-            return View(compra);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Compras/Edit/5
@@ -97,17 +96,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Data")] Compra compra) {
+        public JsonResult Edit([Bind(Include = "Id,IdCliente,IdCondicao,Codigo,Desconto,IdFormaPagamento,IdParcela,Data")] Compra compra) {
             if (ModelState.IsValid) {
                 db.Entry(compra).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Compra editada com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            ViewBag.IdCliente = new SelectList(db.Clientes, "Id", "Nome", compra.IdCliente);
-            ViewBag.IdCondicao = new SelectList(db.Condicaos, "Id", "Nome", compra.IdCondicao);
-            ViewBag.IdFormaPagamento = new SelectList(db.Forma_Pagamento, "Id", "Nome", compra.IdFormaPagamento);
-            ViewBag.IdParcela = new SelectList(db.Parcelas, "Id", "Id", compra.IdParcela);
-            return View(compra);
         }
 
         // GET: Compras/Delete/5
@@ -125,11 +123,11 @@ namespace PetShopJS.Controllers {
         // POST: Compras/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Compra compra = db.Compras.Find(id);
             db.Compras.Remove(compra);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Compra criada com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

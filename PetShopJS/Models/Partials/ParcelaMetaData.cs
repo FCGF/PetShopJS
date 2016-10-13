@@ -13,8 +13,10 @@ namespace PetShopJS.Models {
         [Required]
         public int Id { get; set; }
         [Required]
+        [Range(0, 999)]
         public decimal Quantidade { get; set; }
         [Required]
+        [Range(0, 99999)]
         public decimal Juros { get; set; }
 
         [ScriptIgnore]

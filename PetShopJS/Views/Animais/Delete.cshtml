@@ -9,7 +9,7 @@
 <h3>Você tem certeza que deseja deletar?</h3>
 <div>
     <h4>Animal</h4>
-    <br />
+    <br/>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
@@ -69,11 +69,11 @@
 
     </dl>
 
-    @using (Html.BeginForm("Delete", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), FormMethod.Post, new { id = "crudForm" })) {
+    @using (Html.BeginForm("Delete", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), FormMethod.Post, new {id = "crudForm"})) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="button" value="Delete" class="btn btn-default" />
+            <input type="button" value="Delete" class="btn btn-default"/>
         </div>
     }
 </div>

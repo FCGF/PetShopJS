@@ -52,14 +52,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome")] Fabricante fabricante) {
+        public JsonResult Create([Bind(Include = "Id,Nome")] Fabricante fabricante) {
             if (ModelState.IsValid) {
                 db.Fabricantes.Add(fabricante);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return Json(new { result = true, message = "Fabricante criado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
 
-            return View(fabricante);
+                return Json(new { result = false, message = errors });
+            }
         }
 
         // GET: Fabricantes/Edit/5
@@ -79,13 +81,16 @@ namespace PetShopJS.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome")] Fabricante fabricante) {
+        public JsonResult Edit([Bind(Include = "Id,Nome")] Fabricante fabricante) {
             if (ModelState.IsValid) {
                 db.Entry(fabricante).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Json(new { result = true, message = "Fabricante editado com sucesso" });
+            } else {
+                IEnumerable<ModelError> errors = ModelState.Values.SelectMany(i => i.Errors);
+
+                return Json(new { result = false, message = errors });
             }
-            return View(fabricante);
         }
 
         // GET: Fabricantes/Delete/5
@@ -103,11 +108,11 @@ namespace PetShopJS.Controllers {
         // POST: Fabricantes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id) {
+        public JsonResult DeleteConfirmed(int id) {
             Fabricante fabricante = db.Fabricantes.Find(id);
             db.Fabricantes.Remove(fabricante);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(new { result = true, message = "Fabricante criado com sucesso" });
         }
 
         protected override void Dispose(bool disposing) {

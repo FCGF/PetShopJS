@@ -15,12 +15,12 @@ namespace PetShopJS.Models {
         [Required]
         public int IdBairro { get; set; }
         [Required]
-        [MaxLength(150)]
+        [StringLength(150)]
         public string Endereco1 { get; set; }
-        [MaxLength(150)]
+        [StringLength(150)]
         public string Endereco2 { get; set; }
         [Required]
-        [MaxLength(10)]
+        [StringLength(10)]
         public string CEP { get; set; }
 
         [ScriptIgnore]
