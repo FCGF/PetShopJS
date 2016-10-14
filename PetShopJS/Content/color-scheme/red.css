@@ -1,0 +1,430 @@
+a {
+	color: #ff0104;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background: #ff0104 !important;
+}
+
+a:hover {
+	color: #ff0104;
+}
+
+#header-main .dropdown-menu li a:hover {
+	color: #ff0104 !important;
+}
+
+#header-main .yamm-fw .dropdown-menu li a:hover {
+	color: #ff0104 !important;
+}
+
+#header-main .navbar-nav > li > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a,
+	#header-main .navbar-default .navbar-nav > .open > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a:focus {
+	color: #ff0104 !important;
+}
+
+#header-main .dropdown-menu,
+	#header-main .yamm .dropdown.yamm-fw .dropdown-menu {
+	border-top-color: #ff0104 !important;
+}
+
+#header-main .yamm h3 i,
+	#header-main .yamm-fw .dropdown-menu li a:before {
+	color: #ff0104;
+}
+
+#header-main .navbar-nav > li > a:hover .arrow-up {
+	color:#ff0104;
+}
+
+#header-main .navbar-nav > li > a.active .arrow-up {
+	color:#ff0104;
+}
+
+.ss2-content i {
+	color: #ff0104;
+}
+
+.ss-bg-color {
+	background:#ff0104 !important;
+}
+
+.button:hover {
+	background: #ff0104 !important;
+}
+
+
+.button.color2 {
+	background: #ff0104;
+}
+
+
+.button.color5 {
+	background: #ff0104;
+}
+
+.button.btn-border.color2 {
+	border-color: #ff0104;
+	color: #ff0104;
+}
+
+.cta-clr {
+	background:#ff0104;
+}
+
+.button.btn-border.color2:hover {
+	background: #ff0104 !important;
+}
+
+.button.one {
+	background: #ff0104;
+}
+
+.small-sep {
+	background: #ff0104;
+}
+
+.progress-line {
+	background-color: #ff0104;
+}
+
+.page_header h3 span {
+    background: #ff0104;
+}
+
+#accordion.panel-group .panel.active .panel-title a span {
+	background: #ff0104;
+}
+
+.block-heading h3 {
+	background: #ff0104;
+}
+
+.feature-box .feature-box-icon {
+	color: #ff0104;
+}
+
+.feature-box2 .feature-box-icon {
+	background:#ff0104;
+}
+
+.domain-box.db-dark {
+	background:#c90608;
+}
+
+.plan-price {
+	background: #ff0104;
+	background: -moz-linear-gradient(-45deg,  #ff0104 0%, #ff0104 85%, #c90608 86%, #c90608 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ff0104), color-stop(85%,#ff0104), color-stop(86%,#c90608), color-stop(100%,#c90608));
+	background: -webkit-linear-gradient(-45deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	background: -o-linear-gradient(-45deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	background: -ms-linear-gradient(-45deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	background: linear-gradient(135deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0104', endColorstr='#c90608',GradientType=1 );
+}
+
+.pricing-table-s1 li i {
+	color: #ff0104;
+}
+
+.pricing-table2 thead tr th {
+	background: #ff0104;
+	background: -moz-linear-gradient(-45deg,  #ff0104 0%, #ff0104 85%, #c90608 86%, #c90608 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ff0104), color-stop(85%,#ff0104), color-stop(86%,#c90608), color-stop(100%,#c90608));
+	background: -webkit-linear-gradient(-45deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	background: -o-linear-gradient(-45deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	background: -ms-linear-gradient(-45deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	background: linear-gradient(135deg,  #ff0104 0%,#ff0104 85%,#c90608 86%,#c90608 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0104', endColorstr='#c90608',GradientType=1 );
+}
+
+.pricing-table3 ul li h3 {
+	background: #ff0104;
+}
+
+.search-container button {
+	background: #ff0104;
+}
+
+.cat-list li a:hover {
+	color: #ff0104;
+}
+
+
+.popular-desc h5 a:hover {
+	color: #ff0104;
+}
+
+.tag-list a:hover {
+	background:#ff0104;
+}
+
+.nav-tabs li.active::after {
+	background: #ff0104;
+}
+
+.nav-tabs li a span {
+	color: #ff0104;
+}
+
+#accordion-e3 .panel-title span.icon-check2 {
+	color: #ff0104;
+}
+
+.style1 {
+	border-left: 5px solid #ff0104;
+}
+
+.style1.blockquote-reverse {
+	border-right: 5px solid #ff0104;
+}
+
+.stats1-info i {
+	color: #ff0104;
+}
+
+.stats2-info h2 {
+	color: #ff0104;
+}
+
+.stats3-info i {
+	color: #ff0104;
+}
+
+.service-content span {
+	color: #ff0104;
+}
+
+.service-content:hover span {
+	background: #ff0104;
+}
+
+.service-content span:after {
+	background: #ff0104;
+}
+
+.service-content:hover span:after {
+	background: #ff0104;
+}
+
+.feature-content i {
+	background: #ff0104;
+	background: -moz-linear-gradient(-45deg,  #ff0104 0%, #ff0104 49%, #c90608 50%, #c90608 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ff0104), color-stop(85%,#ff0104), color-stop(86%,#c90608), color-stop(100%,#c90608));
+	background: -webkit-linear-gradient(-45deg,  #ff0104 0%,#ff0104 49%,#c90608 50%,#c90608 100%);
+	background: -o-linear-gradient(-45deg,  #ff0104 0%,#ff0104 49%,#c90608 50%,#c90608 100%);
+	background: -ms-linear-gradient(-45deg,  #ff0104 0%,#ff0104 49%,#c90608 50%,#c90608 100%);
+	background: linear-gradient(135deg,  #ff0104 0%,#ff0104 49%,#c90608 50%,#c90608 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0104', endColorstr='#c90608',GradientType=1 );
+}
+
+h2.post-title a:hover {
+	color: #ff0104;
+}
+
+h2.post-title-small a:hover {
+	color: #ff0104;
+}
+
+.post-meta span {
+	color:#ff0104;
+}
+
+.post-meta span a {
+	color: #ff0104;
+}
+
+.page_nav a:hover {
+	background: #ff0104;
+}
+
+.info-home h3 em {
+	color: #ff0104;
+}
+
+.hover-zoom a:hover {
+	background: #ff0104;
+}
+
+.features-left i {
+	color: #ff0104;
+}
+
+.features-right i {
+	color: #ff0104;
+}
+
+.team-social li a:hover {
+	color:#ff0104 !important;
+}
+
+.pricing-table4 .title strong {
+	color: #ff0104;
+}
+
+
+.pricing-table4#popular h6 {
+	background: #ff0104;
+}
+
+.f-posts li h5 a:hover {
+	color: #ff0104;
+}
+
+.reply:hover {
+	color: #ff0104 !important;
+	border: 2px solid #ff0104;
+}
+
+#portfolio-home.folio-boxed-2col .project-info h2:hover ,
+#portfolio-home.folio-boxed-3col .project-info h2:hover ,
+#portfolio-home.folio-boxed-4col .project-info h2:hover {
+	color: #ff0104;
+}
+
+#accordion-career .panel-default > .panel-heading {
+	border-left: 1px solid #ff0104;
+}
+
+.feature-list li i {
+	color: #ff0104;
+}
+
+.countdown.styled div span {
+	background: #ff0104;
+}
+
+.list-style1 li i {
+	color: #ff0104;
+}
+
+.cs-wrap .chart-color2 span {
+	color: #ff0104;
+}
+
+.progress-bar-success {
+	background: #ff0104 !important;
+}
+
+.nav-tabs li i {
+	color: #ff0104;
+}
+
+.product-categories li a:hover {
+	color: #ff0104;
+}
+
+.product-post-info h5 a:hover {
+color:#ff0104;
+}
+
+.product-size a.active ,
+.product-size a:hover {
+	color: #ff0104;
+	border: 1px solid #ff0104;
+}
+
+.cart-table tbody tr td  a:hover {
+	color: #ff0104;
+}
+
+.higlight {
+	color: #ff0104;
+}
+
+#about-section2 .about-box .about-post a:hover,
+#about-section2 .about-box .about-post a.active {
+	background: #ff0104;
+}
+
+#about-section2 .content-tab .tab-cont h2 {
+	color: #ff0104;
+}
+
+.date-meta {
+    background: #ff0104 ;
+}
+
+#team2 .text-center .team-social a:hover {
+color:#ff0104;
+}
+
+.highlight {
+	color:#ff0104 !important;
+}
+
+#one-res .highlight3 {
+	color:#ff0104;
+}
+
+.highlight4 {
+	color:#ff0104 !important;
+}
+
+#one-res .project-info h2 span {
+	color:#ff0104;
+}
+
+.sc-trigger span {
+background: #ff0104;
+}
+
+.ss-trigger i:hover {
+	color:#ff0104;
+}
+
+.cart-info {
+    border-top: 4px solid #ff0104;
+}
+
+.ci-item-info h5 a:hover {
+	color: #ff0104;
+}
+
+.cart-btn a {
+	background: #ff0104;
+}
+
+.ssc-inner form input {
+	border-bottom:4px solid #ff0104;
+}
+
+.head-w-ul span {
+	border-bottom:4px solid #ff0104;
+	color:#ff0104;
+}
+
+.dm-wrap span{
+	background:#ff0104;
+}
+
+.volunter-info .button {
+	background:#ff0104;
+}
+
+.rating > span {
+   color: #ff0104;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   color: #ff0104;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+	color:#ff0104 !important;
+}
+
+.book-doctor {
+    background: #ff0104;
+}
+
+.domain-box {
+	background:#ff0104;
+}
+
+ul.tld_list .number {
+	background:#ff0104;
+}

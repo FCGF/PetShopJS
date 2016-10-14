@@ -1,0 +1,430 @@
+a {
+	color: #e0d6b2;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background: #e0d6b2 !important;
+}
+
+a:hover {
+	color: #e0d6b2;
+}
+
+#header-main .dropdown-menu li a:hover {
+	color: #e0d6b2 !important;
+}
+
+#header-main .yamm-fw .dropdown-menu li a:hover {
+	color: #e0d6b2 !important;
+}
+
+#header-main .navbar-nav > li > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a,
+	#header-main .navbar-default .navbar-nav > .open > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a:focus {
+	color: #e0d6b2 !important;
+}
+
+#header-main .dropdown-menu,
+	#header-main .yamm .dropdown.yamm-fw .dropdown-menu {
+	border-top-color: #e0d6b2 !important;
+}
+
+#header-main .yamm h3 i,
+	#header-main .yamm-fw .dropdown-menu li a:before {
+	color: #e0d6b2;
+}
+
+#header-main .navbar-nav > li > a:hover .arrow-up {
+	color:#e0d6b2;
+}
+
+#header-main .navbar-nav > li > a.active .arrow-up {
+	color:#e0d6b2;
+}
+
+.ss2-content i {
+	color: #e0d6b2;
+}
+
+.ss-bg-color {
+	background:#e0d6b2 !important;
+}
+
+.button:hover {
+	background: #e0d6b2 !important;
+}
+
+
+.button.color2 {
+	background: #e0d6b2;
+}
+
+
+.button.color5 {
+	background: #e0d6b2;
+}
+
+.button.btn-border.color2 {
+	border-color: #e0d6b2;
+	color: #e0d6b2;
+}
+
+.cta-clr {
+	background:#e0d6b2;
+}
+
+.button.btn-border.color2:hover {
+	background: #e0d6b2 !important;
+}
+
+.button.one {
+	background: #e0d6b2;
+}
+
+.small-sep {
+	background: #e0d6b2;
+}
+
+.progress-line {
+	background-color: #e0d6b2;
+}
+
+.page_header h3 span {
+    background: #e0d6b2;
+}
+
+#accordion.panel-group .panel.active .panel-title a span {
+	background: #e0d6b2;
+}
+
+.block-heading h3 {
+	background: #e0d6b2;
+}
+
+.feature-box .feature-box-icon {
+	color: #e0d6b2;
+}
+
+.feature-box2 .feature-box-icon {
+	background:#e0d6b2;
+}
+
+.domain-box.db-dark {
+	background:#d1c598;
+}
+
+.plan-price {
+	background: #e0d6b2;
+	background: -moz-linear-gradient(-45deg,  #e0d6b2 0%, #e0d6b2 85%, #d1c598 86%, #d1c598 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e0d6b2), color-stop(85%,#e0d6b2), color-stop(86%,#d1c598), color-stop(100%,#d1c598));
+	background: -webkit-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	background: -o-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	background: -ms-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	background: linear-gradient(135deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0d6b2', endColorstr='#d1c598',GradientType=1 );
+}
+
+.pricing-table-s1 li i {
+	color: #e0d6b2;
+}
+
+.pricing-table2 thead tr th {
+	background: #e0d6b2;
+	background: -moz-linear-gradient(-45deg,  #e0d6b2 0%, #e0d6b2 85%, #d1c598 86%, #d1c598 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e0d6b2), color-stop(85%,#e0d6b2), color-stop(86%,#d1c598), color-stop(100%,#d1c598));
+	background: -webkit-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	background: -o-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	background: -ms-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	background: linear-gradient(135deg,  #e0d6b2 0%,#e0d6b2 85%,#d1c598 86%,#d1c598 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0d6b2', endColorstr='#d1c598',GradientType=1 );
+}
+
+.pricing-table3 ul li h3 {
+	background: #e0d6b2;
+}
+
+.search-container button {
+	background: #e0d6b2;
+}
+
+.cat-list li a:hover {
+	color: #e0d6b2;
+}
+
+
+.popular-desc h5 a:hover {
+	color: #e0d6b2;
+}
+
+.tag-list a:hover {
+	background:#e0d6b2;
+}
+
+.nav-tabs li.active::after {
+	background: #e0d6b2;
+}
+
+.nav-tabs li a span {
+	color: #e0d6b2;
+}
+
+#accordion-e3 .panel-title span.icon-check2 {
+	color: #e0d6b2;
+}
+
+.style1 {
+	border-left: 5px solid #e0d6b2;
+}
+
+.style1.blockquote-reverse {
+	border-right: 5px solid #e0d6b2;
+}
+
+.stats1-info i {
+	color: #e0d6b2;
+}
+
+.stats2-info h2 {
+	color: #e0d6b2;
+}
+
+.stats3-info i {
+	color: #e0d6b2;
+}
+
+.service-content span {
+	color: #e0d6b2;
+}
+
+.service-content:hover span {
+	background: #e0d6b2;
+}
+
+.service-content span:after {
+	background: #e0d6b2;
+}
+
+.service-content:hover span:after {
+	background: #e0d6b2;
+}
+
+.feature-content i {
+	background: #e0d6b2;
+	background: -moz-linear-gradient(-45deg,  #e0d6b2 0%, #e0d6b2 49%, #d1c598 50%, #d1c598 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e0d6b2), color-stop(85%,#e0d6b2), color-stop(86%,#d1c598), color-stop(100%,#d1c598));
+	background: -webkit-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 49%,#d1c598 50%,#d1c598 100%);
+	background: -o-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 49%,#d1c598 50%,#d1c598 100%);
+	background: -ms-linear-gradient(-45deg,  #e0d6b2 0%,#e0d6b2 49%,#d1c598 50%,#d1c598 100%);
+	background: linear-gradient(135deg,  #e0d6b2 0%,#e0d6b2 49%,#d1c598 50%,#d1c598 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0d6b2', endColorstr='#d1c598',GradientType=1 );
+}
+
+h2.post-title a:hover {
+	color: #e0d6b2;
+}
+
+h2.post-title-small a:hover {
+	color: #e0d6b2;
+}
+
+.post-meta span {
+	color:#e0d6b2;
+}
+
+.post-meta span a {
+	color: #e0d6b2;
+}
+
+.page_nav a:hover {
+	background: #e0d6b2;
+}
+
+.info-home h3 em {
+	color: #e0d6b2;
+}
+
+.hover-zoom a:hover {
+	background: #e0d6b2;
+}
+
+.features-left i {
+	color: #e0d6b2;
+}
+
+.features-right i {
+	color: #e0d6b2;
+}
+
+.team-social li a:hover {
+	color:#e0d6b2 !important;
+}
+
+.pricing-table4 .title strong {
+	color: #e0d6b2;
+}
+
+
+.pricing-table4#popular h6 {
+	background: #e0d6b2;
+}
+
+.f-posts li h5 a:hover {
+	color: #e0d6b2;
+}
+
+.reply:hover {
+	color: #e0d6b2 !important;
+	border: 2px solid #e0d6b2;
+}
+
+#portfolio-home.folio-boxed-2col .project-info h2:hover ,
+#portfolio-home.folio-boxed-3col .project-info h2:hover ,
+#portfolio-home.folio-boxed-4col .project-info h2:hover {
+	color: #e0d6b2;
+}
+
+#accordion-career .panel-default > .panel-heading {
+	border-left: 1px solid #e0d6b2;
+}
+
+.feature-list li i {
+	color: #e0d6b2;
+}
+
+.countdown.styled div span {
+	background: #e0d6b2;
+}
+
+.list-style1 li i {
+	color: #e0d6b2;
+}
+
+.cs-wrap .chart-color2 span {
+	color: #e0d6b2;
+}
+
+.progress-bar-success {
+	background: #e0d6b2 !important;
+}
+
+.nav-tabs li i {
+	color: #e0d6b2;
+}
+
+.product-categories li a:hover {
+	color: #e0d6b2;
+}
+
+.product-post-info h5 a:hover {
+color:#e0d6b2;
+}
+
+.product-size a.active ,
+.product-size a:hover {
+	color: #e0d6b2;
+	border: 1px solid #e0d6b2;
+}
+
+.cart-table tbody tr td  a:hover {
+	color: #e0d6b2;
+}
+
+.higlight {
+	color: #e0d6b2;
+}
+
+#about-section2 .about-box .about-post a:hover,
+#about-section2 .about-box .about-post a.active {
+	background: #e0d6b2;
+}
+
+#about-section2 .content-tab .tab-cont h2 {
+	color: #e0d6b2;
+}
+
+.date-meta {
+    background: #e0d6b2 ;
+}
+
+#team2 .text-center .team-social a:hover {
+color:#e0d6b2;
+}
+
+.highlight {
+	color:#e0d6b2 !important;
+}
+
+#one-res .highlight3 {
+	color:#e0d6b2;
+}
+
+.highlight4 {
+	color:#e0d6b2 !important;
+}
+
+#one-res .project-info h2 span {
+	color:#e0d6b2;
+}
+
+.sc-trigger span {
+background: #e0d6b2;
+}
+
+.ss-trigger i:hover {
+	color:#e0d6b2;
+}
+
+.cart-info {
+    border-top: 4px solid #e0d6b2;
+}
+
+.ci-item-info h5 a:hover {
+	color: #e0d6b2;
+}
+
+.cart-btn a {
+	background: #e0d6b2;
+}
+
+.ssc-inner form input {
+	border-bottom:4px solid #e0d6b2;
+}
+
+.head-w-ul span {
+	border-bottom:4px solid #e0d6b2;
+	color:#e0d6b2;
+}
+
+.dm-wrap span{
+	background:#e0d6b2;
+}
+
+.volunter-info .button {
+	background:#e0d6b2;
+}
+
+.rating > span {
+   color: #e0d6b2;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   color: #e0d6b2;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+	color:#e0d6b2 !important;
+}
+
+.book-doctor {
+    background: #e0d6b2;
+}
+
+.domain-box {
+	background:#e0d6b2;
+}
+
+ul.tld_list .number {
+	background:#e0d6b2;
+}

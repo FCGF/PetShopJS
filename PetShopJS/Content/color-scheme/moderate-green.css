@@ -1,0 +1,430 @@
+a {
+	color: #8dc73f;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background: #8dc73f !important;
+}
+
+a:hover {
+	color: #8dc73f;
+}
+
+#header-main .dropdown-menu li a:hover {
+	color: #8dc73f !important;
+}
+
+#header-main .yamm-fw .dropdown-menu li a:hover {
+	color: #8dc73f !important;
+}
+
+#header-main .navbar-nav > li > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a,
+	#header-main .navbar-default .navbar-nav > .open > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a:focus {
+	color: #8dc73f !important;
+}
+
+#header-main .dropdown-menu,
+	#header-main .yamm .dropdown.yamm-fw .dropdown-menu {
+	border-top-color: #8dc73f !important;
+}
+
+#header-main .yamm h3 i,
+	#header-main .yamm-fw .dropdown-menu li a:before {
+	color: #8dc73f;
+}
+
+#header-main .navbar-nav > li > a:hover .arrow-up {
+	color:#8DC73F;
+}
+
+#header-main .navbar-nav > li > a.active .arrow-up {
+	color:#8DC73F;
+}
+
+.ss2-content i {
+	color: #8dc73f;
+}
+
+.ss-bg-color {
+	background:#8dc73f !important;
+}
+
+.button:hover {
+	background: #8dc73f !important;
+}
+
+
+.button.color2 {
+	background: #8dc73f;
+}
+
+
+.button.color5 {
+	background: #8dc73f;
+}
+
+.button.btn-border.color2 {
+	border-color: #8dc73f;
+	color: #8dc73f;
+}
+
+.cta-clr {
+	background:#8dc73f;
+}
+
+.button.btn-border.color2:hover {
+	background: #8dc73f !important;
+}
+
+.button.one {
+	background: #8dc73f;
+}
+
+.small-sep {
+	background: #8dc73f;
+}
+
+.progress-line {
+	background-color: #8dc73f;
+}
+
+.page_header h3 span {
+    background: #8dc73f;
+}
+
+#accordion.panel-group .panel.active .panel-title a span {
+	background: #8dc73f;
+}
+
+.block-heading h3 {
+	background: #8DC73F;
+}
+
+.feature-box .feature-box-icon {
+	color: #8dc73f;
+}
+
+.feature-box2 .feature-box-icon {
+	background:#8dc73f;
+}
+
+.domain-box.db-dark {
+	background:#7eb534;
+}
+
+.plan-price {
+	background: #8dc73f;
+	background: -moz-linear-gradient(-45deg,  #8dc73f 0%, #8dc73f 85%, #7aad36 86%, #7aad36 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#8dc73f), color-stop(85%,#8dc73f), color-stop(86%,#7aad36), color-stop(100%,#7aad36));
+	background: -webkit-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	background: -o-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	background: -ms-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	background: linear-gradient(135deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8dc73f', endColorstr='#7aad36',GradientType=1 );
+}
+
+.pricing-table-s1 li i {
+	color: #8dc73f;
+}
+
+.pricing-table2 thead tr th {
+	background: #8dc73f;
+	background: -moz-linear-gradient(-45deg,  #8dc73f 0%, #8dc73f 85%, #7aad36 86%, #7aad36 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#8dc73f), color-stop(85%,#8dc73f), color-stop(86%,#7aad36), color-stop(100%,#7aad36));
+	background: -webkit-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	background: -o-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	background: -ms-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	background: linear-gradient(135deg,  #8dc73f 0%,#8dc73f 85%,#7aad36 86%,#7aad36 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8dc73f', endColorstr='#7aad36',GradientType=1 );
+}
+
+.pricing-table3 ul li h3 {
+	background: #8dc73f;
+}
+
+.search-container button {
+	background: #8dc73f;
+}
+
+.cat-list li a:hover {
+	color: #8dc73f;
+}
+
+
+.popular-desc h5 a:hover {
+	color: #8dc73f;
+}
+
+.tag-list a:hover {
+	background:#8dc73f;
+}
+
+.nav-tabs li.active::after {
+	background: #8dc73f;
+}
+
+.nav-tabs li a span {
+	color: #8dc73f;
+}
+
+#accordion-e3 .panel-title span.icon-check2 {
+	color: #8dc73f;
+}
+
+.style1 {
+	border-left: 5px solid #8dc73f;
+}
+
+.style1.blockquote-reverse {
+	border-right: 5px solid #8dc73f;
+}
+
+.stats1-info i {
+	color: #8dc73f;
+}
+
+.stats2-info h2 {
+	color: #8dc73f;
+}
+
+.stats3-info i {
+	color: #8dc73f;
+}
+
+.service-content span {
+	color: #8dc73f;
+}
+
+.service-content:hover span {
+	background: #8dc73f;
+}
+
+.service-content span:after {
+	background: #8dc73f;
+}
+
+.service-content:hover span:after {
+	background: #8dc73f;
+}
+
+.feature-content i {
+	background: #8dc73f;
+	background: -moz-linear-gradient(-45deg,  #8dc73f 0%, #8dc73f 49%, #7aad36 50%, #7aad36 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#8dc73f), color-stop(85%,#8dc73f), color-stop(86%,#7aad36), color-stop(100%,#7aad36));
+	background: -webkit-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 49%,#7aad36 50%,#7aad36 100%);
+	background: -o-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 49%,#7aad36 50%,#7aad36 100%);
+	background: -ms-linear-gradient(-45deg,  #8dc73f 0%,#8dc73f 49%,#7aad36 50%,#7aad36 100%);
+	background: linear-gradient(135deg,  #8dc73f 0%,#8dc73f 49%,#7aad36 50%,#7aad36 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8dc73f', endColorstr='#7aad36',GradientType=1 );
+}
+
+h2.post-title a:hover {
+	color: #8dc73f;
+}
+
+h2.post-title-small a:hover {
+	color: #8dc73f;
+}
+
+.post-meta span {
+	color:#8dc73f;
+}
+
+.post-meta span a {
+	color: #8dc73f;
+}
+
+.page_nav a:hover {
+	background: #8dc73f;
+}
+
+.info-home h3 em {
+	color: #8dc73f;
+}
+
+.hover-zoom a:hover {
+	background: #8dc73f;
+}
+
+.features-left i {
+	color: #8dc73f;
+}
+
+.features-right i {
+	color: #8dc73f;
+}
+
+.team-social li a:hover {
+	color:#8dc73f !important;
+}
+
+.pricing-table4 .title strong {
+	color: #8dc73f;
+}
+
+
+.pricing-table4#popular h6 {
+	background: #8dc73f;
+}
+
+.f-posts li h5 a:hover {
+	color: #8dc73f;
+}
+
+.reply:hover {
+	color: #8dc73f !important;
+	border: 2px solid #8dc73f;
+}
+
+#portfolio-home.folio-boxed-2col .project-info h2:hover ,
+#portfolio-home.folio-boxed-3col .project-info h2:hover ,
+#portfolio-home.folio-boxed-4col .project-info h2:hover {
+	color: #8dc73f;
+}
+
+#accordion-career .panel-default > .panel-heading {
+	border-left: 1px solid #8dc73f;
+}
+
+.feature-list li i {
+	color: #8dc73f;
+}
+
+.countdown.styled div span {
+	background: #8dc73f;
+}
+
+.list-style1 li i {
+	color: #8dc73f;
+}
+
+.cs-wrap .chart-color2 span {
+	color: #8dc73f;
+}
+
+.progress-bar-success {
+	background: #8dc73f !important;
+}
+
+.nav-tabs li i {
+	color: #8dc73f;
+}
+
+.product-categories li a:hover {
+	color: #8dc73f;
+}
+
+.product-post-info h5 a:hover {
+color:#8dc73f;
+}
+
+.product-size a.active ,
+.product-size a:hover {
+	color: #8dc73f;
+	border: 1px solid #8dc73f;
+}
+
+.cart-table tbody tr td  a:hover {
+	color: #8dc73f;
+}
+
+.higlight {
+	color: #8dc73f;
+}
+
+#about-section2 .about-box .about-post a:hover,
+#about-section2 .about-box .about-post a.active {
+	background: #8dc73f;
+}
+
+#about-section2 .content-tab .tab-cont h2 {
+	color: #8dc73f;
+}
+
+.date-meta {
+    background: #8dc73f ;
+}
+
+#team2 .text-center .team-social a:hover {
+color:#8dc73f;
+}
+
+.highlight {
+	color:#8dc73f !important;
+}
+
+#one-res .highlight3 {
+	color:#8dc73f;
+}
+
+.highlight4 {
+	color:#8dc73f !important;
+}
+
+#one-res .project-info h2 span {
+	color:#8dc73f;
+}
+
+.sc-trigger span {
+background: #8dc73f;
+}
+
+.ss-trigger i:hover {
+	color:#8dc73f;
+}
+
+.cart-info {
+    border-top: 4px solid #8dc73f;
+}
+
+.ci-item-info h5 a:hover {
+	color: #8dc73f;
+}
+
+.cart-btn a {
+	background: #8dc73f;
+}
+
+.ssc-inner form input {
+	border-bottom:4px solid #8dc73f;
+}
+
+.head-w-ul span {
+	border-bottom:4px solid #8dc73f;
+	color:#8dc73f;
+}
+
+.dm-wrap span{
+	background:#8dc73f;
+}
+
+.volunter-info .button {
+	background:#8dc73f;
+}
+
+.rating > span {
+   color: #8dc73f;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   color: #8dc73f;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+	color:#8DC73F !important;
+}
+
+.book-doctor {
+    background: #8DC73F;
+}
+
+.domain-box {
+	background:#8DC73F;
+}
+
+ul.tld_list .number {
+	background:#8DC73F;
+}

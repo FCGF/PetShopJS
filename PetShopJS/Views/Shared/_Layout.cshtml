@@ -1,19 +1,24 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - PetShopJS</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800" rel="stylesheet" type="text/css">
+
     <script type="text/javascript">
         var appInsights = window.appInsights ||
-            function(config) {
+            function (config) {
                 function r(config) {
-                    t[config] = function() {
+                    t[config] = function () {
                         var i = arguments;
-                        t.queue.push(function() { t[config].apply(t, i) })
+                        t.queue.push(function () { t[config].apply(t, i) })
                     }
                 }
 
@@ -25,7 +30,7 @@
                 ) r("track" + i.pop());
                 return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"),
                     config.disableExceptionTracking ||
-                    (i = "onerror", r("_" + i), f = e[i], e[i] = function(config, r, u, e, o) {
+                    (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) {
                         var s = f && f(config, r, u, e, o);
                         return s !== !0 && t["_" + i](config, r, u, e, o), s
                     }), t
@@ -36,51 +41,274 @@
         window.appInsights = appInsights;
         appInsights.trackPageView();
     </script>
-</head>
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("PetShopJS", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                <li>@Html.ActionLink("Administrativo", "Index", "Administrativo")</li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>@Html.ActionLink("WebMail", "Index", "Contato")</li>
-            </ul>
-            @Html.Partial("_LoginPartial")
-        </div>
-    </div>
-</div>
-<div class="container body-content">
-    @RenderBody()
-    <br/>
-    <footer>
-        <p>&copy; @DateTime.Now.Year - PetShopJS</p>
-    </footer>
-</div>
+    <style>
+        .button {
+            font-family: arial;
+        }
 
-<div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" style="max-width: 80%; margin: 10% auto;" role="form">
-        <div class="modal-content" style="padding: 10px;">
-            <div class="modal-body" id="modal-body">
-                <div id="modalContent"></div>
+        .otheritem {
+            max-width: 100% !important;
+            background: #004097;
+            padding: 20px;
+            margin: 0 auto;
+            clear: both;
+            overflow: hidden;
+        }
+
+        .noMargin {
+            margin: 0 !important;
+        }
+
+        .noborder {
+            border: 0 !important;
+        }
+
+        .otheritem ul {
+            border-top: 0px;
+        }
+
+            .otheritem ul li {
+                margin: 0px 40px 0 0;
+                overflow: inherit;
+                float: left;
+            }
+
+                .otheritem ul li img {
+                    max-width: 100%;
+                    height: auto;
+                    margin: 0;
+                    padding: 0;
+                    display: block;
+                    border: 1px solid #235BA9;
+                }
+
+        ul.fivecol li {
+            width: 100%;
+            float: left;
+        }
+
+        .fivecol {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body id="header6">
+    <div id="page-top"></div>
+    <div class="outer-wrapper">
+        <div class="header-wrap">
+            <header id="header-main">
+                <div class="container">
+                    <div class="navbar yamm navbar-default">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="@Url.Action("Index", "Home")" title="PetShopJS" class="navbar-brand">
+                                    <img alt="PetShopJS" src="@Url.Content("~/images/basic/logo.png")" width="40">
+                                </a>
+                                @*Html.ActionLink("~/images/basic/logo.png", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                            </div>
+
+                            <div class="header-x pull-right">
+                                <div class="s-search">
+                                    <div class="ss-trigger">
+                                        <i class="icon-search2"></i>
+                                    </div>
+                                    <div class="ss-content">
+                                        <span class="ss-close icon-cross2"></span>
+                                        <div class="ssc-inner">
+                                            <form>
+                                                <input type="text" placeholder="Type Search text here...">
+                                                <button type="submit"><i class="icon-search2"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="navbar-collapse-1" class="navbar-collapse collapse navbar-right">
+                                <ul class="nav navbar-nav">
+                                    <li>@Html.ActionLink("Sobre", "About", "Home", null, new { @class = "page-scroll" })</li>
+                                    <li>@Html.ActionLink("Contato", "Contact", "Home", null, new { @class = "page-scroll" })</li>
+                                    <li>@Html.ActionLink("Administrativo", "Index", "Administrativo", null, new { @class = "page-scroll" })</li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>@Html.ActionLink("WebMail", "Index", "Contato", null, new { @class = "page-scroll" })</li>
+                                </ul>
+                                @Html.Partial("_LoginPartial")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="body-content">
+            @RenderBody()
+            <br />
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4 class="space30">About us</h4>
+                            <img src="~/images/basic/logo-ico.png" class="img-responsive space20" width="262" alt="" />
+                            <p>Lorem ipsum dolor sit amet consec tetur elit vel quam ligula. Duis vel pulvinar diam in lacus non nisl commodo convallis.</p>
+                            <p>Phasellus rutrum urna ut nibh congue, ut vehicula nibh ultricies.</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="space30">Recent Posts</h4>
+                            <ul class="f-posts">
+                                <li>
+                                    <img src="~/images/blog/1.jpg" class="img-responsive" alt="" />
+                                    <h5><a href="#">Lorem ipsum post title</a></h5>
+                                    <p>
+                                        <i class="fa fa-comments"></i> 5 Comments
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="~/images/blog/2.jpg" class="img-responsive" alt="" />
+                                    <h5><a href="#">Lorem ipsum post title</a></h5>
+                                    <p>
+                                        <i class="fa fa-comments"></i> 5 Comments
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="~/images/blog/3.jpg" class="img-responsive" alt="" />
+                                    <h5><a href="#">Lorem ipsum post title</a></h5>
+                                    <p>
+                                        <i class="fa fa-comments"></i> 5 Comments
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="~/images/blog/4.jpg" class="img-responsive" alt="" />
+                                    <h5><a href="#">Lorem ipsum post title</a></h5>
+                                    <p>
+                                        <i class="fa fa-comments"></i> 5 Comments
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="space30">Contact</h4>
+                            <ul class="c-info">
+                                <li>
+                                    <i class="fa fa-map-marker"></i> 72 Wall street Rd<br>Some county<br>Newyork 20001
+                                </li>
+                                <li>
+                                </li>
+                                <li><i class="fa fa-phone"></i> (012) 345 5678 910</li>
+                                <li><i class="fa fa-envelope-o"></i> petshopjds@gmail.com</li>
+                                <li><i class="fa fa-skype"></i> myskypeid</li>
+                            </ul>
+                            <div class="clearfix space10"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="space30">Flickr</h4>
+                            <ul id="flickr" class="thumbs"></ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p>&copy; @DateTime.Now.Year - PetShopJS</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="f-social pull-right">
+                                <a class="fa fa-twitter" href="#"></a>
+                                <a class="fa fa-facebook" href="#"></a>
+                                <a class="fa fa-linkedin" href="#"></a>
+                                <a class="fa fa-dribbble" href="#"></a>
+                                <a class="fa fa-google-plus" href="#"></a>
+                                <a class="fa fa-skype" href="#"></a>
+                                <a class="fa fa-behance" href="#"></a>
+                                <a class="fa fa-stumbleupon" href="#"></a>
+                                <a class="fa fa-rss" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-@RenderSection("scripts", required: false)
+    <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" style="max-width: 80%; margin: 10% auto;" role="form">
+            <div class="modal-content" style="padding: 10px;">
+                <div class="modal-body" id="modal-body">
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-settings-panel">
+        <div class="settings-section">
+            <span>
+                Boxed
+            </span>
+            <div class="b-switch">
+                <div class="switch-handle"></div>
+            </div>
+            <span>
+                Wide
+            </span>
+        </div>
+        <hr class="dashed" style="margin: 15px 0px;">
+        <h5>Main Background</h5>
+        <div class="settings-section bg-list">
+            <div class="bg-pattern1"></div>
+            <div class="bg-pattern2"></div>
+            <div class="bg-pattern6"></div>
+            <div class="bg-pattern10"></div>
+            <div class="bg-pattern16"></div>
+            <div class="bg-pattern4"></div>
+            <div class="bg-pattern5"></div>
+            <div class="bg-pattern7"></div>
+            <div class="bg-pattern9"></div>
+            <div class="bg-pattern11"></div>
+            <div class="bg-pattern12"></div>
+            <div class="bg-pattern13"></div>
+            <div class="bg-pattern17"></div>
+            <div class="bg-pattern8"></div>
+            <div class="bg-pattern14"></div>
+            <div class="bg-pattern15"></div>
+            <div class="bg-pattern3"></div>
+            <div class="bg-pattern18"></div>
+        </div>
+        <hr class="dashed" style="margin: 15px 0px;">
+        <h5>Color Scheme</h5>
+        <div class="settings-section color-list">
+            <div data-src="css/color-scheme/moderate-green.css" style="background: #8ec249"></div>
+            <div data-src="css/color-scheme/vivid-blue.css" style="background: #228dff"></div>
+            <div data-src="css/color-scheme/orange.css" style="background: #fa6900"></div>
+            <div data-src="css/color-scheme/brown.css" style="background: #a68c69"></div>
+            <div data-src="css/color-scheme/yellow.css" style="background: #fabe28"></div>
+            <div data-src="css/color-scheme/violet.css" style="background: #ba01ff"></div>
+            <div data-src="css/color-scheme/strong-cyan.css" style="background: #00b9bd"></div>
+            <div data-src="css/color-scheme/soft-cyan.css" style="background: #4bd5ea"></div>
+            <div data-src="css/color-scheme/red.css" style="background: #ff0104"></div>
+            <div data-src="css/color-scheme/lite-brown.css" style="background: #f3a76d"></div>
+            <div data-src="css/color-scheme/lime-green.css" style="background: #3bdbad"></div>
+            <div data-src="css/color-scheme/light-voilet.css" style="background: #aaa5ff"></div>
+            <div data-src="css/color-scheme/gray-green.css" style="background: #697060"></div>
+            <div data-src="css/color-scheme/gray-cyan.css" style="background: #aeced2"></div>
+            <div data-src="css/color-scheme/de-green.css" style="background: #b6cd71"></div>
+            <div data-src="css/color-scheme/cream.css" style="background: #e0d6b2"></div>
+
+        </div>
+        <div class="btn-settings"></div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
