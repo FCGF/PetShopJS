@@ -1,0 +1,430 @@
+a {
+	color: #006bb7;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background: #006bb7 !important;
+}
+
+a:hover {
+	color: #006bb7;
+}
+
+#header-main .dropdown-menu li a:hover {
+	color: #006bb7 !important;
+}
+
+#header-main .yamm-fw .dropdown-menu li a:hover {
+	color: #006bb7 !important;
+}
+
+#header-main .navbar-nav > li > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a,
+	#header-main .navbar-default .navbar-nav > .open > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a:focus {
+	color: #006bb7 !important;
+}
+
+#header-main .dropdown-menu,
+	#header-main .yamm .dropdown.yamm-fw .dropdown-menu {
+	border-top-color: #006bb7 !important;
+}
+
+#header-main .yamm h3 i,
+	#header-main .yamm-fw .dropdown-menu li a:before {
+	color: #006bb7;
+}
+
+#header-main .navbar-nav > li > a:hover .arrow-up {
+	color:#006bb7;
+}
+
+#header-main .navbar-nav > li > a.active .arrow-up {
+	color:#006bb7;
+}
+
+.ss2-content i {
+	color: #006bb7;
+}
+
+.ss-bg-color {
+	background:#006bb7 !important;
+}
+
+.button:hover {
+	background: #006bb7 !important;
+}
+
+
+.button.color2 {
+	background: #006bb7;
+}
+
+
+.button.color5 {
+	background: #006bb7;
+}
+
+.button.btn-border.color2 {
+	border-color: #006bb7;
+	color: #006bb7;
+}
+
+.cta-clr {
+	background:#006bb7;
+}
+
+.button.btn-border.color2:hover {
+	background: #006bb7 !important;
+}
+
+.button.one {
+	background: #006bb7;
+}
+
+.small-sep {
+	background: #006bb7;
+}
+
+.progress-line {
+	background-color: #006bb7;
+}
+
+.page_header h3 span {
+    background: #006bb7;
+}
+
+#accordion.panel-group .panel.active .panel-title a span {
+	background: #006bb7;
+}
+
+.block-heading h3 {
+	background: #006bb7;
+}
+
+.feature-box .feature-box-icon {
+	color: #006bb7;
+}
+
+.feature-box2 .feature-box-icon {
+	background:#006bb7;
+}
+
+.domain-box.db-dark {
+	background:#0279ce;
+}
+
+.plan-price {
+	background: #006bb7;
+	background: -moz-linear-gradient(-45deg,  #006bb7 0%, #006bb7 85%, #0279ce 86%, #0279ce 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#006bb7), color-stop(85%,#006bb7), color-stop(86%,#0279ce), color-stop(100%,#0279ce));
+	background: -webkit-linear-gradient(-45deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	background: -o-linear-gradient(-45deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	background: -ms-linear-gradient(-45deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	background: linear-gradient(135deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006bb7', endColorstr='#0279ce',GradientType=1 );
+}
+
+.pricing-table-s1 li i {
+	color: #006bb7;
+}
+
+.pricing-table2 thead tr th {
+	background: #006bb7;
+	background: -moz-linear-gradient(-45deg,  #006bb7 0%, #006bb7 85%, #0279ce 86%, #0279ce 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#006bb7), color-stop(85%,#006bb7), color-stop(86%,#0279ce), color-stop(100%,#0279ce));
+	background: -webkit-linear-gradient(-45deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	background: -o-linear-gradient(-45deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	background: -ms-linear-gradient(-45deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	background: linear-gradient(135deg,  #006bb7 0%,#006bb7 85%,#0279ce 86%,#0279ce 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006bb7', endColorstr='#0279ce',GradientType=1 );
+}
+
+.pricing-table3 ul li h3 {
+	background: #006bb7;
+}
+
+.search-container button {
+	background: #006bb7;
+}
+
+.cat-list li a:hover {
+	color: #006bb7;
+}
+
+
+.popular-desc h5 a:hover {
+	color: #006bb7;
+}
+
+.tag-list a:hover {
+	background:#006bb7;
+}
+
+.nav-tabs li.active::after {
+	background: #006bb7;
+}
+
+.nav-tabs li a span {
+	color: #006bb7;
+}
+
+#accordion-e3 .panel-title span.icon-check2 {
+	color: #006bb7;
+}
+
+.style1 {
+	border-left: 5px solid #006bb7;
+}
+
+.style1.blockquote-reverse {
+	border-right: 5px solid #006bb7;
+}
+
+.stats1-info i {
+	color: #006bb7;
+}
+
+.stats2-info h2 {
+	color: #006bb7;
+}
+
+.stats3-info i {
+	color: #006bb7;
+}
+
+.service-content span {
+	color: #006bb7;
+}
+
+.service-content:hover span {
+	background: #006bb7;
+}
+
+.service-content span:after {
+	background: #006bb7;
+}
+
+.service-content:hover span:after {
+	background: #006bb7;
+}
+
+.feature-content i {
+	background: #006bb7;
+	background: -moz-linear-gradient(-45deg,  #006bb7 0%, #006bb7 49%, #0279ce 50%, #0279ce 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#006bb7), color-stop(85%,#006bb7), color-stop(86%,#0279ce), color-stop(100%,#0279ce));
+	background: -webkit-linear-gradient(-45deg,  #006bb7 0%,#006bb7 49%,#0279ce 50%,#0279ce 100%);
+	background: -o-linear-gradient(-45deg,  #006bb7 0%,#006bb7 49%,#0279ce 50%,#0279ce 100%);
+	background: -ms-linear-gradient(-45deg,  #006bb7 0%,#006bb7 49%,#0279ce 50%,#0279ce 100%);
+	background: linear-gradient(135deg,  #006bb7 0%,#006bb7 49%,#0279ce 50%,#0279ce 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006bb7', endColorstr='#0279ce',GradientType=1 );
+}
+
+h2.post-title a:hover {
+	color: #006bb7;
+}
+
+h2.post-title-small a:hover {
+	color: #006bb7;
+}
+
+.post-meta span {
+	color:#006bb7;
+}
+
+.post-meta span a {
+	color: #006bb7;
+}
+
+.page_nav a:hover {
+	background: #006bb7;
+}
+
+.info-home h3 em {
+	color: #006bb7;
+}
+
+.hover-zoom a:hover {
+	background: #006bb7;
+}
+
+.features-left i {
+	color: #006bb7;
+}
+
+.features-right i {
+	color: #006bb7;
+}
+
+.team-social li a:hover {
+	color:#006bb7 !important;
+}
+
+.pricing-table4 .title strong {
+	color: #006bb7;
+}
+
+
+.pricing-table4#popular h6 {
+	background: #006bb7;
+}
+
+.f-posts li h5 a:hover {
+	color: #006bb7;
+}
+
+.reply:hover {
+	color: #006bb7 !important;
+	border: 2px solid #006bb7;
+}
+
+#portfolio-home.folio-boxed-2col .project-info h2:hover ,
+#portfolio-home.folio-boxed-3col .project-info h2:hover ,
+#portfolio-home.folio-boxed-4col .project-info h2:hover {
+	color: #006bb7;
+}
+
+#accordion-career .panel-default > .panel-heading {
+	border-left: 1px solid #006bb7;
+}
+
+.feature-list li i {
+	color: #006bb7;
+}
+
+.countdown.styled div span {
+	background: #006bb7;
+}
+
+.list-style1 li i {
+	color: #006bb7;
+}
+
+.cs-wrap .chart-color2 span {
+	color: #006bb7;
+}
+
+.progress-bar-success {
+	background: #006bb7 !important;
+}
+
+.nav-tabs li i {
+	color: #006bb7;
+}
+
+.product-categories li a:hover {
+	color: #006bb7;
+}
+
+.product-post-info h5 a:hover {
+color:#006bb7;
+}
+
+.product-size a.active ,
+.product-size a:hover {
+	color: #006bb7;
+	border: 1px solid #006bb7;
+}
+
+.cart-table tbody tr td  a:hover {
+	color: #006bb7;
+}
+
+.higlight {
+	color: #006bb7;
+}
+
+#about-section2 .about-box .about-post a:hover,
+#about-section2 .about-box .about-post a.active {
+	background: #006bb7;
+}
+
+#about-section2 .content-tab .tab-cont h2 {
+	color: #006bb7;
+}
+
+.date-meta {
+    background: #006bb7 ;
+}
+
+#team2 .text-center .team-social a:hover {
+color:#006bb7;
+}
+
+.highlight {
+	color:#006bb7 !important;
+}
+
+#one-res .highlight3 {
+	color:#006bb7;
+}
+
+.highlight4 {
+	color:#006bb7 !important;
+}
+
+#one-res .project-info h2 span {
+	color:#006bb7;
+}
+
+.sc-trigger span {
+background: #006bb7;
+}
+
+.ss-trigger i:hover {
+	color:#006bb7;
+}
+
+.cart-info {
+    border-top: 4px solid #006bb7;
+}
+
+.ci-item-info h5 a:hover {
+	color: #006bb7;
+}
+
+.cart-btn a {
+	background: #006bb7;
+}
+
+.ssc-inner form input {
+	border-bottom:4px solid #006bb7;
+}
+
+.head-w-ul span {
+	border-bottom:4px solid #006bb7;
+	color:#006bb7;
+}
+
+.dm-wrap span{
+	background:#006bb7;
+}
+
+.volunter-info .button {
+	background:#006bb7;
+}
+
+.rating > span {
+   color: #006bb7;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   color: #006bb7;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+	color:#006bb7 !important;
+}
+
+.book-doctor {
+    background: #006bb7;
+}
+
+.domain-box {
+	background:#006bb7;
+}
+
+ul.tld_list .number {
+	background:#006bb7;
+}

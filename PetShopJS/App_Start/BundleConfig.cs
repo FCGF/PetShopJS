@@ -32,16 +32,47 @@ namespace PetShopJS {
             var bootBundle = new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/javascripts/bootstrap.min.js",
                       "~/Scripts/jquery.bootgrid.min.js",
-                      "~/Scripts/respond.js");
+                      "~/Scripts/respond.js",
+                      "~/Scripts/menu.js",
+                      "~/Scripts/owl.carousel.js",
+                      "~/Scripts/rs-plugin/js/jquery.themepunch.tools.min.js",
+                      "~/Scripts/rs-plugin/js/jquery.themepunch.revolution.min.js",
+                      "~/Scripts/jquery.easing.min.js",
+                      "~/Scripts/isotope/isotope.pkgd.js",
+                      "~/Scripts/jflickrfeed.min.js",
+                      "~/Scripts/tweecool.js",
+                      "~/Scripts/flexslider/jquery.flexslider.js",
+                      "~/Scripts/jquery.easypiechart.min.js",
+                      "~/Scripts/jquery-ui.js",
+                      "~/Scripts/jquery.appear.js",
+                      "~/Scripts/jquery.inview.js",
+                      "~/Scripts/jquery.countdown.min.js",
+                      "~/Scripts/jquery.sticky.js",
+                      "~/Scripts/jquery.magnific-popup.min.js",
+                      "~/Scripts/main.js",
+                      "~/Scripts/gmaps/greyscale.js");
             bootBundle.Orderer = new AsIsBundleOrderer();
 
             var cssBundle = new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.min.css",
-                      "~/Content/jquery.bootgrid.min.css",
-                      "~/stylesheets/plugins/bootstrap-datepicker3.min.css",
-                      "~/Content/toastr.css",
-                      "~/Content/Site.css");
+                "~/Content/bootstrap.min.css",
+                "~/Content/jquery.bootgrid.min.css",
+                "~/stylesheets/plugins/bootstrap-datepicker3.min.css",
+                "~/Content/toastr.min.css",
+                "~/Content/Site.css",
+                "~/Content/owl.carousel.css",
+                "~/Content/owl.theme.css",
+                "~/Content/owl.transitions.css",
+                "~/Scripts/rs-plugin/css/settings.css",
+                "~/Scripts/flexslider/flexslider.css",
+                "~/Scripts/isotope/isotope.css",
+                "~/Content/jquery-ui.css",
+                "~/Content/magnific-popup.css",
+                "~/Content/style.css",
+                "~/Content/icomoon/style.css",
+                "~/Content/font-awesome.min.css",
+                "~/Content/color-scheme/default-black.css");
             cssBundle.Orderer = new AsIsBundleOrderer();
+
 
             bundles.Add(jqueryBundle);
             bundles.Add(valBundle);

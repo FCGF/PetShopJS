@@ -1,0 +1,430 @@
+a {
+	color: #aaa5ff;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background: #aaa5ff !important;
+}
+
+a:hover {
+	color: #aaa5ff;
+}
+
+#header-main .dropdown-menu li a:hover {
+	color: #aaa5ff !important;
+}
+
+#header-main .yamm-fw .dropdown-menu li a:hover {
+	color: #aaa5ff !important;
+}
+
+#header-main .navbar-nav > li > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a,
+	#header-main .navbar-default .navbar-nav > .open > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a:focus {
+	color: #aaa5ff !important;
+}
+
+#header-main .dropdown-menu,
+	#header-main .yamm .dropdown.yamm-fw .dropdown-menu {
+	border-top-color: #aaa5ff !important;
+}
+
+#header-main .yamm h3 i,
+	#header-main .yamm-fw .dropdown-menu li a:before {
+	color: #aaa5ff;
+}
+
+#header-main .navbar-nav > li > a:hover .arrow-up {
+	color:#aaa5ff;
+}
+
+#header-main .navbar-nav > li > a.active .arrow-up {
+	color:#aaa5ff;
+}
+
+.ss2-content i {
+	color: #aaa5ff;
+}
+
+.ss-bg-color {
+	background:#aaa5ff !important;
+}
+
+.button:hover {
+	background: #aaa5ff !important;
+}
+
+
+.button.color2 {
+	background: #aaa5ff;
+}
+
+
+.button.color5 {
+	background: #aaa5ff;
+}
+
+.button.btn-border.color2 {
+	border-color: #aaa5ff;
+	color: #aaa5ff;
+}
+
+.cta-clr {
+	background:#aaa5ff;
+}
+
+.button.btn-border.color2:hover {
+	background: #aaa5ff !important;
+}
+
+.button.one {
+	background: #aaa5ff;
+}
+
+.small-sep {
+	background: #aaa5ff;
+}
+
+.progress-line {
+	background-color: #aaa5ff;
+}
+
+.page_header h3 span {
+    background: #aaa5ff;
+}
+
+#accordion.panel-group .panel.active .panel-title a span {
+	background: #aaa5ff;
+}
+
+.block-heading h3 {
+	background: #aaa5ff;
+}
+
+.feature-box .feature-box-icon {
+	color: #aaa5ff;
+}
+
+.feature-box2 .feature-box-icon {
+	background:#aaa5ff;
+}
+
+.domain-box.db-dark {
+	background:#918ceb;
+}
+
+.plan-price {
+	background: #aaa5ff;
+	background: -moz-linear-gradient(-45deg,  #aaa5ff 0%, #aaa5ff 85%, #918ceb 86%, #918ceb 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#aaa5ff), color-stop(85%,#aaa5ff), color-stop(86%,#918ceb), color-stop(100%,#918ceb));
+	background: -webkit-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	background: -o-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	background: -ms-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	background: linear-gradient(135deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaa5ff', endColorstr='#918ceb',GradientType=1 );
+}
+
+.pricing-table-s1 li i {
+	color: #aaa5ff;
+}
+
+.pricing-table2 thead tr th {
+	background: #aaa5ff;
+	background: -moz-linear-gradient(-45deg,  #aaa5ff 0%, #aaa5ff 85%, #918ceb 86%, #918ceb 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#aaa5ff), color-stop(85%,#aaa5ff), color-stop(86%,#918ceb), color-stop(100%,#918ceb));
+	background: -webkit-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	background: -o-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	background: -ms-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	background: linear-gradient(135deg,  #aaa5ff 0%,#aaa5ff 85%,#918ceb 86%,#918ceb 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaa5ff', endColorstr='#918ceb',GradientType=1 );
+}
+
+.pricing-table3 ul li h3 {
+	background: #aaa5ff;
+}
+
+.search-container button {
+	background: #aaa5ff;
+}
+
+.cat-list li a:hover {
+	color: #aaa5ff;
+}
+
+
+.popular-desc h5 a:hover {
+	color: #aaa5ff;
+}
+
+.tag-list a:hover {
+	background:#aaa5ff;
+}
+
+.nav-tabs li.active::after {
+	background: #aaa5ff;
+}
+
+.nav-tabs li a span {
+	color: #aaa5ff;
+}
+
+#accordion-e3 .panel-title span.icon-check2 {
+	color: #aaa5ff;
+}
+
+.style1 {
+	border-left: 5px solid #aaa5ff;
+}
+
+.style1.blockquote-reverse {
+	border-right: 5px solid #aaa5ff;
+}
+
+.stats1-info i {
+	color: #aaa5ff;
+}
+
+.stats2-info h2 {
+	color: #aaa5ff;
+}
+
+.stats3-info i {
+	color: #aaa5ff;
+}
+
+.service-content span {
+	color: #aaa5ff;
+}
+
+.service-content:hover span {
+	background: #aaa5ff;
+}
+
+.service-content span:after {
+	background: #aaa5ff;
+}
+
+.service-content:hover span:after {
+	background: #aaa5ff;
+}
+
+.feature-content i {
+	background: #aaa5ff;
+	background: -moz-linear-gradient(-45deg,  #aaa5ff 0%, #aaa5ff 49%, #918ceb 50%, #918ceb 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#aaa5ff), color-stop(85%,#aaa5ff), color-stop(86%,#918ceb), color-stop(100%,#918ceb));
+	background: -webkit-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 49%,#918ceb 50%,#918ceb 100%);
+	background: -o-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 49%,#918ceb 50%,#918ceb 100%);
+	background: -ms-linear-gradient(-45deg,  #aaa5ff 0%,#aaa5ff 49%,#918ceb 50%,#918ceb 100%);
+	background: linear-gradient(135deg,  #aaa5ff 0%,#aaa5ff 49%,#918ceb 50%,#918ceb 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaa5ff', endColorstr='#918ceb',GradientType=1 );
+}
+
+h2.post-title a:hover {
+	color: #aaa5ff;
+}
+
+h2.post-title-small a:hover {
+	color: #aaa5ff;
+}
+
+.post-meta span {
+	color:#aaa5ff;
+}
+
+.post-meta span a {
+	color: #aaa5ff;
+}
+
+.page_nav a:hover {
+	background: #aaa5ff;
+}
+
+.info-home h3 em {
+	color: #aaa5ff;
+}
+
+.hover-zoom a:hover {
+	background: #aaa5ff;
+}
+
+.features-left i {
+	color: #aaa5ff;
+}
+
+.features-right i {
+	color: #aaa5ff;
+}
+
+.team-social li a:hover {
+	color:#aaa5ff !important;
+}
+
+.pricing-table4 .title strong {
+	color: #aaa5ff;
+}
+
+
+.pricing-table4#popular h6 {
+	background: #aaa5ff;
+}
+
+.f-posts li h5 a:hover {
+	color: #aaa5ff;
+}
+
+.reply:hover {
+	color: #aaa5ff !important;
+	border: 2px solid #aaa5ff;
+}
+
+#portfolio-home.folio-boxed-2col .project-info h2:hover ,
+#portfolio-home.folio-boxed-3col .project-info h2:hover ,
+#portfolio-home.folio-boxed-4col .project-info h2:hover {
+	color: #aaa5ff;
+}
+
+#accordion-career .panel-default > .panel-heading {
+	border-left: 1px solid #aaa5ff;
+}
+
+.feature-list li i {
+	color: #aaa5ff;
+}
+
+.countdown.styled div span {
+	background: #aaa5ff;
+}
+
+.list-style1 li i {
+	color: #aaa5ff;
+}
+
+.cs-wrap .chart-color2 span {
+	color: #aaa5ff;
+}
+
+.progress-bar-success {
+	background: #aaa5ff !important;
+}
+
+.nav-tabs li i {
+	color: #aaa5ff;
+}
+
+.product-categories li a:hover {
+	color: #aaa5ff;
+}
+
+.product-post-info h5 a:hover {
+color:#aaa5ff;
+}
+
+.product-size a.active ,
+.product-size a:hover {
+	color: #aaa5ff;
+	border: 1px solid #aaa5ff;
+}
+
+.cart-table tbody tr td  a:hover {
+	color: #aaa5ff;
+}
+
+.higlight {
+	color: #aaa5ff;
+}
+
+#about-section2 .about-box .about-post a:hover,
+#about-section2 .about-box .about-post a.active {
+	background: #aaa5ff;
+}
+
+#about-section2 .content-tab .tab-cont h2 {
+	color: #aaa5ff;
+}
+
+.date-meta {
+    background: #aaa5ff ;
+}
+
+#team2 .text-center .team-social a:hover {
+color:#aaa5ff;
+}
+
+.highlight {
+	color:#aaa5ff !important;
+}
+
+#one-res .highlight3 {
+	color:#aaa5ff;
+}
+
+.highlight4 {
+	color:#aaa5ff !important;
+}
+
+#one-res .project-info h2 span {
+	color:#aaa5ff;
+}
+
+.sc-trigger span {
+background: #aaa5ff;
+}
+
+.ss-trigger i:hover {
+	color:#aaa5ff;
+}
+
+.cart-info {
+    border-top: 4px solid #aaa5ff;
+}
+
+.ci-item-info h5 a:hover {
+	color: #aaa5ff;
+}
+
+.cart-btn a {
+	background: #aaa5ff;
+}
+
+.ssc-inner form input {
+	border-bottom:4px solid #aaa5ff;
+}
+
+.head-w-ul span {
+	border-bottom:4px solid #aaa5ff;
+	color:#aaa5ff;
+}
+
+.dm-wrap span{
+	background:#aaa5ff;
+}
+
+.volunter-info .button {
+	background:#aaa5ff;
+}
+
+.rating > span {
+   color: #aaa5ff;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   color: #aaa5ff;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+	color:#aaa5ff !important;
+}
+
+.book-doctor {
+    background: #aaa5ff;
+}
+
+.domain-box {
+	background:#aaa5ff;
+}
+
+ul.tld_list .number {
+	background:#aaa5ff;
+}

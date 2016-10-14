@@ -1,0 +1,430 @@
+a {
+	color: #aeced2;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background: #aeced2 !important;
+}
+
+a:hover {
+	color: #aeced2;
+}
+
+#header-main .dropdown-menu li a:hover {
+	color: #aeced2 !important;
+}
+
+#header-main .yamm-fw .dropdown-menu li a:hover {
+	color: #aeced2 !important;
+}
+
+#header-main .navbar-nav > li > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a,
+	#header-main .navbar-default .navbar-nav > .open > a:hover,
+	#header-main .navbar-default .navbar-nav > .open > a:focus {
+	color: #aeced2 !important;
+}
+
+#header-main .dropdown-menu,
+	#header-main .yamm .dropdown.yamm-fw .dropdown-menu {
+	border-top-color: #aeced2 !important;
+}
+
+#header-main .yamm h3 i,
+	#header-main .yamm-fw .dropdown-menu li a:before {
+	color: #aeced2;
+}
+
+#header-main .navbar-nav > li > a:hover .arrow-up {
+	color:#aeced2;
+}
+
+#header-main .navbar-nav > li > a.active .arrow-up {
+	color:#aeced2;
+}
+
+.ss2-content i {
+	color: #aeced2;
+}
+
+.ss-bg-color {
+	background:#aeced2 !important;
+}
+
+.button:hover {
+	background: #aeced2 !important;
+}
+
+
+.button.color2 {
+	background: #aeced2;
+}
+
+
+.button.color5 {
+	background: #aeced2;
+}
+
+.button.btn-border.color2 {
+	border-color: #aeced2;
+	color: #aeced2;
+}
+
+.cta-clr {
+	background:#aeced2;
+}
+
+.button.btn-border.color2:hover {
+	background: #aeced2 !important;
+}
+
+.button.one {
+	background: #aeced2;
+}
+
+.small-sep {
+	background: #aeced2;
+}
+
+.progress-line {
+	background-color: #aeced2;
+}
+
+.page_header h3 span {
+    background: #aeced2;
+}
+
+#accordion.panel-group .panel.active .panel-title a span {
+	background: #aeced2;
+}
+
+.block-heading h3 {
+	background: #aeced2;
+}
+
+.feature-box .feature-box-icon {
+	color: #aeced2;
+}
+
+.feature-box2 .feature-box-icon {
+	background:#aeced2;
+}
+
+.domain-box.db-dark {
+	background:#95bec3;
+}
+
+.plan-price {
+	background: #aeced2;
+	background: -moz-linear-gradient(-45deg,  #aeced2 0%, #aeced2 85%, #95bec3 86%, #95bec3 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#aeced2), color-stop(85%,#aeced2), color-stop(86%,#95bec3), color-stop(100%,#95bec3));
+	background: -webkit-linear-gradient(-45deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	background: -o-linear-gradient(-45deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	background: -ms-linear-gradient(-45deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	background: linear-gradient(135deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aeced2', endColorstr='#95bec3',GradientType=1 );
+}
+
+.pricing-table-s1 li i {
+	color: #aeced2;
+}
+
+.pricing-table2 thead tr th {
+	background: #aeced2;
+	background: -moz-linear-gradient(-45deg,  #aeced2 0%, #aeced2 85%, #95bec3 86%, #95bec3 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#aeced2), color-stop(85%,#aeced2), color-stop(86%,#95bec3), color-stop(100%,#95bec3));
+	background: -webkit-linear-gradient(-45deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	background: -o-linear-gradient(-45deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	background: -ms-linear-gradient(-45deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	background: linear-gradient(135deg,  #aeced2 0%,#aeced2 85%,#95bec3 86%,#95bec3 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aeced2', endColorstr='#95bec3',GradientType=1 );
+}
+
+.pricing-table3 ul li h3 {
+	background: #aeced2;
+}
+
+.search-container button {
+	background: #aeced2;
+}
+
+.cat-list li a:hover {
+	color: #aeced2;
+}
+
+
+.popular-desc h5 a:hover {
+	color: #aeced2;
+}
+
+.tag-list a:hover {
+	background:#aeced2;
+}
+
+.nav-tabs li.active::after {
+	background: #aeced2;
+}
+
+.nav-tabs li a span {
+	color: #aeced2;
+}
+
+#accordion-e3 .panel-title span.icon-check2 {
+	color: #aeced2;
+}
+
+.style1 {
+	border-left: 5px solid #aeced2;
+}
+
+.style1.blockquote-reverse {
+	border-right: 5px solid #aeced2;
+}
+
+.stats1-info i {
+	color: #aeced2;
+}
+
+.stats2-info h2 {
+	color: #aeced2;
+}
+
+.stats3-info i {
+	color: #aeced2;
+}
+
+.service-content span {
+	color: #aeced2;
+}
+
+.service-content:hover span {
+	background: #aeced2;
+}
+
+.service-content span:after {
+	background: #aeced2;
+}
+
+.service-content:hover span:after {
+	background: #aeced2;
+}
+
+.feature-content i {
+	background: #aeced2;
+	background: -moz-linear-gradient(-45deg,  #aeced2 0%, #aeced2 49%, #95bec3 50%, #95bec3 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#aeced2), color-stop(85%,#aeced2), color-stop(86%,#95bec3), color-stop(100%,#95bec3));
+	background: -webkit-linear-gradient(-45deg,  #aeced2 0%,#aeced2 49%,#95bec3 50%,#95bec3 100%);
+	background: -o-linear-gradient(-45deg,  #aeced2 0%,#aeced2 49%,#95bec3 50%,#95bec3 100%);
+	background: -ms-linear-gradient(-45deg,  #aeced2 0%,#aeced2 49%,#95bec3 50%,#95bec3 100%);
+	background: linear-gradient(135deg,  #aeced2 0%,#aeced2 49%,#95bec3 50%,#95bec3 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aeced2', endColorstr='#95bec3',GradientType=1 );
+}
+
+h2.post-title a:hover {
+	color: #aeced2;
+}
+
+h2.post-title-small a:hover {
+	color: #aeced2;
+}
+
+.post-meta span {
+	color:#aeced2;
+}
+
+.post-meta span a {
+	color: #aeced2;
+}
+
+.page_nav a:hover {
+	background: #aeced2;
+}
+
+.info-home h3 em {
+	color: #aeced2;
+}
+
+.hover-zoom a:hover {
+	background: #aeced2;
+}
+
+.features-left i {
+	color: #aeced2;
+}
+
+.features-right i {
+	color: #aeced2;
+}
+
+.team-social li a:hover {
+	color:#aeced2 !important;
+}
+
+.pricing-table4 .title strong {
+	color: #aeced2;
+}
+
+
+.pricing-table4#popular h6 {
+	background: #aeced2;
+}
+
+.f-posts li h5 a:hover {
+	color: #aeced2;
+}
+
+.reply:hover {
+	color: #aeced2 !important;
+	border: 2px solid #aeced2;
+}
+
+#portfolio-home.folio-boxed-2col .project-info h2:hover ,
+#portfolio-home.folio-boxed-3col .project-info h2:hover ,
+#portfolio-home.folio-boxed-4col .project-info h2:hover {
+	color: #aeced2;
+}
+
+#accordion-career .panel-default > .panel-heading {
+	border-left: 1px solid #aeced2;
+}
+
+.feature-list li i {
+	color: #aeced2;
+}
+
+.countdown.styled div span {
+	background: #aeced2;
+}
+
+.list-style1 li i {
+	color: #aeced2;
+}
+
+.cs-wrap .chart-color2 span {
+	color: #aeced2;
+}
+
+.progress-bar-success {
+	background: #aeced2 !important;
+}
+
+.nav-tabs li i {
+	color: #aeced2;
+}
+
+.product-categories li a:hover {
+	color: #aeced2;
+}
+
+.product-post-info h5 a:hover {
+color:#aeced2;
+}
+
+.product-size a.active ,
+.product-size a:hover {
+	color: #aeced2;
+	border: 1px solid #aeced2;
+}
+
+.cart-table tbody tr td  a:hover {
+	color: #aeced2;
+}
+
+.higlight {
+	color: #aeced2;
+}
+
+#about-section2 .about-box .about-post a:hover,
+#about-section2 .about-box .about-post a.active {
+	background: #aeced2;
+}
+
+#about-section2 .content-tab .tab-cont h2 {
+	color: #aeced2;
+}
+
+.date-meta {
+    background: #aeced2 ;
+}
+
+#team2 .text-center .team-social a:hover {
+color:#aeced2;
+}
+
+.highlight {
+	color:#aeced2 !important;
+}
+
+#one-res .highlight3 {
+	color:#aeced2;
+}
+
+.highlight4 {
+	color:#aeced2 !important;
+}
+
+#one-res .project-info h2 span {
+	color:#aeced2;
+}
+
+.sc-trigger span {
+background: #aeced2;
+}
+
+.ss-trigger i:hover {
+	color:#aeced2;
+}
+
+.cart-info {
+    border-top: 4px solid #aeced2;
+}
+
+.ci-item-info h5 a:hover {
+	color: #aeced2;
+}
+
+.cart-btn a {
+	background: #aeced2;
+}
+
+.ssc-inner form input {
+	border-bottom:4px solid #aeced2;
+}
+
+.head-w-ul span {
+	border-bottom:4px solid #aeced2;
+	color:#aeced2;
+}
+
+.dm-wrap span{
+	background:#aeced2;
+}
+
+.volunter-info .button {
+	background:#aeced2;
+}
+
+.rating > span {
+   color: #aeced2;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   color: #aeced2;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+	color:#aeced2 !important;
+}
+
+.book-doctor {
+    background: #aeced2;
+}
+
+.domain-box {
+	background:#aeced2;
+}
+
+ul.tld_list .number {
+	background:#aeced2;
+}
