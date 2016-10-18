@@ -12,85 +12,6 @@
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript">
-        var appInsights = window.appInsights ||
-            function (config) {
-                function r(config) {
-                    t[config] = function () {
-                        var i = arguments;
-                        t.queue.push(function () { t[config].apply(t, i) })
-                    }
-                }
-
-                var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
-                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0]
-                        .parentNode.appendChild(s), t.cookie = u
-                        .cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace", "Ajax"];
-                    i.length;
-                ) r("track" + i.pop());
-                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"),
-                    config.disableExceptionTracking ||
-                    (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) {
-                        var s = f && f(config, r, u, e, o);
-                        return s !== !0 && t["_" + i](config, r, u, e, o), s
-                    }), t
-            }({
-                instrumentationKey: "8a7916f4-1b06-490d-a57c-b676c4a5975f"
-            });
-
-        window.appInsights = appInsights;
-        appInsights.trackPageView();
-    </script>
-    <style>
-        .button {
-            font-family: arial;
-        }
-
-        .otheritem {
-            max-width: 100% !important;
-            background: #004097;
-            padding: 20px;
-            margin: 0 auto;
-            clear: both;
-            overflow: hidden;
-        }
-
-        .noMargin {
-            margin: 0 !important;
-        }
-
-        .noborder {
-            border: 0 !important;
-        }
-
-        .otheritem ul {
-            border-top: 0px;
-        }
-
-            .otheritem ul li {
-                margin: 0px 40px 0 0;
-                overflow: inherit;
-                float: left;
-            }
-
-                .otheritem ul li img {
-                    max-width: 100%;
-                    height: auto;
-                    margin: 0;
-                    padding: 0;
-                    display: block;
-                    border: 1px solid #235BA9;
-                }
-
-        ul.fivecol li {
-            width: 100%;
-            float: left;
-        }
-
-        .fivecol {
-            overflow: hidden;
-        }
-    </style>
 </head>
 <body id="header6">
     <div id="page-top"></div>
@@ -109,7 +30,6 @@
                                 <a href="@Url.Action("Index", "Home")" title="PetShopJS" class="navbar-brand">
                                     <img alt="PetShopJS" src="@Url.Content("~/images/basic/logo.png")" width="40">
                                 </a>
-                                @*Html.ActionLink("~/images/basic/logo.png", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
                             </div>
 
                             <div class="header-x pull-right">
@@ -153,9 +73,8 @@
                     <div class="row">
                         <div class="col-md-3">
                             <h4 class="space30">Sobre nós</h4>
-                            <img src="~/images/basic/logo-ico.png" class="img-responsive space20" width="262" alt="" />
-                            <p>Lorem ipsum dolor sit amet consec tetur elit vel quam ligula. Duis vel pulvinar diam in lacus non nisl commodo convallis.</p>
-                            <p>Phasellus rutrum urna ut nibh congue, ut vehicula nibh ultricies.</p>
+                            <a href="../Home/About"><img src="~/images/basic/logo-ico.png" class="img-responsive space20" width="177" alt="" /></a>
+                            <p>PetShopJs. O melhor da cidade</p>
                         </div>
                         <div class="col-md-3">
                             <h4 class="space30">Posts Recentes</h4>
@@ -168,7 +87,7 @@
                                     </p>
                                 </li>
                                 <li>
-                                    <img src="~/images/blog/2.jpg" class="img-responsive" alt="" />
+                                    <img src="~/images/blog/2.jpg" class="img-responsive" alt=""/>
                                     <h5><a href="#">Lorem ipsum post title</a></h5>
                                     <p>
                                         <i class="fa fa-comments"></i> 5 Comments
@@ -181,20 +100,13 @@
                                         <i class="fa fa-comments"></i> 5 Comments
                                     </p>
                                 </li>
-                                <li>
-                                    <img src="~/images/blog/4.jpg" class="img-responsive" alt="" />
-                                    <h5><a href="#">Lorem ipsum post title</a></h5>
-                                    <p>
-                                        <i class="fa fa-comments"></i> 5 Comments
-                                    </p>
-                                </li>
                             </ul>
                         </div>
                         <div class="col-md-3">
-                            <h4 class="space30">Contact</h4>
+                            <h4 class="space30">Contato</h4>
                             <ul class="c-info">
                                 <li>
-                                    <i class="fa fa-map-marker"></i> 72 Wall street Rd<br>Some county<br>Newyork 20001
+                                    <i class="fa fa-map-marker"></i> R. Marina Frutuoso, 720<br>Centro<br>Jaraguá do Sul SC
                                 </li>
                                 <li>
                                 </li>
@@ -249,17 +161,17 @@
     <div class="b-settings-panel">
         <div class="settings-section">
             <span>
-                Boxed
+                Caixa
             </span>
             <div class="b-switch">
                 <div class="switch-handle"></div>
             </div>
             <span>
-                Wide
+                Largo
             </span>
         </div>
         <hr class="dashed" style="margin: 15px 0px;">
-        <h5>Main Background</h5>
+        <h5>Plano de Fundo</h5>
         <div class="settings-section bg-list">
             <div class="bg-pattern1"></div>
             <div class="bg-pattern2"></div>
@@ -281,7 +193,7 @@
             <div class="bg-pattern18"></div>
         </div>
         <hr class="dashed" style="margin: 15px 0px;">
-        <h5>Color Scheme</h5>
+        <h5>Cor</h5>
         <div class="settings-section color-list">
             <div data-src="css/color-scheme/moderate-green.css" style="background: #8ec249"></div>
             <div data-src="css/color-scheme/vivid-blue.css" style="background: #228dff"></div>

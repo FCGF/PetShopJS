@@ -1,6 +1,8 @@
 ﻿using PetShopJS.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -9,6 +11,16 @@ namespace PetShopJS.Controllers {
     public class HomeController : Controller {
         private PetShopEntities db = new PetShopEntities();
         public ActionResult Index() {
+            string[] filePaths = Directory.GetFiles(Server.MapPath("~/images/slider/"));
+
+            IList<string> files = new List<string>();
+            foreach (string filePath in filePaths) {
+                string fileName = Path.GetFileName(filePath);
+                files.Add("../images/slider/" + fileName);
+            }
+
+            ViewBag.Files = files;
+
             return View();
         }
 

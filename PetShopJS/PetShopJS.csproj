@@ -408,7 +408,6 @@
     <Content Include="images\d4.jpg" />
     <Content Include="images\dummy.png" />
     <Content Include="images\footer-bg.png" />
-    <Content Include="images\lawyerdesk_220_65.png" />
     <Content Include="images\map.png" />
     <Content Include="images\other\1.jpg" />
     <Content Include="images\other\1.png" />
@@ -474,20 +473,16 @@
     <Content Include="images\quote\thumb\3.png" />
     <Content Include="images\quote\thumb\4.png" />
     <Content Include="images\ray_220_65.png" />
-    <Content Include="images\rica_220_65.png" />
-    <Content Include="images\rica_220_65_with_bg.png" />
     <Content Include="images\select_220_65.png" />
-    <Content Include="images\shop\1.jpg" />
-    <Content Include="images\shop\2.jpg" />
-    <Content Include="images\shop\3.jpg" />
-    <Content Include="images\shop\4.jpg" />
-    <Content Include="images\shop\5.jpg" />
-    <Content Include="images\shop\6.jpg" />
-    <Content Include="images\shop\7.jpg" />
-    <Content Include="images\shop\8.jpg" />
-    <Content Include="images\shop\9.jpg" />
-    <Content Include="images\slider\1\1.jpg" />
-    <Content Include="images\slider\1\2.jpg" />
+    <Content Include="images\slider\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\slider\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\slider\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\slider_dbtn.png" />
     <Content Include="images\slider_range.png" />
     <Content Include="javascripts\bootstrap-sprockets.js" />

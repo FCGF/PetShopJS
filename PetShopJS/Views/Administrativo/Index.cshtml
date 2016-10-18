@@ -3,51 +3,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
+<div class="container padding-top-70">
+    <div class="col-md-5">
+        <div>
+            <h2>Endereço</h2>
 
-    <div>
-        <h2>Endereço</h2>
+            <ul>
+                <li>@Html.ActionLink("Bairros", "Index", "Bairros")</li>
+                <li>@Html.ActionLink("Cidades", "Index", "Cidades")</li>
+                <li>@Html.ActionLink("Enderecos", "Index", "Enderecos")</li>
+                <li>@Html.ActionLink("Estados", "Index", "Estados")</li>
+                <li>@Html.ActionLink("Paises", "Index", "Paises")</li>
+            </ul>
+        </div>
 
-        <ul>
-            <li>@Html.ActionLink("Bairros", "Index", "Bairros")</li>
-            <li>@Html.ActionLink("Cidades", "Index", "Cidades")</li>
-            <li>@Html.ActionLink("Enderecos", "Index", "Enderecos")</li>
-            <li>@Html.ActionLink("Estados", "Index", "Estados")</li>
-            <li>@Html.ActionLink("Paises", "Index", "Paises")</li>
-        </ul>
+        <div>
+            <h2>Produtos e Serviços</h2>
+
+            <ul>
+                <li>@Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                <li>@Html.ActionLink("Compra_Produto_Empresa", "Index", "Compra_Produto_Empresa")</li>
+                <li>@Html.ActionLink("Compras", "Index", "Compras")</li>
+                <li>@Html.ActionLink("Condicoes", "Index", "Condicoes")</li>
+                <li>@Html.ActionLink("Empresas", "Index", "Empresas")</li>
+                <li>@Html.ActionLink("Especificacoes", "Index", "Especificacoes")</li>
+                <li>@Html.ActionLink("Fabricantes", "Index", "Fabricantes")</li>
+                <li>@Html.ActionLink("Forma_Pagamento", "Index", "Forma_Pagamento")</li>
+                <li>@Html.ActionLink("Parcelas", "Index", "Parcelas")</li>
+                <li>@Html.ActionLink("Produto_Empresa", "Index", "Produto_Empresa")</li>
+                <li>@Html.ActionLink("Produtos", "Index", "Produtos")</li>
+            </ul>
+        </div>
+        <div>
+
+            <h2> Clientes e seus donos</h2>
+
+            <ul>
+                <li>@Html.ActionLink("Animais", "Index", "Animais")</li>
+                <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                <li>@Html.ActionLink("Especies", "Index", "Especies")</li>
+                <li>@Html.ActionLink("Racas", "Index", "Racas")</li>
+            </ul>
+        </div>
     </div>
 
-    <div>
-        <h2>Produtos e Serviços</h2>
-
-        <ul>
-            <li>@Html.ActionLink("Categorias", "Index", "Categorias")</li>
-            <li>@Html.ActionLink("Compra_Produto_Empresa", "Index", "Compra_Produto_Empresa")</li>
-            <li>@Html.ActionLink("Compras", "Index", "Compras")</li>
-            <li>@Html.ActionLink("Condicoes", "Index", "Condicoes")</li>
-            <li>@Html.ActionLink("Empresas", "Index", "Empresas")</li>
-            <li>@Html.ActionLink("Especificacoes", "Index", "Especificacoes")</li>
-            <li>@Html.ActionLink("Fabricantes", "Index", "Fabricantes")</li>
-            <li>@Html.ActionLink("Forma_Pagamento", "Index", "Forma_Pagamento")</li>
-            <li>@Html.ActionLink("Parcelas", "Index", "Parcelas")</li>
-            <li>@Html.ActionLink("Produto_Empresa", "Index", "Produto_Empresa")</li>
-            <li>@Html.ActionLink("Produtos", "Index", "Produtos")</li>
-        </ul>
-    </div>
-    <div>
-
-        <h2> Clientes e seus donos</h2>
-
-        <ul>
-            <li>@Html.ActionLink("Animais", "Index", "Animais")</li>
-            <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
-            <li>@Html.ActionLink("Especies", "Index", "Especies")</li>
-            <li>@Html.ActionLink("Racas", "Index", "Racas")</li>
-        </ul>
+    <div class="col-md-7"> 
+        <div class="row">
+            <img src="/Home/Chart1" />
+        </div>
     </div>
 
 </div>
 
-<div class="row">
-    <img src="/Home/Chart1" />
-</div>
