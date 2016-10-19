@@ -7,15 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PetShopJS.Models {
+namespace PetShopJS.Models
+{
+    using System;
     using System.Collections.Generic;
-
-    public partial class Animal {
+    
+    public partial class Animal
+    {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Animal() {
+        public Animal()
+        {
             this.Produtos = new HashSet<Produto>();
         }
-
+    
         public int Id { get; set; }
         public int IdDono { get; set; }
         public string Nome { get; set; }
@@ -24,10 +28,10 @@ namespace PetShopJS.Models {
         public string Cor { get; set; }
         public string Sexo { get; set; }
         public string Observacoes { get; set; }
-
-        public Cliente Cliente { get; set; }
-        public Raca Raca { get; set; }
+    
+        public virtual Cliente Cliente { get; set; }
+        public virtual Raca Raca { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public ICollection<Produto> Produtos { get; set; }
+        public virtual ICollection<Produto> Produtos { get; set; }
     }
 }

@@ -47,6 +47,14 @@
         <AssociationConnector Association="PetShopModel.FK_Estado_Pais" ManuallyRouted="false" />
         <AssociationConnector Association="PetShopModel.FK_Produto_Fabricante" ManuallyRouted="false" />
         <AssociationConnector Association="PetShopModel.FK_Produto_Empresa_Produto" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PetShopModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="PetShopModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="PetShopModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="PetShopModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="PetShopModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="9.75" />
+        <AssociationConnector Association="PetShopModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="PetShopModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="PetShopModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

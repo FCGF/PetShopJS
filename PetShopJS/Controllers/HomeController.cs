@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 
 namespace PetShopJS.Controllers {
+
+    [AllowAnonymous]
     public class HomeController : Controller {
         private PetShopEntities db = new PetShopEntities();
         public ActionResult Index() {
@@ -25,13 +27,13 @@ namespace PetShopJS.Controllers {
         }
 
         public ActionResult About() {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "PetShopJS.";
 
             return View();
         }
 
         public ActionResult Contact() {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "PetShopJS.";
 
             return View();
         }

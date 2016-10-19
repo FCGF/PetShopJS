@@ -6,6 +6,8 @@ namespace PetShopJS {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters) {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new JsonHandlerAttribute());
+            filters.Add(new AuthorizeAttribute());
+            filters.Add(new RequireHttpsAttribute());
         }
     }
 }

@@ -12,26 +12,18 @@ namespace PetShopJS.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class AspNetRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
+        public AspNetRole()
         {
-            this.Animals = new HashSet<Animal>();
-            this.Compras = new HashSet<Compra>();
+            this.AspNetUsers = new HashSet<AspNetUser>();
         }
     
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public int IdEndereco { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-        public string Telefone { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Animal> Animals { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Compra> Compras { get; set; }
-        public virtual Endereco Endereco { get; set; }
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }

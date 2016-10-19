@@ -1,17 +1,63 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model PetShopJS.Models.ContatoModel
+
+@{
+    ViewBag.Title = "Contato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br/>
-    Redmond, WA 98052-6399<br/>
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="container padding-top-70">
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br/>
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <address>
+        R. Marina Frutuoso, 720<br />
+        Centro<br />
+        Jaraguá do Sul - SC<br />
+        <abbr title="Phone">F:</abbr>
+        +55 (47) 5678-9101
+    </address>
+
+    <address>
+        <strong>Email:</strong> <a href="mailto:petshopjds@gmail.com">petshopjds@gmail.com</a><br />
+    </address>
+
+
+    @using (Html.BeginForm("SendEmail", "Contato", FormMethod.Post)) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>ContatoModel</h4>
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EMailBody, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EMailBody, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EMailBody, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EmailSubject, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EmailSubject, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EmailSubject, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Enviar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+
+</div>
