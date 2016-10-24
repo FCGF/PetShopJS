@@ -6526,3 +6526,14 @@ ul.tld_list {
         overflow: hidden;
     }
 }
+
+.socialLoginButton {
+    cursor:pointer;color:transparent;border:none;width:94px;height:93px;margin-right:20px;
+}
+
+.socialLoginButton.facebook {
+    background:url(/content/images/gui/loginFacebook.png);
+}
+.socialLoginButton.google {
+    background:url(/content/images/gui/loginGoogle.png);
+}

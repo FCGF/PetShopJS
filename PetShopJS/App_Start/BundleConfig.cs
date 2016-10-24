@@ -68,11 +68,11 @@ namespace PetShopJS {
                 "~/Content/jquery-ui.css",
                 "~/Content/magnific-popup.css",
                 "~/Content/style.css",
+                "~/Content/bootstrap-social.css",
                 "~/Content/icomoon/style.css",
                 "~/Content/font-awesome.min.css",
                 "~/Content/color-scheme/default-black.css");
             cssBundle.Orderer = new AsIsBundleOrderer();
-
 
             bundles.Add(jqueryBundle);
             bundles.Add(valBundle);

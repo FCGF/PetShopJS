@@ -27,13 +27,13 @@ namespace PetShopJS.Controllers {
         }
 
         public ActionResult About() {
-            ViewBag.Message = "PetShopJS.";
+            ViewBag.Message = "PetShopJS";
 
             return View();
         }
 
         public ActionResult Contact() {
-            ViewBag.Message = "PetShopJS.";
+            ViewBag.Message = "PetShopJS";
 
             return View();
         }
@@ -52,6 +52,11 @@ namespace PetShopJS.Controllers {
 
             ViewBag.Datas = datasUnicas;
             ViewBag.Quantidade = contas;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SendEmail() {
             return View();
         }
     }

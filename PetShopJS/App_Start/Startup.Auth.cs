@@ -43,9 +43,9 @@ namespace PetShopJS {
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "01e0fac5-e081-4f7b-bd4a-bcf9c83c0883",
+                clientSecret: "OL05uUW2Gt4H4V0pcZOMs2k");
 
             app.UseTwitterAuthentication(new TwitterAuthenticationOptions {
                 ConsumerKey = "WXquaPoWgx019can9maEP5srK",

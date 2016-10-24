@@ -7,14 +7,14 @@
 
 <div class="container padding-top-70">
 
-    <h2>@ViewBag.Title.</h2>
+    <h2>@ViewBag.Title</h2>
     <h3>@ViewBag.Message</h3>
 
     <address>
         R. Marina Frutuoso, 720<br />
         Centro<br />
         Jaraguá do Sul - SC<br />
-        <abbr title="Phone">F:</abbr>
+        <abbr title="Telefone">F:</abbr>
         +55 (47) 5678-9101
     </address>
 
@@ -23,11 +23,11 @@
     </address>
 
 
-    @using (Html.BeginForm("SendEmail", "Contato", FormMethod.Post)) {
+    @using (Html.BeginForm("SendEmail", "Home", FormMethod.Post)) {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h4>ContatoModel</h4>
+            <h4>Entrar em Contato:</h4>
             <br />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 

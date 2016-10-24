@@ -1,7 +1,8 @@
 ﻿@{
     var chart = new Chart(width: 600, height: 600, theme: ChartTheme.Green)
         .AddTitle("Venda de Produtos")
-        .AddSeries("Default",
+        .AddSeries(
+            name: "Vendas",
             xValue: ViewBag.Datas, xField: "Data",
             yValues: ViewBag.Quantidade, yFields: "Quantidade")
         .Write();

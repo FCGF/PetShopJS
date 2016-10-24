@@ -10,10 +10,17 @@
             <li>
                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
             </li>
+            @if (User.IsInRole("Admin")) {
+                <li>
+                    @Html.ActionLink("WebMail", "Index", "Contato", null, new {@class = "page-scroll"})
+                </li>
+                <li>
+                    @Html.ActionLink("Administrativo", "Index", "Administrativo", null, new { @class = "page-scroll" })
+                </li>
+            }
         </ul>
     }
-}
-else {
+} else {
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Registrar", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink", @class = "page-scroll" })</li>
         <li>@Html.ActionLink("Entrar", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink", @class = "page-scroll" })</li>
