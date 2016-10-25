@@ -49,8 +49,8 @@ namespace PetShopJS {
                       "~/Scripts/jquery.countdown.min.js",
                       "~/Scripts/jquery.sticky.js",
                       "~/Scripts/jquery.magnific-popup.min.js",
-                      "~/Scripts/main.js",
-                      "~/Scripts/gmaps/greyscale.js");
+                      "~/Scripts/main.js");
+            //"~/Scripts/gmaps/greyscale.js"
             bootBundle.Orderer = new AsIsBundleOrderer();
 
             var cssBundle = new StyleBundle("~/Content/css").Include(

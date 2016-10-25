@@ -408,19 +408,10 @@
     <Content Include="images\blog\1.jpg" />
     <Content Include="images\blog\2.jpg" />
     <Content Include="images\blog\3.jpg" />
-    <Content Include="images\blog\4.jpg" />
-    <Content Include="images\blog\5.jpg" />
     <Content Include="images\boson_220_65.png" />
     <Content Include="images\boson_html_220_65.png" />
     <Content Include="images\btn-bg.png" />
     <Content Include="images\bubble.png" />
-    <Content Include="images\clients\1.png" />
-    <Content Include="images\clients\2.png" />
-    <Content Include="images\clients\3.png" />
-    <Content Include="images\clients\4.png" />
-    <Content Include="images\clients\5.png" />
-    <Content Include="images\clients\6.png" />
-    <Content Include="images\clients\7.png" />
     <Content Include="images\d4.jpg" />
     <Content Include="images\dummy.png" />
     <Content Include="images\footer-bg.png" />
@@ -464,32 +455,11 @@
     <Content Include="images\pattern\pattern7.png" />
     <Content Include="images\pattern\pattern8.png" />
     <Content Include="images\pattern\pattern9.png" />
-    <Content Include="images\projects\1.jpg" />
-    <Content Include="images\projects\10.jpg" />
-    <Content Include="images\projects\11.jpg" />
-    <Content Include="images\projects\12.jpg" />
-    <Content Include="images\projects\2.jpg" />
-    <Content Include="images\projects\2\1.jpg" />
-    <Content Include="images\projects\2\2.jpg" />
-    <Content Include="images\projects\2\3.jpg" />
-    <Content Include="images\projects\2\4.jpg" />
-    <Content Include="images\projects\2\5.jpg" />
-    <Content Include="images\projects\3.jpg" />
-    <Content Include="images\projects\4.jpg" />
-    <Content Include="images\projects\5.jpg" />
-    <Content Include="images\projects\6.jpg" />
-    <Content Include="images\projects\7.jpg" />
-    <Content Include="images\projects\8.jpg" />
-    <Content Include="images\projects\9.jpg" />
-    <Content Include="images\quote\1.jpg" />
-    <Content Include="images\quote\2.jpg" />
-    <Content Include="images\quote\3.jpg" />
-    <Content Include="images\quote\thumb\1.png" />
-    <Content Include="images\quote\thumb\2.png" />
-    <Content Include="images\quote\thumb\3.png" />
-    <Content Include="images\quote\thumb\4.png" />
     <Content Include="images\ray_220_65.png" />
     <Content Include="images\select_220_65.png" />
+    <Content Include="images\shop\1.jpg" />
+    <Content Include="images\shop\2.jpg" />
+    <Content Include="images\shop\3.jpg" />
     <Content Include="images\slider\1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1096,7 +1066,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\gui\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

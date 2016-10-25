@@ -6,58 +6,77 @@
 }
 
 <div class="container padding-top-70">
+    <div class="col-md-6">
+        <h2>@ViewBag.Title</h2>
+        <h3>@ViewBag.Message</h3>
 
-    <h2>@ViewBag.Title</h2>
-    <h3>@ViewBag.Message</h3>
+        <address>
+            R. Marina Frutuoso, 720<br />
+            Centro<br />
+            Jaraguá do Sul - SC<br />
+            <abbr title="Telefone">F:</abbr>
+            +55 (47) 5678-9101
+        </address>
 
-    <address>
-        R. Marina Frutuoso, 720<br />
-        Centro<br />
-        Jaraguá do Sul - SC<br />
-        <abbr title="Telefone">F:</abbr>
-        +55 (47) 5678-9101
-    </address>
+        <address>
+            <strong>Email:</strong> <a href="mailto:petshopjds@gmail.com">petshopjds@gmail.com</a><br />
+        </address>
 
-    <address>
-        <strong>Email:</strong> <a href="mailto:petshopjds@gmail.com">petshopjds@gmail.com</a><br />
-    </address>
+        @using (Html.BeginForm("SendEmail", "Home", FormMethod.Post)) {
+            @Html.AntiForgeryToken()
 
+            <div class="form-horizontal">
+                <h4>Entrar em Contato:</h4>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    @using (Html.BeginForm("SendEmail", "Home", FormMethod.Post)) {
-        @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EMailBody, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.EMailBody, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EMailBody, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-horizontal">
-            <h4>Entrar em Contato:</h4>
-            <br />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EmailSubject, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.EmailSubject, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EmailSubject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.EMailBody, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EMailBody, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EMailBody, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Enviar" class="btn btn-default" />
+                    </div>
                 </div>
             </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.EmailSubject, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EmailSubject, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EmailSubject, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Enviar" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
+        }
+    </div>
+    <div class="col-md-6 no-padding clearfix">
+        <div id="map" style="height: 500px; width: 100%;"></div>
+    </div>
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
 
+    <script>
+        function initMap() {
+            var uluru = { lat: -26.4933104, lng: -49.0763121 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYdSPWp5IinU5mY5T7_Jp-MTnpfNcGkC0&callback=initMap">
+    </script>
 
 </div>
