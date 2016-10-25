@@ -1,12 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Web.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PetShopJS.Controllers;
-using System.Web.Mvc;
 
 namespace PetShopJSTest.Controllers {
-    [TestClass]
+    [TestClass()]
     public class HomeControllerTest {
-        [TestMethod]
-        public void Index() {
+        [TestMethod()]
+        public void IndexTest() {
             // Arrange
             HomeController controller = new HomeController();
 
@@ -17,8 +17,8 @@ namespace PetShopJSTest.Controllers {
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
-        public void About() {
+        [TestMethod()]
+        public void AboutTest() {
             // Arrange
             HomeController controller = new HomeController();
 
@@ -29,8 +29,8 @@ namespace PetShopJSTest.Controllers {
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
-        [TestMethod]
-        public void Contact() {
+        [TestMethod()]
+        public void ContactTest() {
             // Arrange
             HomeController controller = new HomeController();
 
@@ -39,6 +39,16 @@ namespace PetShopJSTest.Controllers {
 
             // Assert
             Assert.IsNotNull(result);
+        }
+
+        [TestMethod()]
+        public void Chart1Test() {
+
+        }
+
+        [TestMethod()]
+        public void SendEmailTest() {
+
         }
     }
 }

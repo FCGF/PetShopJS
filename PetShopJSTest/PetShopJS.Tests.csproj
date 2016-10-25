@@ -63,12 +63,60 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\AccountControllerTests.cs" />
+    <Compile Include="Controllers\AdministrativoControllerTests.cs" />
+    <Compile Include="Controllers\AnimaisControllerTests.cs" />
+    <Compile Include="Controllers\BairrosControllerTests.cs" />
+    <Compile Include="Controllers\CategoriasControllerTests.cs" />
+    <Compile Include="Controllers\CidadesControllerTests.cs" />
+    <Compile Include="Controllers\ClientesControllerTests.cs" />
+    <Compile Include="Controllers\ComprasControllerTests.cs" />
+    <Compile Include="Controllers\Compra_Produto_EmpresaControllerTests.cs" />
+    <Compile Include="Controllers\CondicoesControllerTests.cs" />
+    <Compile Include="Controllers\ContatoControllerTests.cs" />
+    <Compile Include="Controllers\EmpresasControllerTests.cs" />
+    <Compile Include="Controllers\EnderecosControllerTests.cs" />
+    <Compile Include="Controllers\EspeciesControllerTests.cs" />
+    <Compile Include="Controllers\EspecificacoesControllerTests.cs" />
+    <Compile Include="Controllers\EstadosControllerTests.cs" />
+    <Compile Include="Controllers\FabricantesControllerTests.cs" />
+    <Compile Include="Controllers\Forma_PagamentoControllerTests.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Controllers\ManageControllerTests.cs" />
+    <Compile Include="Controllers\PaisesControllerTests.cs" />
+    <Compile Include="Controllers\ParcelasControllerTests.cs" />
+    <Compile Include="Controllers\ProdutosControllerTests.cs" />
+    <Compile Include="Controllers\Produto_EmpresaControllerTests.cs" />
+    <Compile Include="Controllers\RacasControllerTests.cs" />
+    <Compile Include="Models\AnimalTests.cs" />
+    <Compile Include="Models\AspNetRoleTests.cs" />
+    <Compile Include="Models\AspNetUserTests.cs" />
+    <Compile Include="Models\BairroTests.cs" />
+    <Compile Include="Models\CategoriaTests.cs" />
+    <Compile Include="Models\CidadeTests.cs" />
+    <Compile Include="Models\ClienteTests.cs" />
+    <Compile Include="Models\CompraTests.cs" />
+    <Compile Include="Models\CondicaoTests.cs" />
+    <Compile Include="Models\EmpresaTests.cs" />
+    <Compile Include="Models\EnderecoTests.cs" />
+    <Compile Include="Models\EspecieTests.cs" />
+    <Compile Include="Models\EstadoTests.cs" />
+    <Compile Include="Models\FabricanteTests.cs" />
+    <Compile Include="Models\Forma_PagamentoTests.cs" />
+    <Compile Include="Models\JsonHandlerAttributeTests.cs" />
+    <Compile Include="Models\JsonNetResultTests.cs" />
+    <Compile Include="Models\ManageViewModelsTests.cs" />
+    <Compile Include="Models\IdentityModelsTests.cs" />
+    <Compile Include="Models\ContatoModelTests.cs" />
+    <Compile Include="Models\AccountViewModelsTests.cs" />
+    <Compile Include="Models\PaisTests.cs" />
+    <Compile Include="Models\ParcelaTests.cs" />
+    <Compile Include="Models\ProdutoTests.cs" />
+    <Compile Include="Models\Produto_EmpresaTests.cs" />
+    <Compile Include="Models\RacaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
