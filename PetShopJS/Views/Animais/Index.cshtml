@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<PetShopJS.Models.Animal>
 
 @{
-    ViewBag.Title = "Animais";
+    ViewBag.Title = Resources.Resource.Animals;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container padding-top-70">
 
-    <h2>Animais</h2>
+    <h2>@Resources.Resource.Animals</h2>
 
     @Html.Partial("_PartialIndex")
     

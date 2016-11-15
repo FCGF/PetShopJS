@@ -12,36 +12,38 @@ namespace PetShopJS.Models {
         [Key]
         public int Id { get; set; }
         [Required]
-        [Display(Name = "Dono")]
+        [Display(Name = "Owner", ResourceType =typeof(Resources.Resource))]
         public int IdDono { get; set; }
         [Required]
-        [Display(Name = "Animal")]
+        [Display(Name = "Animal", ResourceType = typeof(Resources.Resource))]
         [StringLength(50, MinimumLength = 3)]
         public string Nome { get; set; }
         [Required]
-        [Display(Name = "Raça")]
+        [Display(Name = "Race", ResourceType = typeof(Resources.Resource))]
         public int IdRaca { get; set; }
         [Required]
         [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd.MM.yy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Data de Nascimento")]
+        [Display(Name = "BirthDate", ResourceType = typeof(Resources.Resource))]
         public System.DateTime DataNascimento { get; set; }
         [Required]
+        [Display(Name = "Color", ResourceType = typeof(Resources.Resource))]
         [StringLength(50, MinimumLength = 3)]
         public string Cor { get; set; }
         [Required]
+        [Display(Name = "Sex", ResourceType = typeof(Resources.Resource))]
         public string Sexo { get; set; }
         [Required]
-        [Display(Name = "Observações")]
+        [Display(Name = "Observations", ResourceType = typeof(Resources.Resource))]
         [StringLength(255, MinimumLength = 3)]
         public string Observacoes { get; set; }
 
         [ScriptIgnore]
         [JsonIgnore]
-        [Display(Name = "Dono")]
+        [Display(Name = "Owner", ResourceType = typeof(Resources.Resource))]
         public Cliente Cliente { get; set; }
         [ScriptIgnore]
         [JsonIgnore]
-        [Display(Name = "Raça")]
+        [Display(Name = "Race", ResourceType = typeof(Resources.Resource))]
         public Raca Raca { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         [ScriptIgnore]

@@ -1,17 +1,17 @@
 ﻿@model PetShopJS.Models.Animal
 
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = Resources.Resource.Edit;
 }
 
-<h2>Editar</h2>
+<h2>@Resources.Resource.Edit</h2>
 
 
 @using (Html.BeginForm("Edit", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), FormMethod.Post, new {id = "crudForm"})) {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Animal</h4>
+        <h4>@Resources.Resource.Animal</h4>
         <br/>
         @Html.ValidationSummary(true, "", new {@class = "text-danger"})
         @Html.HiddenFor(model => model.Id)
@@ -73,11 +73,11 @@
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.Sexo, new List<SelectListItem>() {
                     new SelectListItem() {
-                        Text = "Masculino",
+                        Text = @Resources.Resource.Masculine,
                         Value = "M"
                     },
                     new SelectListItem() {
-                        Text = "Feminino",
+                        Text = @Resources.Resource.Feminine,
                         Value = "F"
                     }
                 }, htmlAttributes: new {@class = "form-control"})

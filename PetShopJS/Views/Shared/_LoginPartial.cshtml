@@ -5,7 +5,7 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
+                @Html.ActionLink(@Resources.Resource.Hello + " " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
             </li>
             <li>
                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
@@ -15,14 +15,14 @@
                     @Html.ActionLink("WebMail", "Index", "Contato", null, new {@class = "page-scroll"})
                 </li>
                 <li>
-                    @Html.ActionLink("Administrativo", "Index", "Administrativo", null, new { @class = "page-scroll" })
+                    @Html.ActionLink(@Resources.Resource.Administrative, "Index", "Administrativo", null, new { @class = "page-scroll" })
                 </li>
             }
         </ul>
     }
 } else {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Registrar", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink", @class = "page-scroll" })</li>
-        <li>@Html.ActionLink("Entrar", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink", @class = "page-scroll" })</li>
+        <li>@Html.ActionLink(@Resources.Resource.Register, "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink", @class = "page-scroll" })</li>
+        <li>@Html.ActionLink(@Resources.Resource.Login, "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink", @class = "page-scroll" })</li>
     </ul>
 }

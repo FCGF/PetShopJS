@@ -41,7 +41,7 @@
                                         <span class="ss-close icon-cross2"></span>
                                         <div class="ssc-inner">
                                             <form>
-                                                <input type="text" placeholder="Buscar...">
+                                                <input type="text" placeholder="@Resources.Resource.Search...">
                                                 <button type="submit"><i class="icon-search2"></i></button>
                                             </form>
                                         </div>
@@ -51,8 +51,8 @@
 
                             <div id="navbar-collapse-1" class="navbar-collapse collapse navbar-right">
                                 <ul class="nav navbar-nav">
-                                    <li>@Html.ActionLink("Sobre", "About", "Home", null, new { @class = "page-scroll" })</li>
-                                    <li>@Html.ActionLink("Contato", "Contact", "Home", null, new { @class = "page-scroll" })</li>
+                                    <li>@Html.ActionLink(Resources.Resource.About, "About", "Home", null, new { @class = "page-scroll" })</li>
+                                    <li>@Html.ActionLink(Resources.Resource.Contact, "Contact", "Home", null, new { @class = "page-scroll" })</li>
                                     
                                 </ul>
                                 @Html.Partial("_LoginPartial")
@@ -69,38 +69,38 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <h4 class="space30">Sobre nós</h4>
+                            <h4 class="space30">@Resources.Resource.About @Resources.Resource.us</h4>
                             <a href="../Home/About"><img src="~/images/basic/logo-ico.png" class="img-responsive space20" width="177" alt="" /></a>
-                            <p>PetShopJs. O melhor da cidade</p>
+                            <p>PetShopJs. @Resources.Resource.BestCity</p>
                         </div>
                         <div class="col-md-3">
-                            <h4 class="space30">Posts Recentes</h4>
+                            <h4 class="space30">@Resources.Resource.RecentPosts</h4>
                             <ul class="f-posts">
                                 <li>
                                     <img src="~/images/blog/1.jpg" class="img-responsive" alt="" />
                                     <h5><a href="#">Lorem ipsum post title</a></h5>
                                     <p>
-                                        <i class="fa fa-comments"></i> 5 Comments
+                                        <i class="fa fa-comments"></i> 5 @Resources.Resource.Comments
                                     </p>
                                 </li>
                                 <li>
                                     <img src="~/images/blog/2.jpg" class="img-responsive" alt=""/>
                                     <h5><a href="#">Lorem ipsum post title</a></h5>
                                     <p>
-                                        <i class="fa fa-comments"></i> 5 Comments
+                                        <i class="fa fa-comments"></i> 5 @Resources.Resource.Comments
                                     </p>
                                 </li>
                                 <li>
                                     <img src="~/images/blog/3.jpg" class="img-responsive" alt="" />
                                     <h5><a href="#">Lorem ipsum post title</a></h5>
                                     <p>
-                                        <i class="fa fa-comments"></i> 5 Comments
+                                        <i class="fa fa-comments"></i> 5 @Resources.Resource.Comments
                                     </p>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-md-3">
-                            <h4 class="space30">Contato</h4>
+                            <h4 class="space30">@Resources.Resource.Contact</h4>
                             <ul class="c-info">
                                 <li>
                                     <i class="fa fa-map-marker"></i> R. Marina Frutuoso, 720<br>Centro<br>Jaraguá do Sul SC
@@ -158,17 +158,17 @@
     <div class="b-settings-panel">
         <div class="settings-section">
             <span>
-                Caixa
+                @Resources.Resource.Boxed
             </span>
             <div class="b-switch">
                 <div class="switch-handle"></div>
             </div>
             <span>
-                Largo
+                @Resources.Resource.Wide
             </span>
         </div>
         <hr class="dashed" style="margin: 15px 0px;">
-        <h5>Plano de Fundo</h5>
+        <h5>@Resources.Resource.Background</h5>
         <div class="settings-section bg-list">
             <div class="bg-pattern1"></div>
             <div class="bg-pattern2"></div>
@@ -190,7 +190,7 @@
             <div class="bg-pattern18"></div>
         </div>
         <hr class="dashed" style="margin: 15px 0px;">
-        <h5>Cor</h5>
+        <h5>@Resources.Resource.Color</h5>
         <div class="settings-section color-list">
             <div data-src="css/color-scheme/moderate-green.css" style="background: #8ec249"></div>
             <div data-src="css/color-scheme/vivid-blue.css" style="background: #228dff"></div>
