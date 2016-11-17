@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 
@@ -12,7 +13,9 @@ namespace PetShopJS.Controllers {
     [AllowAnonymous]
     public class HomeController : Controller {
         private PetShopEntities db = new PetShopEntities();
+
         public ActionResult Index() {
+
             string[] filePaths = Directory.GetFiles(Server.MapPath("~/images/slider/"));
 
             IList<string> files = new List<string>();
@@ -32,8 +35,23 @@ namespace PetShopJS.Controllers {
             return View();
         }
 
-        public ActionResult Contact() {
+        public async Task<ActionResult> Contact() {
             ViewBag.Message = "PetShopJS";
+
+            try {
+                const double latitude = -26.4933104;
+                const double longitude = -49.0763121;
+
+                var weather = await WeatherMapProxy.GetWeather(latitude, longitude);
+
+                ViewBag.Location = weather.name;
+                ViewBag.Temperature = ((int)weather.main.temp).ToString();
+                ViewBag.WeatherDescription = weather.weather[0].description;
+            } catch {
+                ViewBag.Location = "";
+                ViewBag.Temperature = "";
+                ViewBag.WeatherDescription = "Unable to get weather at this time.";
+            }
 
             return View();
         }
