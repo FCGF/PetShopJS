@@ -15,7 +15,7 @@ namespace PetShopJS {
         }
 
         protected void Application_BeginRequest(Object sender, EventArgs e) {
-            Thread.CurrentThread.CurrentCulture = Request.UserLanguages != null ? CultureInfo.CreateSpecificCulture(Request.UserLanguages[0]) : new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentCulture = Request.UserLanguages != null ? CultureInfo.CreateSpecificCulture(Request.UserLanguages[0]) : new CultureInfo("pt-BR");
             //Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             //Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
         }

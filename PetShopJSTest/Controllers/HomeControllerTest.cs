@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using PetShopJS.Controllers;
 using System.Web;
@@ -44,12 +45,12 @@ namespace PetShopJSTest.Controllers {
         }
 
         [TestMethod()]
-        public void ContactTest() {
+        public async Task ContactTest() {
             // Arrange
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            ViewResult result = await controller.Contact() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
